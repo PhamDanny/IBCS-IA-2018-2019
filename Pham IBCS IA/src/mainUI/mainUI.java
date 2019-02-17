@@ -48,6 +48,8 @@ public class mainUI extends javax.swing.JFrame {
         labelTitle = new javax.swing.JLabel();
         labelLogo = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        panelExit = new javax.swing.JPanel();
+        labelExit = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
@@ -58,8 +60,6 @@ public class mainUI extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         panelNewProfile = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        panelExit = new javax.swing.JPanel();
-        labelExit = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("TargetGrade");
@@ -96,6 +96,39 @@ public class mainUI extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 153));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        panelExit.setBackground(new java.awt.Color(0, 153, 153));
+        panelExit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                panelExitMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                panelExitMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                panelExitMouseExited(evt);
+            }
+        });
+        panelExit.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        labelExit.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        labelExit.setForeground(new java.awt.Color(0, 0, 51));
+        labelExit.setText("X");
+        labelExit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        labelExit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelExitMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                labelExitMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                labelExitMouseExited(evt);
+            }
+        });
+        panelExit.add(labelExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(9, 0, 30, 40));
+
+        jPanel2.add(panelExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 40, 40));
 
         jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -170,29 +203,6 @@ public class mainUI extends javax.swing.JFrame {
 
         jPanel2.add(panelNewProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 100, 30));
 
-        panelExit.setBackground(new java.awt.Color(0, 153, 153));
-        panelExit.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                panelExitMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                panelExitMouseEntered(evt);
-            }
-        });
-        panelExit.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        labelExit.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        labelExit.setText("X");
-        labelExit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        labelExit.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                labelExitMouseExited(evt);
-            }
-        });
-        panelExit.add(labelExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(9, 0, 30, 40));
-
-        jPanel2.add(panelExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 40, 40));
-
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 260, 300));
 
         pack();
@@ -250,8 +260,24 @@ public class mainUI extends javax.swing.JFrame {
 
     private void panelExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelExitMouseClicked
         // closes login form when exit is clicked
+        // this one is based on the panel which is larger and more forgiving to click
         this.dispose();
     }//GEN-LAST:event_panelExitMouseClicked
+
+    private void labelExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelExitMouseClicked
+        // closes login form when exit is clicked
+        this.dispose();
+    }//GEN-LAST:event_labelExitMouseClicked
+
+    private void labelExitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelExitMouseEntered
+        // change exit button to white when hovered
+        labelExit.setForeground(new java.awt.Color(0,0,0));
+    }//GEN-LAST:event_labelExitMouseEntered
+
+    private void panelExitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelExitMouseExited
+        // reset exit button to default color
+        labelExit.setForeground(new java.awt.Color(0,0,51));
+    }//GEN-LAST:event_panelExitMouseExited
 
     /**
      * @param args the command line arguments
