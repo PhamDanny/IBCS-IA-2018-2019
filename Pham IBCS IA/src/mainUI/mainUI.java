@@ -5,6 +5,12 @@
  */
 package mainUI;
 
+import java.awt.Image;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+
 /**
  *
  * @author htvph
@@ -14,8 +20,12 @@ public class mainUI extends javax.swing.JFrame {
     /**
      * Creates new form mainUI
      */
-    public mainUI() {
+    public mainUI() throws IOException {
         initComponents();
+        
+        // set up form's icon image
+        Image i = ImageIO.read(getClass().getResource("/mainUI/targetlogo.png"));
+        setIconImage(i);
     }
 
     /**
@@ -28,62 +38,76 @@ public class mainUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        labelSubtitle = new javax.swing.JLabel();
+        labelTitle = new javax.swing.JLabel();
+        labelLogo = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        labelLoginTitle = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        labelLoginTitle1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jPasswordField1 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setPreferredSize(new java.awt.Dimension(800, 500));
-        setResizable(false);
+        setTitle("TargetGrade");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 102));
+        jPanel1.setBackground(new java.awt.Color(0, 51, 153));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 48)); // NOI18N
+        labelSubtitle.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        labelSubtitle.setForeground(new java.awt.Color(255, 255, 255));
+        labelSubtitle.setText("Aim for your best self. Take control of your grades.");
+        jPanel1.add(labelSubtitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
+
+        labelTitle.setFont(new java.awt.Font("Open Sans Semibold", 1, 48)); // NOI18N
+        labelTitle.setForeground(new java.awt.Color(255, 255, 255));
+        labelTitle.setText("TargetGrade");
+        jPanel1.add(labelTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, -1));
+
+        labelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mainUI/target.png"))); // NOI18N
+        jPanel1.add(labelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 440));
+
+        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        labelLoginTitle.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        labelLoginTitle.setForeground(new java.awt.Color(255, 255, 255));
+        labelLoginTitle.setText("Register");
+        jPanel2.add(labelLoginTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, -1, -1));
+
+        jTextField1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 65, 120, 30));
+
+        jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Test");
+        jLabel1.setText("Username");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, 20));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mainUI/login background.jpg"))); // NOI18N
-        jLabel2.setText("jLabel2");
+        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Password");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 105, -1, 20));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(jLabel1)
-                .addGap(68, 68, 68)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(2275, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addContainerGap(818, Short.MAX_VALUE))
-        );
+        labelLoginTitle1.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        labelLoginTitle1.setForeground(new java.awt.Color(255, 255, 255));
+        labelLoginTitle1.setText("Login");
+        jPanel2.add(labelLoginTitle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 20, -1, -1));
 
-        jPanel2.setLayout(null);
+        jButton1.setBackground(new java.awt.Color(0, 102, 102));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Log In");
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 140, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(3565, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jPasswordField1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        jPasswordField1.setEchoChar('\u2022');
+        jPanel2.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 120, 30));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 220, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -118,15 +142,27 @@ public class mainUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new mainUI().setVisible(true);
+                try {
+                    new mainUI().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(mainUI.class.getName()).log(Level.SEVERE, null, ex);
+                }            
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel labelLoginTitle;
+    private javax.swing.JLabel labelLoginTitle1;
+    private javax.swing.JLabel labelLogo;
+    private javax.swing.JLabel labelSubtitle;
+    private javax.swing.JLabel labelTitle;
     // End of variables declaration//GEN-END:variables
 }
