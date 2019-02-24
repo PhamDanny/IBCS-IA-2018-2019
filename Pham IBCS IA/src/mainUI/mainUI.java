@@ -8,7 +8,9 @@ package mainUI;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -28,6 +30,8 @@ public class mainUI extends javax.swing.JFrame {
     // sets up username/password strings
     
     String username, password;
+    static User[] savedUsers = new User[100];
+    static int users;
 
     // main constructor
     public mainUI() throws IOException {
@@ -44,6 +48,14 @@ public class mainUI extends javax.swing.JFrame {
         
     }
 
+    public User[] getSavedUsers() {
+        return savedUsers;
+    }
+
+    public void setSavedUsers(User[] savedUsers) {
+        this.savedUsers = savedUsers;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -311,7 +323,24 @@ public class mainUI extends javax.swing.JFrame {
     private void panelExitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelExitMouseExited
         
     }//GEN-LAST:event_panelExitMouseExited
-
+    
+    private void saveUsers() {
+        
+        try {
+            PrintWriter writer = new PrintWriter(new File("users.txt"));
+            for(int i = 0; i <= users; i++) {
+                writer.println(savedUsers[i].getUsername() + "," + savedUsers[i].getPassword() + "," + savedUsers[i].getFirstName() + "," + savedUsers[i].getLastName() + "," + savedUsers[i].getGradeLevel() + "," + savedUsers[i].getHiddenID());
+                
+            }
+        }
+        catch(IOException e) {
+            
+        }
+    }
+    private void loadUsers() {
+        // TO DO: method extracts users from text file and converts them into user objects
+        
+    }
     // USER SIGNS IN HERE
     private void panelSignInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelSignInMouseClicked
         try {
@@ -319,8 +348,10 @@ public class mainUI extends javax.swing.JFrame {
             username = textFieldUserName.getText();
             password = passwordField.getText();
             
+            // TODO
             // validation goes here
-            new Dashboard(username).setVisible(true);
+            // fetching account from list of files goes here
+            new Dashboard(new User(username, password, "Danny", "Pham", 11, 0)).setVisible(true); // just a placeholder for now, later paremeter will have user fetched from list from textfile
         } catch (IOException ex) {
             Logger.getLogger(mainUI.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -333,7 +364,7 @@ public class mainUI extends javax.swing.JFrame {
             // user signs in
             username = textFieldUserName.getText();
             password = passwordField.getText();
-            new Dashboard(username).setVisible(true);
+            new Dashboard(new User(username, password, "Danny", "Pham", 11, 0)).setVisible(true);
         } catch (IOException ex) {
             Logger.getLogger(mainUI.class.getName()).log(Level.SEVERE, null, ex);
         }

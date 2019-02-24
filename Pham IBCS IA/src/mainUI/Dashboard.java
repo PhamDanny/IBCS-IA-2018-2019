@@ -22,7 +22,7 @@ public class Dashboard extends javax.swing.JFrame {
     /**
      * Creates new form Dashboard
      */
-    public Dashboard(String username) throws IOException {
+    public Dashboard(User user) throws IOException {
         initComponents();
         
         // set up form's icon image
@@ -34,7 +34,7 @@ public class Dashboard extends javax.swing.JFrame {
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         
         // sets greeting message
-        labelWelcome.setText("Welcome back, " + username + ".");
+        labelWelcome.setText("Welcome back, " + user.getFirstName() + ".");
     }
 
     /**
@@ -337,7 +337,7 @@ public class Dashboard extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    new Dashboard("").setVisible(true);
+                    new Dashboard(new User("", "", "", "", 0, 0)).setVisible(true);
                 } catch (IOException ex) {
                     Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
                 }
