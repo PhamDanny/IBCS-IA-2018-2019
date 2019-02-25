@@ -72,7 +72,6 @@ public class Dashboard extends javax.swing.JFrame {
         setForeground(new java.awt.Color(0, 0, 0));
         setMinimumSize(new java.awt.Dimension(700, 440));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(700, 440));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelExit.setBackground(new java.awt.Color(0, 153, 153));
@@ -223,8 +222,8 @@ public class Dashboard extends javax.swing.JFrame {
 
         labelWelcome.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
         labelWelcome.setForeground(new java.awt.Color(255, 255, 255));
-        labelWelcome.setText("Welcome back, username.");
-        jPanel2.add(labelWelcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 3, -1, -1));
+        labelWelcome.setText("Welcome back, name.");
+        jPanel2.add(labelWelcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 440));
 
