@@ -248,11 +248,12 @@ public class SignUp extends javax.swing.JFrame {
         
         User newUser = new User(newUsername, newPassword, textFieldFirstName.getText(), textFieldLastName.getText(), Integer.parseInt(textFieldGrade.getText()), mainUI.users);
         // set new user in array
+        // TO DO: Fix array because of change from array to arraylist
         mainUI.savedUsers[mainUI.users] = newUser;
         // add one to logical size of array
         mainUI.users++;
         //TO DO: save the list of users in file
-        //mainUI.saveUsers();
+        mainUI.saveUsers();
         
         // close sign up form and open dashboard with new account
         try {            

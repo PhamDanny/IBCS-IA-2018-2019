@@ -9,8 +9,14 @@ import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -30,7 +36,7 @@ public class mainUI extends javax.swing.JFrame {
     // sets up username/password strings
     
     String username, password;
-    static User[] savedUsers = new User[100];
+    static ArrayList<User> savedUsers = new ArrayList<User>();
     static int users = 0;
 
     // main constructor
@@ -321,23 +327,48 @@ public class mainUI extends javax.swing.JFrame {
         
     }//GEN-LAST:event_panelExitMouseExited
     
-    static void saveUsers() {        
-        try {
-            PrintWriter writer = new PrintWriter(new File("users.txt"));
-            writer.println(users);
-            for(int i = 0; i <= users; i++) {
-                writer.println(savedUsers[i].getUsername() + "," + savedUsers[i].getPassword() + "," + savedUsers[i].getFirstName() + "," + savedUsers[i].getLastName() + "," + savedUsers[i].getGradeLevel() + "," + savedUsers[i].getHiddenID());
-                
-            }
+    public static void saveUsers() {
+        // serializes user objects and stores them in file
+        FileOutputStream fileID;
+        ObjectOutputStream outFile;
+        try
+        {
+            // Create the output stream
+            fileID = new FileOutputStream("users.dat");
+            outFile = new ObjectOutputStream(fileID);
+
+            // Write the ArrayList to the file
+            outFile.writeObject(savedUsers);
+
+            // Close the file
+            outFile.close();
         }
-        catch(IOException e) {
-            
+        catch (IOException e)
+        {
+            System.out.println("Error saving user data.");
         }
         
     }
-    private void loadUsers() {
-        // TO DO: method extracts users from text file and converts them into user objects       
-        
+    public static void loadUsers() throws FileNotFoundException, IOException {
+        // Deserializes user objects
+        FileInputStream fileID = new FileInputStream(new File("users.dat"));
+        ObjectInputStream inFile = new ObjectInputStream(fileID);
+        try
+        {
+            // Read all the objects and put them in the ArrayList
+            savedUsers = (ArrayList <User>) inFile.readObject();
+
+            // Close the stream
+            inFile.close();
+        }
+        catch(IOException e)
+        {
+            System.out.println("Error trying to open file: " + e.getMessage());
+        }
+        catch(ClassNotFoundException e)  // needed because of cast above
+        {
+            System.out.println("Error trying to open file: " + e.getMessage());
+        }
     }
     // USER SIGNS IN HERE
     private void panelSignInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelSignInMouseClicked
