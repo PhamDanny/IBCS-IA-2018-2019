@@ -246,12 +246,10 @@ public class SignUp extends javax.swing.JFrame {
     private void labelSignUpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelSignUpMouseClicked
         // create new user
         
-        User newUser = new User(newUsername, newPassword, textFieldFirstName.getText(), textFieldLastName.getText(), Integer.parseInt(textFieldGrade.getText()), mainUI.users);
+        User newUser = new User(newUsername, newPassword, textFieldFirstName.getText(), textFieldLastName.getText(), Integer.parseInt(textFieldGrade.getText()), mainUI.savedUsers.size());
         // set new user in array
         // TO DO: Fix array because of change from array to arraylist
-        mainUI.savedUsers[mainUI.users] = newUser;
-        // add one to logical size of array
-        mainUI.users++;
+        mainUI.savedUsers.add(newUser);
         //TO DO: save the list of users in file
         mainUI.saveUsers();
         
