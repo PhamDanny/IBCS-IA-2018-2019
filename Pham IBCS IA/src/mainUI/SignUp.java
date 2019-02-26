@@ -22,9 +22,12 @@ public class SignUp extends javax.swing.JFrame {
     /**
      * Creates new form SignUp
      */
-    public SignUp() throws IOException {
+    
+    String newUsername;
+    String newPassword;
+    
+    public SignUp(String username, String password) throws IOException {
         initComponents();
-        
         // set up form's icon image
         Image i = ImageIO.read(getClass().getResource("/mainUI/targetlogo.png"));
         setIconImage(i);
@@ -32,6 +35,9 @@ public class SignUp extends javax.swing.JFrame {
         // puts form in center of screen
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        
+        this.newUsername = username;
+        this.newPassword = password;
     }
 
     /**
@@ -236,7 +242,22 @@ public class SignUp extends javax.swing.JFrame {
 
     // NEW ACCOUNT CREATED
     private void labelSignUpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelSignUpMouseClicked
-        System.out.println(mainUI.savedUsers[0]);
+        // create new user
+        User newUser = new User(newUsername, newPassword, textFieldFirstName.getText(), textFieldLastName.getText(), Integer.getInteger(textFieldGrade.getText()), mainUI.users);
+        // set new user in array
+        mainUI.savedUsers[mainUI.users] = newUser;
+        // add one to logical size of array
+        mainUI.users++;
+        // save the list of users in file
+        //mainUI.saveUsers();
+        
+        // close sign up form and open dashboard with new account
+        try {            
+            new Dashboard(newUser).setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(SignUp.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.dispose();
     }//GEN-LAST:event_labelSignUpMouseClicked
 
     private void labelSignUpMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelSignUpMouseEntered
@@ -294,7 +315,7 @@ public class SignUp extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    new SignUp().setVisible(true);
+                    new SignUp("","").setVisible(true);
                 } catch (IOException ex) {
                     Logger.getLogger(SignUp.class.getName()).log(Level.SEVERE, null, ex);
                 }

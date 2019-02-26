@@ -31,12 +31,14 @@ public class mainUI extends javax.swing.JFrame {
     
     String username, password;
     static User[] savedUsers = new User[100];
-    static int users;
+    static int users = 0;
 
     // main constructor
     public mainUI() throws IOException {
         initComponents();
         
+        // load users from file
+        loadUsers();
         // set up form's icon image
         Image i = ImageIO.read(getClass().getResource("/mainUI/targetlogo.png"));
         setIconImage(i);
@@ -46,14 +48,6 @@ public class mainUI extends javax.swing.JFrame {
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         
         
-    }
-
-    public User[] getSavedUsers() {
-        return savedUsers;
-    }
-
-    public void setSavedUsers(User[] savedUsers) {
-        this.savedUsers = savedUsers;
     }
     
     /**
@@ -241,6 +235,9 @@ public class mainUI extends javax.swing.JFrame {
         labelNewProfile.setText("New Profile");
         labelNewProfile.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         labelNewProfile.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelNewProfileMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 labelNewProfileMouseEntered(evt);
             }
@@ -324,10 +321,10 @@ public class mainUI extends javax.swing.JFrame {
         
     }//GEN-LAST:event_panelExitMouseExited
     
-    private void saveUsers() {
-        
+    static void saveUsers() {        
         try {
             PrintWriter writer = new PrintWriter(new File("users.txt"));
+            writer.println(users);
             for(int i = 0; i <= users; i++) {
                 writer.println(savedUsers[i].getUsername() + "," + savedUsers[i].getPassword() + "," + savedUsers[i].getFirstName() + "," + savedUsers[i].getLastName() + "," + savedUsers[i].getGradeLevel() + "," + savedUsers[i].getHiddenID());
                 
@@ -336,9 +333,10 @@ public class mainUI extends javax.swing.JFrame {
         catch(IOException e) {
             
         }
+        
     }
     private void loadUsers() {
-        // TO DO: method extracts users from text file and converts them into user objects
+        // TO DO: method extracts users from text file and converts them into user objects       
         
     }
     // USER SIGNS IN HERE
@@ -361,9 +359,12 @@ public class mainUI extends javax.swing.JFrame {
     private void labelSignInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelSignInMouseClicked
         try {
             // user signs in
-            // user signs in
             username = textFieldUserName.getText();
             password = passwordField.getText();
+            
+            // TODO
+            // validation goes here
+            // fetching account from list of files goes here
             new Dashboard(new User(username, password, "Danny", "Pham", 11, 0)).setVisible(true);
         } catch (IOException ex) {
             Logger.getLogger(mainUI.class.getName()).log(Level.SEVERE, null, ex);
@@ -390,6 +391,16 @@ public class mainUI extends javax.swing.JFrame {
         // changes color back when mouse stops hovering
         panelNewProfile.setBackground(new java.awt.Color(0, 0, 51));
     }//GEN-LAST:event_labelNewProfileMouseExited
+// USER SIGNS UP HERE
+    private void labelNewProfileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelNewProfileMouseClicked
+        try {
+            new SignUp(textFieldUserName.getText(), passwordField.getText()).setVisible(true);
+            this.setVisible(false);
+            
+        } catch (IOException ex) {
+            Logger.getLogger(mainUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_labelNewProfileMouseClicked
 
     /**
      * @param args the command line arguments
