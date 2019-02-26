@@ -38,6 +38,8 @@ public class SignUp extends javax.swing.JFrame {
         
         this.newUsername = username;
         this.newPassword = password;
+        
+        
     }
 
     /**
@@ -243,12 +245,13 @@ public class SignUp extends javax.swing.JFrame {
     // NEW ACCOUNT CREATED
     private void labelSignUpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelSignUpMouseClicked
         // create new user
-        User newUser = new User(newUsername, newPassword, textFieldFirstName.getText(), textFieldLastName.getText(), Integer.getInteger(textFieldGrade.getText()), mainUI.users);
+        
+        User newUser = new User(newUsername, newPassword, textFieldFirstName.getText(), textFieldLastName.getText(), Integer.parseInt(textFieldGrade.getText()), mainUI.users);
         // set new user in array
         mainUI.savedUsers[mainUI.users] = newUser;
         // add one to logical size of array
         mainUI.users++;
-        //save the list of users in file
+        //TO DO: save the list of users in file
         //mainUI.saveUsers();
         
         // close sign up form and open dashboard with new account

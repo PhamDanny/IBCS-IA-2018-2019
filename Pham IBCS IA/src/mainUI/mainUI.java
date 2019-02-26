@@ -362,6 +362,7 @@ public class mainUI extends javax.swing.JFrame {
             username = textFieldUserName.getText();
             password = String.valueOf(passwordField.getPassword());
             
+            
             // TODO
             // validation goes here
             // fetching account from list of files goes here
