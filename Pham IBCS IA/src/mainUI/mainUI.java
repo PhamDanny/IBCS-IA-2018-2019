@@ -344,7 +344,7 @@ public class mainUI extends javax.swing.JFrame {
         try {
             // user signs in
             username = textFieldUserName.getText();
-            password = passwordField.getText();
+            password = String.valueOf(passwordField.getPassword());
             
             // TODO
             // validation goes here
@@ -360,7 +360,7 @@ public class mainUI extends javax.swing.JFrame {
         try {
             // user signs in
             username = textFieldUserName.getText();
-            password = passwordField.getText();
+            password = String.valueOf(passwordField.getPassword());
             
             // TODO
             // validation goes here
@@ -394,7 +394,7 @@ public class mainUI extends javax.swing.JFrame {
 // USER SIGNS UP HERE
     private void labelNewProfileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelNewProfileMouseClicked
         try {
-            new SignUp(textFieldUserName.getText(), passwordField.getText()).setVisible(true);
+            new SignUp(textFieldUserName.getText(), String.valueOf(passwordField.getPassword())).setVisible(true);
             this.setVisible(false);
             
         } catch (IOException ex) {

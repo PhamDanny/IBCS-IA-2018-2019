@@ -66,7 +66,7 @@ public class SignUp extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(350, 280));
+        setMinimumSize(new java.awt.Dimension(340, 280));
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -248,7 +248,7 @@ public class SignUp extends javax.swing.JFrame {
         mainUI.savedUsers[mainUI.users] = newUser;
         // add one to logical size of array
         mainUI.users++;
-        // save the list of users in file
+        //save the list of users in file
         //mainUI.saveUsers();
         
         // close sign up form and open dashboard with new account
