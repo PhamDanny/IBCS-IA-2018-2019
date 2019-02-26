@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 package mainUI;
-
+import java.io.Serializable;
 /**
  *
  * @author htvph
  */
-public class User {
+public class User implements Serializable{
     // Stores all user information
     String username, password, firstName, lastName;
     int gradeLevel, hiddenID;

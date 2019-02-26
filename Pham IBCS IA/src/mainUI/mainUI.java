@@ -20,6 +20,9 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import java.io.Serializable;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -37,7 +40,6 @@ public class mainUI extends javax.swing.JFrame {
     
     String username, password;
     static ArrayList<User> savedUsers = new ArrayList<User>();
-    static int users = 0;
 
     // main constructor
     public mainUI() throws IOException {
@@ -351,10 +353,12 @@ public class mainUI extends javax.swing.JFrame {
     }
     public static void loadUsers() throws FileNotFoundException, IOException {
         // Deserializes user objects
-        FileInputStream fileID = new FileInputStream(new File("users.dat"));
-        ObjectInputStream inFile = new ObjectInputStream(fileID);
+        FileInputStream fileID;
+        ObjectInputStream inFile;
         try
         {
+            fileID = new FileInputStream("users.dat");
+            inFile = new ObjectInputStream(fileID);
             // Read all the objects and put them in the ArrayList
             savedUsers = (ArrayList <User>) inFile.readObject();
 
@@ -372,38 +376,42 @@ public class mainUI extends javax.swing.JFrame {
     }
     // USER SIGNS IN HERE
     private void panelSignInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelSignInMouseClicked
-        try {
-            // user signs in
-            username = textFieldUserName.getText();
-            password = String.valueOf(passwordField.getPassword());
-            
-            // TODO
-            // validation goes here
-            // fetching account from list of files goes here
-            new Dashboard(new User(username, password, "Danny", "Pham", 11, 0)).setVisible(true); // just a placeholder for now, later paremeter will have user fetched from list from textfile
-        } catch (IOException ex) {
-            Logger.getLogger(mainUI.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        this.setVisible(false);
+        login();
     }//GEN-LAST:event_panelSignInMouseClicked
     // USER ALSO SIGNS IN HERE
     private void labelSignInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelSignInMouseClicked
-        try {
-            // user signs in
-            username = textFieldUserName.getText();
-            password = String.valueOf(passwordField.getPassword());
-            
-            
-            // TODO
-            // validation goes here
-            // fetching account from list of files goes here
-            new Dashboard(new User(username, password, "Danny", "Pham", 11, 0)).setVisible(true);
-        } catch (IOException ex) {
-            Logger.getLogger(mainUI.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        this.setVisible(false);
+        login();
     }//GEN-LAST:event_labelSignInMouseClicked
-
+    
+    private void login () {
+        // user signs in
+        username = textFieldUserName.getText();
+        password = String.valueOf(passwordField.getPassword());
+        User signedInUser = null;
+        boolean unsuccessful = true;
+        for(User validatedUser : savedUsers) {
+            // cycles through all users
+            if(validatedUser.getUsername() == username && validatedUser.getPassword() == password) {
+                System.out.println("Successful login.");
+                signedInUser = validatedUser;
+                unsuccessful = false;
+                break;
+            }
+        }
+        if (unsuccessful) {
+            // unsuccessful login
+            JOptionPane.showMessageDialog(new JFrame(), "Incorrect username or password.", "Dialog", JOptionPane.ERROR_MESSAGE);
+        }
+        else {
+            // successful login
+            try {            
+                new Dashboard(signedInUser).setVisible(true);
+            } catch (IOException ex) {
+                Logger.getLogger(SignUp.class.getName()).log(Level.SEVERE, null, ex);
+                this.setVisible(false);
+            }
+        }        
+    }
     private void labelSignInMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelSignInMouseEntered
         // changes color of sign in button when hovered
         panelSignIn.setBackground(new java.awt.Color(0, 0, 120));
