@@ -39,14 +39,17 @@ public class mainUI extends javax.swing.JFrame {
     // sets up username/password strings
     
     String username, password;
+    
+    // sets up saved users array
     static ArrayList<User> savedUsers = new ArrayList<User>();
 
     // main constructor
     public mainUI() throws IOException {
         initComponents();
         
-        // load users from file
+        // load users from file to savedusers array
         loadUsers();
+        
         // set up form's icon image
         Image i = ImageIO.read(getClass().getResource("/mainUI/targetlogo.png"));
         setIconImage(i);
@@ -207,10 +210,10 @@ public class mainUI extends javax.swing.JFrame {
         });
         panelSignIn.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        labelSignIn.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        labelSignIn.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         labelSignIn.setForeground(new java.awt.Color(255, 255, 255));
         labelSignIn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelSignIn.setText("Sign In");
+        labelSignIn.setText("SIGN IN");
         labelSignIn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 labelSignInMouseClicked(evt);
@@ -237,10 +240,10 @@ public class mainUI extends javax.swing.JFrame {
         });
         panelNewProfile.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        labelNewProfile.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        labelNewProfile.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         labelNewProfile.setForeground(new java.awt.Color(255, 255, 255));
         labelNewProfile.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelNewProfile.setText("New Profile");
+        labelNewProfile.setText("NEW PROFILE");
         labelNewProfile.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         labelNewProfile.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

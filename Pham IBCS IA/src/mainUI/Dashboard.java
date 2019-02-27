@@ -245,7 +245,7 @@ public class Dashboard extends javax.swing.JFrame {
         labelWelcome.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
         labelWelcome.setForeground(new java.awt.Color(255, 255, 255));
         labelWelcome.setText("Welcome, name.");
-        jPanel2.add(labelWelcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, -1));
+        jPanel2.add(labelWelcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 440));
 
