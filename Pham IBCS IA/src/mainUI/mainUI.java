@@ -378,7 +378,7 @@ public class mainUI extends javax.swing.JFrame {
     private void panelSignInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelSignInMouseClicked
         login();
     }//GEN-LAST:event_panelSignInMouseClicked
-    // USER ALSO SIGNS IN HERE
+    // USER CAN ALSO SIGN IN HERE
     private void labelSignInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelSignInMouseClicked
         login();
     }//GEN-LAST:event_labelSignInMouseClicked
@@ -395,6 +395,7 @@ public class mainUI extends javax.swing.JFrame {
                 System.out.println("Successful login.");
                 signedInUser = validatedUser;
                 successful = true;
+                // break out of loop when correct user has been found
                 break;
             }
         }
@@ -404,12 +405,12 @@ public class mainUI extends javax.swing.JFrame {
                 new Dashboard(signedInUser).setVisible(true);
             } catch (IOException ex) {
                 Logger.getLogger(SignUp.class.getName()).log(Level.SEVERE, null, ex);
-                this.setVisible(false);
+                this.dispose();
             }          
         }
         else {
             // unsuccessful login
-            JOptionPane.showMessageDialog(new JFrame(), "Incorrect username or password.", "Dialog", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(new JFrame(), "Incorrect username or password.", "Unsuccessful Login", JOptionPane.ERROR_MESSAGE);
         }        
     }
     private void labelSignInMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelSignInMouseEntered

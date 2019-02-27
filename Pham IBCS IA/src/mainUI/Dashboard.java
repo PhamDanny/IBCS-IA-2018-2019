@@ -22,6 +22,7 @@ public class Dashboard extends javax.swing.JFrame {
     /**
      * Creates new form Dashboard
      */
+    static int dashboardState = 0;
     public Dashboard(User user) throws IOException {
         initComponents();
         
@@ -34,7 +35,16 @@ public class Dashboard extends javax.swing.JFrame {
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         
         // sets greeting message
-        labelWelcome.setText("Welcome back, " + user.getFirstName() + ".");
+        labelWelcome.setText("Welcome, " + user.getFirstName() + ".");
+        
+        // set dashboard state to 1
+        // dashboardState keeps track of what screen the dashboard is on
+        // 1 = home
+        // 2 = grades
+        // 3 = calendar
+        // 4 = settings
+        dashboardState = 1;
+        updateDashButtons();
     }
 
     /**
@@ -118,6 +128,9 @@ public class Dashboard extends javax.swing.JFrame {
 
         homeButton.setOpaque(false);
         homeButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                homeButtonMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 homeButtonMouseEntered(evt);
             }
@@ -144,6 +157,9 @@ public class Dashboard extends javax.swing.JFrame {
 
         gradesButton.setOpaque(false);
         gradesButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                gradesButtonMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 gradesButtonMouseEntered(evt);
             }
@@ -170,6 +186,9 @@ public class Dashboard extends javax.swing.JFrame {
 
         calendarButton.setOpaque(false);
         calendarButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                calendarButtonMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 calendarButtonMouseEntered(evt);
             }
@@ -196,6 +215,9 @@ public class Dashboard extends javax.swing.JFrame {
 
         settingsButton.setOpaque(false);
         settingsButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                settingsButtonMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 settingsButtonMouseEntered(evt);
             }
@@ -222,7 +244,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         labelWelcome.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
         labelWelcome.setForeground(new java.awt.Color(255, 255, 255));
-        labelWelcome.setText("Welcome back, name.");
+        labelWelcome.setText("Welcome, name.");
         jPanel2.add(labelWelcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 440));
@@ -230,38 +252,67 @@ public class Dashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void updateDashButtons() {
+        if(dashboardState == 1) {
+            panelHome.setBackground(new java.awt.Color(0,0,100));
+            panelGrades.setBackground(new java.awt.Color(0,0,51));
+            panelCalendar.setBackground(new java.awt.Color(0,0,51));
+            panelSettings.setBackground(new java.awt.Color(0,0,51));
+        }
+        else if(dashboardState == 2) {
+            panelGrades.setBackground(new java.awt.Color(0,0,100));
+            panelHome.setBackground(new java.awt.Color(0,0,51));
+            panelCalendar.setBackground(new java.awt.Color(0,0,51));
+            panelSettings.setBackground(new java.awt.Color(0,0,51));
+        }
+        else if(dashboardState == 3) {
+            panelCalendar.setBackground(new java.awt.Color(0,0,100));
+            panelHome.setBackground(new java.awt.Color(0,0,51));
+            panelGrades.setBackground(new java.awt.Color(0,0,51));
+            panelSettings.setBackground(new java.awt.Color(0,0,51));
+        }
+        else if (dashboardState == 4) {
+            panelSettings.setBackground(new java.awt.Color(0,0,100));
+            panelHome.setBackground(new java.awt.Color(0,0,51));
+            panelGrades.setBackground(new java.awt.Color(0,0,51));
+            panelCalendar.setBackground(new java.awt.Color(0,0,51));
+        }
+    }
     private void panelHomeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelHomeMouseEntered
         
     }//GEN-LAST:event_panelHomeMouseEntered
 
     private void homeButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeButtonMouseEntered
         // when hovered over home panel change color
-        panelHome.setBackground(new java.awt.Color(0,0,100));
+        panelHome.setBackground(new java.awt.Color(0,0,150));
     }//GEN-LAST:event_homeButtonMouseEntered
 
     private void homeButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeButtonMouseExited
         // change back
         panelHome.setBackground(new java.awt.Color(0,0,51));
+        updateDashButtons();
     }//GEN-LAST:event_homeButtonMouseExited
 
     private void gradesButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gradesButtonMouseEntered
         // when hovered over grade panel change color
-        panelGrades.setBackground(new java.awt.Color(0,0,100));
+        panelGrades.setBackground(new java.awt.Color(0,0,150));
     }//GEN-LAST:event_gradesButtonMouseEntered
 
     private void gradesButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gradesButtonMouseExited
         // change back
         panelGrades.setBackground(new java.awt.Color(0,0,51));
+        updateDashButtons();
     }//GEN-LAST:event_gradesButtonMouseExited
 
     private void calendarButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calendarButtonMouseEntered
         // when hovered over calendar panel change color
-        panelCalendar.setBackground(new java.awt.Color(0,0,100));
+        panelCalendar.setBackground(new java.awt.Color(0,0,150));
     }//GEN-LAST:event_calendarButtonMouseEntered
 
     private void calendarButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calendarButtonMouseExited
         // change back
         panelCalendar.setBackground(new java.awt.Color(0,0,51));
+        updateDashButtons();
     }//GEN-LAST:event_calendarButtonMouseExited
 
     private void labelExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelExitMouseClicked
@@ -303,13 +354,38 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void settingsButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseEntered
         // when hovered over calendar panel change color
-        panelSettings.setBackground(new java.awt.Color(0,0,100));
+        panelSettings.setBackground(new java.awt.Color(0,0,150));
     }//GEN-LAST:event_settingsButtonMouseEntered
 
     private void settingsButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseExited
         // change back
         panelSettings.setBackground(new java.awt.Color(0,0,51));
+        updateDashButtons();
     }//GEN-LAST:event_settingsButtonMouseExited
+
+    private void gradesButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gradesButtonMouseClicked
+        // grades tab selected
+        dashboardState = 2;
+        updateDashButtons();
+    }//GEN-LAST:event_gradesButtonMouseClicked
+
+    private void calendarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calendarButtonMouseClicked
+        // calendar tab selected
+        dashboardState = 3;
+        updateDashButtons();
+    }//GEN-LAST:event_calendarButtonMouseClicked
+
+    private void homeButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeButtonMouseClicked
+        // home button clicked
+        dashboardState = 1;
+        updateDashButtons();
+    }//GEN-LAST:event_homeButtonMouseClicked
+
+    private void settingsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseClicked
+        // settings button clicked
+        dashboardState = 4;
+        updateDashButtons();
+    }//GEN-LAST:event_settingsButtonMouseClicked
 
     /**
      * @param args the command line arguments
