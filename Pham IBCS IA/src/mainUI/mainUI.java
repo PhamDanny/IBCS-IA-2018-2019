@@ -388,28 +388,28 @@ public class mainUI extends javax.swing.JFrame {
         username = textFieldUserName.getText();
         password = String.valueOf(passwordField.getPassword());
         User signedInUser = null;
-        boolean unsuccessful = true;
+        boolean successful = false;
         for(User validatedUser : savedUsers) {
             // cycles through all users
-            if(validatedUser.getUsername() == username && validatedUser.getPassword() == password) {
+            if(validatedUser.getUsername().equals(username) && validatedUser.getPassword().equals(password)) {
                 System.out.println("Successful login.");
                 signedInUser = validatedUser;
-                unsuccessful = false;
+                successful = true;
                 break;
             }
         }
-        if (unsuccessful) {
-            // unsuccessful login
-            JOptionPane.showMessageDialog(new JFrame(), "Incorrect username or password.", "Dialog", JOptionPane.ERROR_MESSAGE);
-        }
-        else {
+        if (successful) {
             // successful login
             try {            
                 new Dashboard(signedInUser).setVisible(true);
             } catch (IOException ex) {
                 Logger.getLogger(SignUp.class.getName()).log(Level.SEVERE, null, ex);
                 this.setVisible(false);
-            }
+            }          
+        }
+        else {
+            // unsuccessful login
+            JOptionPane.showMessageDialog(new JFrame(), "Incorrect username or password.", "Dialog", JOptionPane.ERROR_MESSAGE);
         }        
     }
     private void labelSignInMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelSignInMouseEntered

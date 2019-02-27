@@ -265,8 +265,14 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_calendarButtonMouseExited
 
     private void labelExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelExitMouseClicked
-        // closes login form when exit is clicked
+        // closes dashboard form when exit is clicked
         this.dispose();
+        try {
+            // returns to login
+            new mainUI().setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_labelExitMouseClicked
 
     private void labelExitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelExitMouseEntered
