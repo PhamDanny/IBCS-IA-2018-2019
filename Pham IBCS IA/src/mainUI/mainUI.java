@@ -405,13 +405,11 @@ public class mainUI extends javax.swing.JFrame {
             } catch (IOException ex) {
                 Logger.getLogger(SignUp.class.getName()).log(Level.SEVERE, null, ex);
                 this.setVisible(false);
-
             }          
         }
         else {
             // unsuccessful login
             JOptionPane.showMessageDialog(new JFrame(), "Incorrect username or password.", "Dialog", JOptionPane.ERROR_MESSAGE);
-            }
         }        
     }
     private void labelSignInMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelSignInMouseEntered
