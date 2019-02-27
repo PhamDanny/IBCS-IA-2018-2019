@@ -284,7 +284,8 @@ public class mainUI extends javax.swing.JFrame {
 
     private void panelSignInMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelSignInMouseEntered
         // changes color of sign in button when hovered
-        //panelSignIn.setBackground(new java.awt.Color(0, 0, 120));
+        // unneeded because label covers up entire panel
+        //panelSignIn.setBackground(new java.awt.Color(0, 0, 150));
     }//GEN-LAST:event_panelSignInMouseEntered
 
     private void panelSignInMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelSignInMouseExited
@@ -347,7 +348,7 @@ public class mainUI extends javax.swing.JFrame {
         }
         catch (IOException e)
         {
-            System.out.println("Error saving user data.");
+            System.out.println("Error saving user data to file: " + e.getMessage());
         }
         
     }
@@ -367,11 +368,11 @@ public class mainUI extends javax.swing.JFrame {
         }
         catch(IOException e)
         {
-            System.out.println("Error trying to open file: " + e.getMessage());
+            System.out.println("Error trying to load user data: " + e.getMessage());
         }
         catch(ClassNotFoundException e)  // needed because of cast above
         {
-            System.out.println("Error trying to open file: " + e.getMessage());
+            System.out.println("Error trying to load user data: " + e.getMessage());
         }
     }
     // USER SIGNS IN HERE
@@ -415,7 +416,7 @@ public class mainUI extends javax.swing.JFrame {
     }
     private void labelSignInMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelSignInMouseEntered
         // changes color of sign in button when hovered
-        panelSignIn.setBackground(new java.awt.Color(0, 0, 120));
+        panelSignIn.setBackground(new java.awt.Color(0, 0, 150));
     }//GEN-LAST:event_labelSignInMouseEntered
 
     private void labelSignInMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelSignInMouseExited
@@ -425,7 +426,7 @@ public class mainUI extends javax.swing.JFrame {
 
     private void labelNewProfileMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelNewProfileMouseEntered
         // changes color of new profile button when hovered
-        panelNewProfile.setBackground(new java.awt.Color(0, 0, 120));
+        panelNewProfile.setBackground(new java.awt.Color(0, 0, 150));
     }//GEN-LAST:event_labelNewProfileMouseEntered
 
     private void labelNewProfileMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelNewProfileMouseExited
