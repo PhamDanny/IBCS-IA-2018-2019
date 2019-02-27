@@ -8,19 +8,16 @@ package mainUI;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
-import java.io.Serializable;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -57,9 +54,11 @@ public class mainUI extends javax.swing.JFrame {
         // puts form in center of screen
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
-        
-        
-    }
+       
+        }
+    
+    //frame movimentavel
+    
     
     /**
      * This method is called from within the constructor to initialize the form.

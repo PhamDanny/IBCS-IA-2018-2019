@@ -5,6 +5,7 @@
  */
 package mainUI;
 import java.io.Serializable;
+import java.util.ArrayList;
 /**
  *
  * @author htvph
@@ -13,6 +14,7 @@ public class User implements Serializable{
     // Stores all user information
     String username, password, firstName, lastName;
     int gradeLevel, hiddenID;
+    ArrayList<Class> classes = new ArrayList<>();
 
     public User(String username, String password, String firstName, String lastName, int gradeLevel, int hiddenID) {
         this.username = username;
