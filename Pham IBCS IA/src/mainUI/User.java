@@ -12,17 +12,16 @@ import java.util.ArrayList;
  */
 public class User implements Serializable{
     // Stores all user information
-    String username, password, firstName, lastName;
-    int gradeLevel, hiddenID;
-    ArrayList<Class> classes = new ArrayList<>();
+    private String username, password, firstName, lastName;
+    private int gradeLevel;
+    public ArrayList<Class> classes = new ArrayList<>();
 
-    public User(String username, String password, String firstName, String lastName, int gradeLevel, int hiddenID) {
+    public User(String username, String password, String firstName, String lastName, int gradeLevel) {
         this.username = username;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.gradeLevel = gradeLevel;
-        this.hiddenID = hiddenID;
     }
 
     public String getUsername() {
@@ -64,11 +63,6 @@ public class User implements Serializable{
     public void setGradeLevel(int gradeLevel) {
         this.gradeLevel = gradeLevel;
     }
-
-    public int getHiddenID() {
-        return hiddenID;
-    }
-
     public void setHiddenID(int hiddenID) {
         // hidden ID should never have to change
         //this.hiddenID = hiddenID;

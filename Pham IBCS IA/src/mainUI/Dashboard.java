@@ -75,7 +75,6 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         labelSettingsIcon = new javax.swing.JLabel();
         panelCalendar = new javax.swing.JPanel();
-        calendarPanel1 = new com.github.lgooddatepicker.components.CalendarPanel();
         panelHome = new javax.swing.JPanel();
         labelWelcome = new javax.swing.JLabel();
         panelGrades = new javax.swing.JPanel();
@@ -247,9 +246,6 @@ public class Dashboard extends javax.swing.JFrame {
 
         panelCalendar.setBackground(new java.awt.Color(0, 153, 153));
         panelCalendar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        panelCalendar.add(calendarPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, -1, -1));
-
         getContentPane().add(panelCalendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 440));
 
         panelHome.setBackground(new java.awt.Color(0, 153, 153));
@@ -467,7 +463,7 @@ public class Dashboard extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    new Dashboard(new User("", "", "", "", 0, 0)).setVisible(true);
+                    new Dashboard(new User("", "", "", "", 0)).setVisible(true);
                 } catch (IOException ex) {
                     Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -477,7 +473,6 @@ public class Dashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel calendarButton;
-    private com.github.lgooddatepicker.components.CalendarPanel calendarPanel1;
     private javax.swing.JPanel gradesButton;
     private javax.swing.JPanel homeButton;
     private javax.swing.JLabel jLabel1;

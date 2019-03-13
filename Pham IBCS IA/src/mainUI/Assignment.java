@@ -4,17 +4,19 @@
  * and open the template in the editor.
  */
 package mainUI;
-
+import java.io.Serializable;
 /**
  *
  * @author htvph
  */
-public class Assignment {
-    double maxScore, score;
+public class Assignment implements Serializable {
+    private String name;
+    private double maxScore, score;
     // if assignment is pending or not
-    boolean pending;
+    private boolean pending;
 
-    public Assignment(double maxScore, double score, boolean pending) {
+    public Assignment(String name, double maxScore, double score, boolean pending) {
+        this.name = name;
         this.maxScore = maxScore;
         this.score = score;
         this.pending = pending;

@@ -6,49 +6,50 @@
 package mainUI;
 
 import java.util.ArrayList;
-
+import java.io.Serializable;
 /**
  *
  * @author htvph
  */
-public class ClassCategory {
-    double weight;
-    ArrayList<Assignment> assignments = new ArrayList<>();
+public class ClassCategory implements Serializable{
+    private String name;
+    private double weight;
+    public ArrayList<Assignment> assignments = new ArrayList<>();
 
-    public ClassCategory(double weight) {
+    public ClassCategory(String name, double weight) {
+        this.name = name;
         this.weight = weight;
     }
 
-    public double getPercentage() {
-        double totalScore = 0, maxScore = 0;
+    public double getWeightedGrade() {
+        if(assignments.isEmpty()) {
+            // returns full score if no assignments in category yet
+            return weight;
+        }
+        else {
+            double totalScore = 0, maxScore = 0;
         for(Assignment addedAssignment : assignments) {
             if(!addedAssignment.isPending()) {
             // only add non-pending assignments
             totalScore += addedAssignment.getScore();
             maxScore += addedAssignment.getMaxScore();
             }
-        }
-        
+        }       
         return (totalScore / maxScore) * weight;
+        }      
     }
-    public double getCategoryPercentage() {
-        return getPercentage() / weight;
+    public double getCategoryGrade() {
+        return getWeightedGrade() / weight;
     }
-    public double getGradeNeeded(double neededIncrease) {
-        // calculates the grade needed from pending assignments based on how much of a score increase in the category is needed
-        double totalScore = 0, maxScore = 0, pendingPoints = 0;
-        for(Assignment addedAssignment : assignments) {
-            if(!addedAssignment.isPending()) {
-                // only add non-pending assignments
-                totalScore += addedAssignment.getScore();
-                maxScore += addedAssignment.getMaxScore();
-            }
-            else {
-                pendingPoints += addedAssignment.getMaxScore();
-            }
-        }            
-        return (getCategoryPercentage() + neededIncrease) * (maxScore + pendingPoints) - totalScore;
+
+    public String getName() {
+        return name;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
     public double getWeight() {
         return weight;
     }
@@ -56,14 +57,4 @@ public class ClassCategory {
     public void setWeight(double weight) {
         this.weight = weight;
     }
-
-    public ArrayList<Assignment> getAssignments() {
-        return assignments;
-    }
-
-    public void setAssignments(ArrayList<Assignment> assignments) {
-        this.assignments = assignments;
-    }
-    
-    
 }

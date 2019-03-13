@@ -363,20 +363,6 @@
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
         <Property name="useNullLayout" type="boolean" value="false"/>
       </Layout>
-      <SubComponents>
-        <Component class="com.github.lgooddatepicker.components.CalendarPanel" name="calendarPanel1">
-          <Properties>
-            <Property name="selectedDateWithoutShowing" type="java.time.LocalDate" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="default"/>
-            </Property>
-          </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="130" y="210" width="-1" height="-1"/>
-            </Constraint>
-          </Constraints>
-        </Component>
-      </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="panelHome">
       <Properties>
