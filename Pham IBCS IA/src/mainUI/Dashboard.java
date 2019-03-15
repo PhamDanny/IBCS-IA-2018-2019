@@ -75,6 +75,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         labelSettingsIcon = new javax.swing.JLabel();
         panelCalendar = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
         panelHome = new javax.swing.JPanel();
         labelWelcome = new javax.swing.JLabel();
         panelGrades = new javax.swing.JPanel();
@@ -210,7 +211,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("CALENDAR");
+        jLabel3.setText("TO-DO");
         panelCalendarButton.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 110, -1));
 
         getContentPane().add(panelCalendarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 110, 110));
@@ -246,6 +247,12 @@ public class Dashboard extends javax.swing.JFrame {
 
         panelCalendar.setBackground(new java.awt.Color(0, 153, 153));
         panelCalendar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel6.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("To-Do List");
+        panelCalendar.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, -1));
+
         getContentPane().add(panelCalendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 440));
 
         panelHome.setBackground(new java.awt.Color(0, 153, 153));
@@ -480,6 +487,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel labelCalendarIcon;
     private javax.swing.JLabel labelExit;
