@@ -133,7 +133,6 @@ public class SignUp extends javax.swing.JFrame {
         textFieldGrade.setBackground(new java.awt.Color(0, 153, 153));
         textFieldGrade.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         textFieldGrade.setForeground(new java.awt.Color(255, 255, 255));
-        textFieldGrade.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         textFieldGrade.setBorder(null);
         textFieldGrade.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -148,8 +147,8 @@ public class SignUp extends javax.swing.JFrame {
                 textFieldGradeActionPerformed(evt);
             }
         });
-        jPanel1.add(textFieldGrade, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 50, -1));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 50, 10));
+        jPanel1.add(textFieldGrade, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 40, -1));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 40, 10));
 
         panelSignUp.setBackground(new java.awt.Color(0, 0, 51));
         panelSignUp.addMouseListener(new java.awt.event.MouseAdapter() {

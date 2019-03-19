@@ -23,6 +23,7 @@ public class Dashboard extends javax.swing.JFrame {
      * Creates new form Dashboard
      */
     static int dashboardState = 0;
+    User currentUser;
     public Dashboard(User user) throws IOException {
         initComponents();
         
@@ -44,7 +45,9 @@ public class Dashboard extends javax.swing.JFrame {
         // 3 = calendar
         // 4 = settings
         dashboardState = 1;
+        this.currentUser = user;
         updateDashButtons();
+        updateToDoList();
     }
 
     /**
@@ -75,7 +78,29 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         labelSettingsIcon = new javax.swing.JLabel();
         panelCalendar = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        labelToDoName1 = new javax.swing.JLabel();
+        labelToDoName2 = new javax.swing.JLabel();
+        labelToDoName3 = new javax.swing.JLabel();
+        labelToDoName4 = new javax.swing.JLabel();
+        labelToDoName5 = new javax.swing.JLabel();
+        labelToDoName6 = new javax.swing.JLabel();
+        labelToDoName7 = new javax.swing.JLabel();
+        labelToDoName8 = new javax.swing.JLabel();
+        checkBoxToDo1 = new javax.swing.JCheckBox();
+        checkBoxToDo2 = new javax.swing.JCheckBox();
+        checkBoxToDo3 = new javax.swing.JCheckBox();
+        checkBoxToDo4 = new javax.swing.JCheckBox();
+        checkBoxToDo5 = new javax.swing.JCheckBox();
+        checkBoxToDo6 = new javax.swing.JCheckBox();
+        checkBoxToDo7 = new javax.swing.JCheckBox();
+        checkBoxToDo8 = new javax.swing.JCheckBox();
+        textFieldTaskName = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        panelNewTask = new javax.swing.JPanel();
+        buttonNewTask = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         panelHome = new javax.swing.JPanel();
         labelWelcome = new javax.swing.JLabel();
         panelGrades = new javax.swing.JPanel();
@@ -246,12 +271,115 @@ public class Dashboard extends javax.swing.JFrame {
         getContentPane().add(panelSettingsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 110, 110));
 
         panelCalendar.setBackground(new java.awt.Color(0, 153, 153));
+        panelCalendar.setForeground(new java.awt.Color(255, 255, 255));
         panelCalendar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelCalendar.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, 200, 10));
 
-        jLabel6.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("To-Do List");
-        panelCalendar.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, -1));
+        labelToDoName1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        labelToDoName1.setForeground(new java.awt.Color(255, 255, 255));
+        labelToDoName1.setText("jLabel8");
+        panelCalendar.add(labelToDoName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, -1, -1));
+
+        labelToDoName2.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        labelToDoName2.setForeground(new java.awt.Color(255, 255, 255));
+        labelToDoName2.setText("jLabel8");
+        panelCalendar.add(labelToDoName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, -1, -1));
+
+        labelToDoName3.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        labelToDoName3.setForeground(new java.awt.Color(255, 255, 255));
+        labelToDoName3.setText("jLabel8");
+        panelCalendar.add(labelToDoName3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, -1, -1));
+
+        labelToDoName4.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        labelToDoName4.setForeground(new java.awt.Color(255, 255, 255));
+        labelToDoName4.setText("jLabel8");
+        panelCalendar.add(labelToDoName4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, -1, -1));
+
+        labelToDoName5.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        labelToDoName5.setForeground(new java.awt.Color(255, 255, 255));
+        labelToDoName5.setText("jLabel8");
+        panelCalendar.add(labelToDoName5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, -1, -1));
+
+        labelToDoName6.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        labelToDoName6.setForeground(new java.awt.Color(255, 255, 255));
+        labelToDoName6.setText("jLabel8");
+        panelCalendar.add(labelToDoName6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, -1, -1));
+
+        labelToDoName7.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        labelToDoName7.setForeground(new java.awt.Color(255, 255, 255));
+        labelToDoName7.setText("jLabel8");
+        panelCalendar.add(labelToDoName7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, -1, -1));
+
+        labelToDoName8.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        labelToDoName8.setForeground(new java.awt.Color(255, 255, 255));
+        labelToDoName8.setText("jLabel8");
+        panelCalendar.add(labelToDoName8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, -1, -1));
+
+        checkBoxToDo1.setBackground(new java.awt.Color(0, 153, 153));
+        panelCalendar.add(checkBoxToDo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, -1, -1));
+
+        checkBoxToDo2.setBackground(new java.awt.Color(0, 153, 153));
+        panelCalendar.add(checkBoxToDo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, -1, -1));
+
+        checkBoxToDo3.setBackground(new java.awt.Color(0, 153, 153));
+        panelCalendar.add(checkBoxToDo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, -1, -1));
+
+        checkBoxToDo4.setBackground(new java.awt.Color(0, 153, 153));
+        panelCalendar.add(checkBoxToDo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, -1, -1));
+
+        checkBoxToDo5.setBackground(new java.awt.Color(0, 153, 153));
+        panelCalendar.add(checkBoxToDo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, -1, -1));
+
+        checkBoxToDo6.setBackground(new java.awt.Color(0, 153, 153));
+        panelCalendar.add(checkBoxToDo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, -1, -1));
+
+        checkBoxToDo7.setBackground(new java.awt.Color(0, 153, 153));
+        panelCalendar.add(checkBoxToDo7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, -1, -1));
+
+        checkBoxToDo8.setBackground(new java.awt.Color(0, 153, 153));
+        panelCalendar.add(checkBoxToDo8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, -1, -1));
+
+        textFieldTaskName.setBackground(new java.awt.Color(0, 153, 153));
+        textFieldTaskName.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        textFieldTaskName.setForeground(new java.awt.Color(255, 255, 255));
+        textFieldTaskName.setBorder(null);
+        panelCalendar.add(textFieldTaskName, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 210, 200, -1));
+
+        jLabel8.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("To-Do List");
+        panelCalendar.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, -1));
+
+        panelNewTask.setBackground(new java.awt.Color(0, 0, 51));
+        panelNewTask.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        buttonNewTask.setOpaque(false);
+        buttonNewTask.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonNewTaskMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                buttonNewTaskMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonNewTaskMouseExited(evt);
+            }
+        });
+        panelNewTask.add(buttonNewTask, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 40));
+
+        jLabel10.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Add Task");
+        panelNewTask.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 200, -1));
+
+        panelCalendar.add(panelNewTask, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 250, 200, 40));
+
+        jLabel9.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("New Task");
+        panelCalendar.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 170, 200, -1));
 
         getContentPane().add(panelCalendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 440));
 
@@ -439,6 +567,152 @@ public class Dashboard extends javax.swing.JFrame {
         updateDashButtons();
     }//GEN-LAST:event_settingsButtonMouseClicked
 
+    private void buttonNewTaskMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonNewTaskMouseClicked
+        currentUser.toDoList.add(new ToDo(textFieldTaskName.getText(), "", 0));
+        textFieldTaskName.setText("");
+        updateToDoList();
+    }//GEN-LAST:event_buttonNewTaskMouseClicked
+
+    private void buttonNewTaskMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonNewTaskMouseEntered
+        panelNewTask.setBackground(new java.awt.Color(0, 0, 150));
+    }//GEN-LAST:event_buttonNewTaskMouseEntered
+
+    private void buttonNewTaskMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonNewTaskMouseExited
+        panelNewTask.setBackground(new java.awt.Color(0, 0, 51));
+    }//GEN-LAST:event_buttonNewTaskMouseExited
+    
+    private void updateToDoList() {
+        
+        checkBoxToDo1.setVisible(true);
+        checkBoxToDo2.setVisible(true);
+        checkBoxToDo3.setVisible(true);
+        checkBoxToDo4.setVisible(true);
+        checkBoxToDo5.setVisible(true);
+        checkBoxToDo6.setVisible(true);
+        checkBoxToDo7.setVisible(true);
+        checkBoxToDo8.setVisible(true);
+        
+        labelToDoName1.setVisible(true);
+        labelToDoName2.setVisible(true);
+        labelToDoName3.setVisible(true);
+        labelToDoName4.setVisible(true);
+        labelToDoName5.setVisible(true);
+        labelToDoName6.setVisible(true);
+        labelToDoName7.setVisible(true);
+        labelToDoName8.setVisible(true);
+        
+        if(currentUser.toDoList.isEmpty()) {
+            checkBoxToDo1.setVisible(false);
+            checkBoxToDo2.setVisible(false);
+            checkBoxToDo3.setVisible(false);
+            checkBoxToDo4.setVisible(false);
+            checkBoxToDo5.setVisible(false);
+            checkBoxToDo6.setVisible(false);
+            checkBoxToDo7.setVisible(false);
+            checkBoxToDo8.setVisible(false);
+            
+            labelToDoName1.setVisible(false);
+            labelToDoName2.setVisible(false);
+            labelToDoName3.setVisible(false);
+            labelToDoName4.setVisible(false);
+            labelToDoName5.setVisible(false);
+            labelToDoName6.setVisible(false);
+            labelToDoName7.setVisible(false);
+            labelToDoName8.setVisible(false);
+        }
+        else if(currentUser.toDoList.size() == 1) {           
+            checkBoxToDo2.setVisible(false);
+            checkBoxToDo3.setVisible(false);
+            checkBoxToDo4.setVisible(false);
+            checkBoxToDo5.setVisible(false);
+            checkBoxToDo6.setVisible(false);
+            checkBoxToDo7.setVisible(false);
+            checkBoxToDo8.setVisible(false);
+            
+            labelToDoName2.setVisible(false);
+            labelToDoName3.setVisible(false);
+            labelToDoName4.setVisible(false);
+            labelToDoName5.setVisible(false);
+            labelToDoName6.setVisible(false);
+            labelToDoName7.setVisible(false);
+            labelToDoName8.setVisible(false);
+        }
+        else if(currentUser.toDoList.size() == 2) {
+            checkBoxToDo3.setVisible(false);
+            checkBoxToDo4.setVisible(false);
+            checkBoxToDo5.setVisible(false);
+            checkBoxToDo6.setVisible(false);
+            checkBoxToDo7.setVisible(false);
+            checkBoxToDo8.setVisible(false);
+            
+            labelToDoName3.setVisible(false);
+            labelToDoName4.setVisible(false);
+            labelToDoName5.setVisible(false);
+            labelToDoName6.setVisible(false);
+            labelToDoName7.setVisible(false);
+            labelToDoName8.setVisible(false);
+        }
+        else if(currentUser.toDoList.size() == 3) {
+            checkBoxToDo4.setVisible(false);
+            checkBoxToDo5.setVisible(false);
+            checkBoxToDo6.setVisible(false);
+            checkBoxToDo7.setVisible(false);
+            checkBoxToDo8.setVisible(false);
+
+            labelToDoName4.setVisible(false);
+            labelToDoName5.setVisible(false);
+            labelToDoName6.setVisible(false);
+            labelToDoName7.setVisible(false);
+            labelToDoName8.setVisible(false);
+        }
+        else if(currentUser.toDoList.size() == 3) {
+            checkBoxToDo5.setVisible(false);
+            checkBoxToDo6.setVisible(false);
+            checkBoxToDo7.setVisible(false);
+            checkBoxToDo8.setVisible(false);
+
+            labelToDoName5.setVisible(false);
+            labelToDoName6.setVisible(false);
+            labelToDoName7.setVisible(false);
+            labelToDoName8.setVisible(false);
+        }
+        else if(currentUser.toDoList.size() == 5) {
+            checkBoxToDo6.setVisible(false);
+            checkBoxToDo7.setVisible(false);
+            checkBoxToDo8.setVisible(false);
+
+            labelToDoName6.setVisible(false);
+            labelToDoName7.setVisible(false);
+            labelToDoName8.setVisible(false);
+        }
+        else if(currentUser.toDoList.size() == 6) {
+            checkBoxToDo7.setVisible(false);
+            checkBoxToDo8.setVisible(false);
+
+            labelToDoName7.setVisible(false);
+            labelToDoName8.setVisible(false);
+        }
+        else if(currentUser.toDoList.size() == 7) {
+            checkBoxToDo8.setVisible(false);
+
+            labelToDoName8.setVisible(false);
+        }
+        
+        String[] toDoTasks = new String[8];
+        for(int i = 0; i < currentUser.toDoList.size(); i++) {
+            toDoTasks[i] = currentUser.toDoList.get(i).getName();
+        }
+        labelToDoName1.setText(toDoTasks[0]);
+        labelToDoName2.setText(toDoTasks[1]);
+        labelToDoName3.setText(toDoTasks[2]);
+        labelToDoName4.setText(toDoTasks[3]);
+        labelToDoName5.setText(toDoTasks[4]);
+        labelToDoName6.setText(toDoTasks[5]);
+        labelToDoName7.setText(toDoTasks[6]);
+        labelToDoName8.setText(toDoTasks[7]);
+        
+        mainUI.saveUsers();
+    }
     /**
      * @param args the command line arguments
      */
@@ -479,21 +753,41 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel buttonNewTask;
     private javax.swing.JPanel calendarButton;
+    private javax.swing.JCheckBox checkBoxToDo1;
+    private javax.swing.JCheckBox checkBoxToDo2;
+    private javax.swing.JCheckBox checkBoxToDo3;
+    private javax.swing.JCheckBox checkBoxToDo4;
+    private javax.swing.JCheckBox checkBoxToDo5;
+    private javax.swing.JCheckBox checkBoxToDo6;
+    private javax.swing.JCheckBox checkBoxToDo7;
+    private javax.swing.JCheckBox checkBoxToDo8;
     private javax.swing.JPanel gradesButton;
     private javax.swing.JPanel homeButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel labelCalendarIcon;
     private javax.swing.JLabel labelExit;
     private javax.swing.JLabel labelGradesIcon;
     private javax.swing.JLabel labelHomeIcon;
     private javax.swing.JLabel labelSettingsIcon;
+    private javax.swing.JLabel labelToDoName1;
+    private javax.swing.JLabel labelToDoName2;
+    private javax.swing.JLabel labelToDoName3;
+    private javax.swing.JLabel labelToDoName4;
+    private javax.swing.JLabel labelToDoName5;
+    private javax.swing.JLabel labelToDoName6;
+    private javax.swing.JLabel labelToDoName7;
+    private javax.swing.JLabel labelToDoName8;
     private javax.swing.JLabel labelWelcome;
     private javax.swing.JPanel panelCalendar;
     private javax.swing.JPanel panelCalendarButton;
@@ -502,8 +796,10 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel panelGradesButton;
     private javax.swing.JPanel panelHome;
     private javax.swing.JPanel panelHomeButton;
+    private javax.swing.JPanel panelNewTask;
     private javax.swing.JPanel panelSettings;
     private javax.swing.JPanel panelSettingsButton;
     private javax.swing.JPanel settingsButton;
+    private javax.swing.JTextField textFieldTaskName;
     // End of variables declaration//GEN-END:variables
 }

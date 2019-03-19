@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 package mainUI;
-
+import java.io.Serializable;
 /**
  *
  * @author htvph
  */
-public class ToDo {
+public class ToDo implements Serializable {
     String name, description;
     int priority;
 

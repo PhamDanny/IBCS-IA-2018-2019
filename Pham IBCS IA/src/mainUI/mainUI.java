@@ -27,9 +27,6 @@ import javax.swing.JOptionPane;
  * mainUI is the login screen
  */
 public class mainUI extends javax.swing.JFrame {
-
-    
-
     /**
      * Creates new form mainUI
      */
