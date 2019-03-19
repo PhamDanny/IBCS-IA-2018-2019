@@ -5,9 +5,7 @@
  */
 package mainUI;
 
-import java.awt.Dimension;
-import java.awt.Image;
-import java.awt.Toolkit;
+import java.awt.*;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -316,27 +314,77 @@ public class Dashboard extends javax.swing.JFrame {
         panelCalendar.add(labelToDoName8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, -1, -1));
 
         checkBoxToDo1.setBackground(new java.awt.Color(0, 153, 153));
+        checkBoxToDo1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                checkBoxToDo1StateChanged(evt);
+            }
+        });
+        checkBoxToDo1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                checkBoxToDo1MouseClicked(evt);
+            }
+        });
+        checkBoxToDo1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                checkBoxToDo1PropertyChange(evt);
+            }
+        });
         panelCalendar.add(checkBoxToDo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, -1, -1));
 
         checkBoxToDo2.setBackground(new java.awt.Color(0, 153, 153));
+        checkBoxToDo2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                checkBoxToDo2MouseClicked(evt);
+            }
+        });
         panelCalendar.add(checkBoxToDo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, -1, -1));
 
         checkBoxToDo3.setBackground(new java.awt.Color(0, 153, 153));
+        checkBoxToDo3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                checkBoxToDo3MouseClicked(evt);
+            }
+        });
         panelCalendar.add(checkBoxToDo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, -1, -1));
 
         checkBoxToDo4.setBackground(new java.awt.Color(0, 153, 153));
+        checkBoxToDo4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                checkBoxToDo4MouseClicked(evt);
+            }
+        });
         panelCalendar.add(checkBoxToDo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, -1, -1));
 
         checkBoxToDo5.setBackground(new java.awt.Color(0, 153, 153));
+        checkBoxToDo5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                checkBoxToDo5MouseClicked(evt);
+            }
+        });
         panelCalendar.add(checkBoxToDo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, -1, -1));
 
         checkBoxToDo6.setBackground(new java.awt.Color(0, 153, 153));
+        checkBoxToDo6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                checkBoxToDo6MouseClicked(evt);
+            }
+        });
         panelCalendar.add(checkBoxToDo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, -1, -1));
 
         checkBoxToDo7.setBackground(new java.awt.Color(0, 153, 153));
+        checkBoxToDo7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                checkBoxToDo7MouseClicked(evt);
+            }
+        });
         panelCalendar.add(checkBoxToDo7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, -1, -1));
 
         checkBoxToDo8.setBackground(new java.awt.Color(0, 153, 153));
+        checkBoxToDo8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                checkBoxToDo8MouseClicked(evt);
+            }
+        });
         panelCalendar.add(checkBoxToDo8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, -1, -1));
 
         textFieldTaskName.setBackground(new java.awt.Color(0, 153, 153));
@@ -580,6 +628,54 @@ public class Dashboard extends javax.swing.JFrame {
     private void buttonNewTaskMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonNewTaskMouseExited
         panelNewTask.setBackground(new java.awt.Color(0, 0, 51));
     }//GEN-LAST:event_buttonNewTaskMouseExited
+
+    private void checkBoxToDo1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_checkBoxToDo1StateChanged
+        
+    }//GEN-LAST:event_checkBoxToDo1StateChanged
+
+    private void checkBoxToDo1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_checkBoxToDo1PropertyChange
+
+    }//GEN-LAST:event_checkBoxToDo1PropertyChange
+
+    private void checkBoxToDo1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkBoxToDo1MouseClicked
+        currentUser.toDoList.remove(0);
+        updateToDoList();
+    }//GEN-LAST:event_checkBoxToDo1MouseClicked
+
+    private void checkBoxToDo2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkBoxToDo2MouseClicked
+        currentUser.toDoList.remove(1);
+        updateToDoList();
+    }//GEN-LAST:event_checkBoxToDo2MouseClicked
+
+    private void checkBoxToDo3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkBoxToDo3MouseClicked
+        currentUser.toDoList.remove(2);
+        updateToDoList();
+    }//GEN-LAST:event_checkBoxToDo3MouseClicked
+
+    private void checkBoxToDo4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkBoxToDo4MouseClicked
+        currentUser.toDoList.remove(3);
+        updateToDoList();
+    }//GEN-LAST:event_checkBoxToDo4MouseClicked
+
+    private void checkBoxToDo5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkBoxToDo5MouseClicked
+        currentUser.toDoList.remove(4);
+        updateToDoList();
+    }//GEN-LAST:event_checkBoxToDo5MouseClicked
+
+    private void checkBoxToDo6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkBoxToDo6MouseClicked
+        currentUser.toDoList.remove(5);
+        updateToDoList();
+    }//GEN-LAST:event_checkBoxToDo6MouseClicked
+
+    private void checkBoxToDo7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkBoxToDo7MouseClicked
+        currentUser.toDoList.remove(6);
+        updateToDoList();
+    }//GEN-LAST:event_checkBoxToDo7MouseClicked
+
+    private void checkBoxToDo8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkBoxToDo8MouseClicked
+        currentUser.toDoList.remove(7);
+        updateToDoList();
+    }//GEN-LAST:event_checkBoxToDo8MouseClicked
     
     private void updateToDoList() {
         
@@ -591,6 +687,15 @@ public class Dashboard extends javax.swing.JFrame {
         checkBoxToDo6.setVisible(true);
         checkBoxToDo7.setVisible(true);
         checkBoxToDo8.setVisible(true);
+        
+        checkBoxToDo1.setSelected(false);
+        checkBoxToDo2.setSelected(false);
+        checkBoxToDo3.setSelected(false);
+        checkBoxToDo4.setSelected(false);
+        checkBoxToDo5.setSelected(false);
+        checkBoxToDo6.setSelected(false);
+        checkBoxToDo7.setSelected(false);
+        checkBoxToDo8.setSelected(false);
         
         labelToDoName1.setVisible(true);
         labelToDoName2.setVisible(true);
@@ -665,7 +770,7 @@ public class Dashboard extends javax.swing.JFrame {
             labelToDoName7.setVisible(false);
             labelToDoName8.setVisible(false);
         }
-        else if(currentUser.toDoList.size() == 3) {
+        else if(currentUser.toDoList.size() == 4) {
             checkBoxToDo5.setVisible(false);
             checkBoxToDo6.setVisible(false);
             checkBoxToDo7.setVisible(false);
