@@ -21,7 +21,7 @@ public class Dashboard extends javax.swing.JFrame {
      * Creates new form Dashboard
      */
     static int dashboardState = 0;
-    User currentUser;
+    static User currentUser;
     public Dashboard(User user) throws IOException {
         initComponents();
         
@@ -33,7 +33,7 @@ public class Dashboard extends javax.swing.JFrame {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         
-        // sets greeting message
+        // sets greeting message on home page
         labelWelcome.setText("Welcome, " + user.getFirstName() + ".");
         
         // set dashboard state to 1
@@ -45,6 +45,7 @@ public class Dashboard extends javax.swing.JFrame {
         dashboardState = 1;
         this.currentUser = user;
         updateDashButtons();
+        updateClassButtons();
         updateToDoList();
     }
 
@@ -57,6 +58,7 @@ public class Dashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         panelExit = new javax.swing.JPanel();
         labelExit = new javax.swing.JLabel();
         panelHomeButton = new javax.swing.JPanel();
@@ -75,6 +77,36 @@ public class Dashboard extends javax.swing.JFrame {
         settingsButton = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         labelSettingsIcon = new javax.swing.JLabel();
+        panelGrades = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        panelClass1 = new javax.swing.JPanel();
+        buttonClass1 = new javax.swing.JPanel();
+        labelClass1 = new javax.swing.JLabel();
+        panelClass2 = new javax.swing.JPanel();
+        buttonClass2 = new javax.swing.JPanel();
+        labelClass2 = new javax.swing.JLabel();
+        panelClass3 = new javax.swing.JPanel();
+        buttonClass3 = new javax.swing.JPanel();
+        labelClass3 = new javax.swing.JLabel();
+        panelClass4 = new javax.swing.JPanel();
+        buttonClass4 = new javax.swing.JPanel();
+        labelClass4 = new javax.swing.JLabel();
+        panelClass5 = new javax.swing.JPanel();
+        buttonClass5 = new javax.swing.JPanel();
+        labelClass5 = new javax.swing.JLabel();
+        panelClass6 = new javax.swing.JPanel();
+        buttonClass6 = new javax.swing.JPanel();
+        labelClass6 = new javax.swing.JLabel();
+        panelClass7 = new javax.swing.JPanel();
+        buttonClass7 = new javax.swing.JPanel();
+        labelClass7 = new javax.swing.JLabel();
+        panelClass8 = new javax.swing.JPanel();
+        buttonClass8 = new javax.swing.JPanel();
+        labelClass8 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList2 = new javax.swing.JList();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jList3 = new javax.swing.JList();
         panelCalendar = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         labelToDoName1 = new javax.swing.JLabel();
@@ -101,8 +133,6 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         panelHome = new javax.swing.JPanel();
         labelWelcome = new javax.swing.JLabel();
-        panelGrades = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
         panelSettings = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
 
@@ -268,6 +298,186 @@ public class Dashboard extends javax.swing.JFrame {
 
         getContentPane().add(panelSettingsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 110, 110));
 
+        panelGrades.setBackground(new java.awt.Color(0, 153, 153));
+        panelGrades.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Grades");
+        panelGrades.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, -1));
+
+        panelClass1.setBackground(new java.awt.Color(0, 0, 51));
+        panelClass1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        buttonClass1.setOpaque(false);
+        buttonClass1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonClass1MouseClicked(evt);
+            }
+        });
+        panelClass1.add(buttonClass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
+
+        labelClass1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        labelClass1.setForeground(new java.awt.Color(255, 255, 255));
+        labelClass1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClass1.setText("Class 1");
+        panelClass1.add(labelClass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
+
+        panelGrades.add(panelClass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 130, 40));
+
+        panelClass2.setBackground(new java.awt.Color(0, 0, 51));
+        panelClass2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        buttonClass2.setOpaque(false);
+        buttonClass2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonClass2MouseClicked(evt);
+            }
+        });
+        panelClass2.add(buttonClass2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
+
+        labelClass2.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        labelClass2.setForeground(new java.awt.Color(255, 255, 255));
+        labelClass2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClass2.setText("Class 2");
+        panelClass2.add(labelClass2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
+
+        panelGrades.add(panelClass2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 130, 40));
+
+        panelClass3.setBackground(new java.awt.Color(0, 0, 51));
+        panelClass3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        buttonClass3.setOpaque(false);
+        buttonClass3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonClass3MouseClicked(evt);
+            }
+        });
+        panelClass3.add(buttonClass3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
+
+        labelClass3.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        labelClass3.setForeground(new java.awt.Color(255, 255, 255));
+        labelClass3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClass3.setText("Class 3");
+        panelClass3.add(labelClass3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
+
+        panelGrades.add(panelClass3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 60, 130, 40));
+
+        panelClass4.setBackground(new java.awt.Color(0, 0, 51));
+        panelClass4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        buttonClass4.setOpaque(false);
+        buttonClass4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonClass4MouseClicked(evt);
+            }
+        });
+        panelClass4.add(buttonClass4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
+
+        labelClass4.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        labelClass4.setForeground(new java.awt.Color(255, 255, 255));
+        labelClass4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClass4.setText("Class 4");
+        panelClass4.add(labelClass4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
+
+        panelGrades.add(panelClass4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 60, 130, 40));
+
+        panelClass5.setBackground(new java.awt.Color(0, 0, 51));
+        panelClass5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        buttonClass5.setOpaque(false);
+        buttonClass5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonClass5MouseClicked(evt);
+            }
+        });
+        panelClass5.add(buttonClass5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
+
+        labelClass5.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        labelClass5.setForeground(new java.awt.Color(255, 255, 255));
+        labelClass5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClass5.setText("Class 5");
+        panelClass5.add(labelClass5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
+
+        panelGrades.add(panelClass5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 130, 40));
+
+        panelClass6.setBackground(new java.awt.Color(0, 0, 51));
+        panelClass6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        buttonClass6.setOpaque(false);
+        buttonClass6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonClass6MouseClicked(evt);
+            }
+        });
+        panelClass6.add(buttonClass6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
+
+        labelClass6.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        labelClass6.setForeground(new java.awt.Color(255, 255, 255));
+        labelClass6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClass6.setText("Class 6");
+        panelClass6.add(labelClass6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
+
+        panelGrades.add(panelClass6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, 130, 40));
+
+        panelClass7.setBackground(new java.awt.Color(0, 0, 51));
+        panelClass7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        buttonClass7.setOpaque(false);
+        buttonClass7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonClass7MouseClicked(evt);
+            }
+        });
+        panelClass7.add(buttonClass7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
+
+        labelClass7.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        labelClass7.setForeground(new java.awt.Color(255, 255, 255));
+        labelClass7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClass7.setText("Class 7");
+        panelClass7.add(labelClass7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
+
+        panelGrades.add(panelClass7, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, 130, 40));
+
+        panelClass8.setBackground(new java.awt.Color(0, 0, 51));
+        panelClass8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        buttonClass8.setOpaque(false);
+        buttonClass8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonClass8MouseClicked(evt);
+            }
+        });
+        panelClass8.add(buttonClass8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
+
+        labelClass8.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        labelClass8.setForeground(new java.awt.Color(255, 255, 255));
+        labelClass8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClass8.setText("Class 8");
+        panelClass8.add(labelClass8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
+
+        panelGrades.add(panelClass8, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, 130, 40));
+
+        jList2.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(jList2);
+
+        panelGrades.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, 200, -1));
+
+        jList3.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane3.setViewportView(jList3);
+
+        panelGrades.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 200, -1));
+
+        getContentPane().add(panelGrades, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 440));
+
         panelCalendar.setBackground(new java.awt.Color(0, 153, 153));
         panelCalendar.setForeground(new java.awt.Color(255, 255, 255));
         panelCalendar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -314,22 +524,12 @@ public class Dashboard extends javax.swing.JFrame {
         panelCalendar.add(labelToDoName8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, -1, -1));
 
         checkBoxToDo1.setBackground(new java.awt.Color(0, 153, 153));
-        checkBoxToDo1.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                checkBoxToDo1StateChanged(evt);
-            }
-        });
         checkBoxToDo1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 checkBoxToDo1MouseClicked(evt);
             }
         });
-        checkBoxToDo1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                checkBoxToDo1PropertyChange(evt);
-            }
-        });
-        panelCalendar.add(checkBoxToDo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, -1, -1));
+        panelCalendar.add(checkBoxToDo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 92, -1, -1));
 
         checkBoxToDo2.setBackground(new java.awt.Color(0, 153, 153));
         checkBoxToDo2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -337,7 +537,7 @@ public class Dashboard extends javax.swing.JFrame {
                 checkBoxToDo2MouseClicked(evt);
             }
         });
-        panelCalendar.add(checkBoxToDo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, -1, -1));
+        panelCalendar.add(checkBoxToDo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 132, -1, -1));
 
         checkBoxToDo3.setBackground(new java.awt.Color(0, 153, 153));
         checkBoxToDo3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -345,7 +545,7 @@ public class Dashboard extends javax.swing.JFrame {
                 checkBoxToDo3MouseClicked(evt);
             }
         });
-        panelCalendar.add(checkBoxToDo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, -1, -1));
+        panelCalendar.add(checkBoxToDo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 172, -1, -1));
 
         checkBoxToDo4.setBackground(new java.awt.Color(0, 153, 153));
         checkBoxToDo4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -353,7 +553,7 @@ public class Dashboard extends javax.swing.JFrame {
                 checkBoxToDo4MouseClicked(evt);
             }
         });
-        panelCalendar.add(checkBoxToDo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, -1, -1));
+        panelCalendar.add(checkBoxToDo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 212, -1, -1));
 
         checkBoxToDo5.setBackground(new java.awt.Color(0, 153, 153));
         checkBoxToDo5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -361,7 +561,7 @@ public class Dashboard extends javax.swing.JFrame {
                 checkBoxToDo5MouseClicked(evt);
             }
         });
-        panelCalendar.add(checkBoxToDo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, -1, -1));
+        panelCalendar.add(checkBoxToDo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 252, -1, -1));
 
         checkBoxToDo6.setBackground(new java.awt.Color(0, 153, 153));
         checkBoxToDo6.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -369,7 +569,7 @@ public class Dashboard extends javax.swing.JFrame {
                 checkBoxToDo6MouseClicked(evt);
             }
         });
-        panelCalendar.add(checkBoxToDo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, -1, -1));
+        panelCalendar.add(checkBoxToDo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 292, -1, -1));
 
         checkBoxToDo7.setBackground(new java.awt.Color(0, 153, 153));
         checkBoxToDo7.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -377,7 +577,7 @@ public class Dashboard extends javax.swing.JFrame {
                 checkBoxToDo7MouseClicked(evt);
             }
         });
-        panelCalendar.add(checkBoxToDo7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, -1, -1));
+        panelCalendar.add(checkBoxToDo7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 332, -1, -1));
 
         checkBoxToDo8.setBackground(new java.awt.Color(0, 153, 153));
         checkBoxToDo8.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -385,7 +585,7 @@ public class Dashboard extends javax.swing.JFrame {
                 checkBoxToDo8MouseClicked(evt);
             }
         });
-        panelCalendar.add(checkBoxToDo8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, -1, -1));
+        panelCalendar.add(checkBoxToDo8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 372, -1, -1));
 
         textFieldTaskName.setBackground(new java.awt.Color(0, 153, 153));
         textFieldTaskName.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
@@ -427,7 +627,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("New Task");
-        panelCalendar.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 170, 200, -1));
+        panelCalendar.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, 200, -1));
 
         getContentPane().add(panelCalendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 440));
 
@@ -440,14 +640,6 @@ public class Dashboard extends javax.swing.JFrame {
         panelHome.add(labelWelcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, -1));
 
         getContentPane().add(panelHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 440));
-
-        panelGrades.setBackground(new java.awt.Color(0, 153, 153));
-        panelGrades.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel7.setText("grades");
-        panelGrades.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, -1, -1));
-
-        getContentPane().add(panelGrades, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 440));
 
         panelSettings.setBackground(new java.awt.Color(0, 153, 153));
         panelSettings.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -595,6 +787,7 @@ public class Dashboard extends javax.swing.JFrame {
         // grades tab selected
         dashboardState = 2;
         updateDashButtons();
+        updateClassButtons();
     }//GEN-LAST:event_gradesButtonMouseClicked
 
     private void calendarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calendarButtonMouseClicked
@@ -628,14 +821,6 @@ public class Dashboard extends javax.swing.JFrame {
     private void buttonNewTaskMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonNewTaskMouseExited
         panelNewTask.setBackground(new java.awt.Color(0, 0, 51));
     }//GEN-LAST:event_buttonNewTaskMouseExited
-
-    private void checkBoxToDo1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_checkBoxToDo1StateChanged
-        
-    }//GEN-LAST:event_checkBoxToDo1StateChanged
-
-    private void checkBoxToDo1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_checkBoxToDo1PropertyChange
-
-    }//GEN-LAST:event_checkBoxToDo1PropertyChange
 
     private void checkBoxToDo1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkBoxToDo1MouseClicked
         currentUser.toDoList.remove(0);
@@ -676,7 +861,94 @@ public class Dashboard extends javax.swing.JFrame {
         currentUser.toDoList.remove(7);
         updateToDoList();
     }//GEN-LAST:event_checkBoxToDo8MouseClicked
+
+    private void buttonClass1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass1MouseClicked
+        if(currentUser.classes.isEmpty()) {
+            new NewClass().setVisible(true);
+        }
+        else {
+            // TO DO: display class information
+        }
+    }//GEN-LAST:event_buttonClass1MouseClicked
+
+    private void buttonClass2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonClass2MouseClicked
+
+    private void buttonClass3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonClass3MouseClicked
+
+    private void buttonClass4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonClass4MouseClicked
+
+    private void buttonClass5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass5MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonClass5MouseClicked
+
+    private void buttonClass6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass6MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonClass6MouseClicked
+
+    private void buttonClass7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass7MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonClass7MouseClicked
+
+    private void buttonClass8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass8MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonClass8MouseClicked
     
+    public void updateClassButtons() {
+        buttonClass1.setVisible(false);
+        buttonClass2.setVisible(false);
+        buttonClass3.setVisible(false);
+        buttonClass4.setVisible(false);
+        buttonClass5.setVisible(false);
+        buttonClass6.setVisible(false);
+        buttonClass7.setVisible(false);
+        buttonClass8.setVisible(false);
+        
+        labelClass1.setVisible(false);
+        labelClass2.setVisible(false);
+        labelClass3.setVisible(false);
+        labelClass4.setVisible(false);
+        labelClass5.setVisible(false);
+        labelClass6.setVisible(false);
+        labelClass7.setVisible(false);
+        labelClass8.setVisible(false);
+        
+        panelClass1.setVisible(false);
+        panelClass2.setVisible(false);
+        panelClass3.setVisible(false);
+        panelClass4.setVisible(false);
+        panelClass5.setVisible(false);
+        panelClass6.setVisible(false);
+        panelClass7.setVisible(false);
+        panelClass8.setVisible(false);
+        
+        if(currentUser.classes.isEmpty()) {
+            buttonClass1.setVisible(true);
+            labelClass1.setVisible(true);
+            panelClass1.setVisible(true);
+            labelClass1.setText("Add new class");
+            panelClass1.setBackground(new java.awt.Color(150,0,0));
+        }
+        else if(currentUser.classes.size() == 1) {
+            buttonClass1.setVisible(true);
+            labelClass1.setVisible(true);
+            panelClass1.setVisible(true);
+            buttonClass2.setVisible(true);
+            labelClass2.setVisible(true);
+            panelClass2.setVisible(true);
+            
+            labelClass1.setText(currentUser.classes.get(0).getClassName());
+            panelClass1.setBackground(new java.awt.Color(0,0,51));
+            labelClass2.setText("Add new class");
+            panelClass2.setBackground(new java.awt.Color(150,0,0));
+        }
+        //TO DO: rest of possible button scenarios and bugfix
+    }
     private void updateToDoList() {
         
         checkBoxToDo1.setVisible(true);
@@ -858,6 +1130,14 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel buttonClass1;
+    private javax.swing.JPanel buttonClass2;
+    private javax.swing.JPanel buttonClass3;
+    private javax.swing.JPanel buttonClass4;
+    private javax.swing.JPanel buttonClass5;
+    private javax.swing.JPanel buttonClass6;
+    private javax.swing.JPanel buttonClass7;
+    private javax.swing.JPanel buttonClass8;
     private javax.swing.JPanel buttonNewTask;
     private javax.swing.JPanel calendarButton;
     private javax.swing.JCheckBox checkBoxToDo1;
@@ -879,8 +1159,21 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JList jList2;
+    private javax.swing.JList jList3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel labelCalendarIcon;
+    private javax.swing.JLabel labelClass1;
+    private javax.swing.JLabel labelClass2;
+    private javax.swing.JLabel labelClass3;
+    private javax.swing.JLabel labelClass4;
+    private javax.swing.JLabel labelClass5;
+    private javax.swing.JLabel labelClass6;
+    private javax.swing.JLabel labelClass7;
+    private javax.swing.JLabel labelClass8;
     private javax.swing.JLabel labelExit;
     private javax.swing.JLabel labelGradesIcon;
     private javax.swing.JLabel labelHomeIcon;
@@ -896,6 +1189,14 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel labelWelcome;
     private javax.swing.JPanel panelCalendar;
     private javax.swing.JPanel panelCalendarButton;
+    private javax.swing.JPanel panelClass1;
+    private javax.swing.JPanel panelClass2;
+    private javax.swing.JPanel panelClass3;
+    private javax.swing.JPanel panelClass4;
+    private javax.swing.JPanel panelClass5;
+    private javax.swing.JPanel panelClass6;
+    private javax.swing.JPanel panelClass7;
+    private javax.swing.JPanel panelClass8;
     private javax.swing.JPanel panelExit;
     private javax.swing.JPanel panelGrades;
     private javax.swing.JPanel panelGradesButton;
