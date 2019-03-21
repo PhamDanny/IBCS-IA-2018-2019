@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import javax.swing.DefaultListModel;
 
 /**
  *
@@ -104,9 +105,9 @@ public class Dashboard extends javax.swing.JFrame {
         buttonClass8 = new javax.swing.JPanel();
         labelClass8 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList();
+        listAssignments = new javax.swing.JList();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jList3 = new javax.swing.JList();
+        listClassCategories = new javax.swing.JList();
         panelCalendar = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         labelToDoName1 = new javax.swing.JLabel();
@@ -458,21 +459,21 @@ public class Dashboard extends javax.swing.JFrame {
 
         panelGrades.add(panelClass8, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, 130, 40));
 
-        jList2.setModel(new javax.swing.AbstractListModel() {
+        listAssignments.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane2.setViewportView(jList2);
+        jScrollPane2.setViewportView(listAssignments);
 
         panelGrades.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, 200, -1));
 
-        jList3.setModel(new javax.swing.AbstractListModel() {
+        listClassCategories.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane3.setViewportView(jList3);
+        jScrollPane3.setViewportView(listClassCategories);
 
         panelGrades.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 200, -1));
 
@@ -864,10 +865,14 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void buttonClass1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass1MouseClicked
         if(currentUser.classes.isEmpty()) {
-            new NewClass().setVisible(true);
+            try {
+                new NewClass().setVisible(true);
+            } catch (IOException ex) {
+                Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         else {
-            // TO DO: display class information
+            updateCategoriesLists(0);
         }
     }//GEN-LAST:event_buttonClass1MouseClicked
 
@@ -899,6 +904,17 @@ public class Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonClass8MouseClicked
     
+    public void updateCategoriesLists(int classIndex) {
+        // clears list
+        DefaultListModel model=new DefaultListModel();
+        model.clear();
+        listClassCategories.setModel(model);
+        
+        // repopulates list with names
+        for(ClassCategory category : currentUser.classes.get(classIndex).getCategories()) {
+            //listClassCategories.add(category.getName());
+        }       
+    }
     public void updateClassButtons() {
         buttonClass1.setVisible(false);
         buttonClass2.setVisible(false);
@@ -1159,8 +1175,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList jList2;
-    private javax.swing.JList jList3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -1187,6 +1201,8 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel labelToDoName7;
     private javax.swing.JLabel labelToDoName8;
     private javax.swing.JLabel labelWelcome;
+    private javax.swing.JList listAssignments;
+    private javax.swing.JList listClassCategories;
     private javax.swing.JPanel panelCalendar;
     private javax.swing.JPanel panelCalendarButton;
     private javax.swing.JPanel panelClass1;
