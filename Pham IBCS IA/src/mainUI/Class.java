@@ -93,4 +93,8 @@ public class Class implements Serializable {
     public void addCompleteAssignment(int categoryIndex, String name, double maxScore, double score) {
         categories.get(categoryIndex).assignments.add(new Assignment(name, maxScore, score, false));
     }
+    
+    public ClassCategory getClassCategory(int index) {
+        return categories.get(index);
+    }
 }

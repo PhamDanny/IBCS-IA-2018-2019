@@ -7,6 +7,7 @@ package mainUI;
 
 import java.awt.*;
 import java.io.IOException;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -874,46 +875,114 @@ public class Dashboard extends javax.swing.JFrame {
         else {
             updateCategoriesLists(0);
         }
+        
     }//GEN-LAST:event_buttonClass1MouseClicked
 
     private void buttonClass2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass2MouseClicked
-        // TODO add your handling code here:
+        if(currentUser.classes.size() == 1) {
+            try {
+                new NewClass().setVisible(true);
+            } catch (IOException ex) {
+                Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else {
+            updateCategoriesLists(1);
+        }
     }//GEN-LAST:event_buttonClass2MouseClicked
 
     private void buttonClass3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass3MouseClicked
-        // TODO add your handling code here:
+        if(currentUser.classes.size() == 2) {
+            try {
+                new NewClass().setVisible(true);
+            } catch (IOException ex) {
+                Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else {
+            updateCategoriesLists(2);
+        }
     }//GEN-LAST:event_buttonClass3MouseClicked
 
     private void buttonClass4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass4MouseClicked
-        // TODO add your handling code here:
+        if(currentUser.classes.size() == 3) {
+            try {
+                new NewClass().setVisible(true);
+            } catch (IOException ex) {
+                Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else {
+            updateCategoriesLists(3);
+        }
     }//GEN-LAST:event_buttonClass4MouseClicked
 
     private void buttonClass5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass5MouseClicked
-        // TODO add your handling code here:
+        if(currentUser.classes.size() == 4) {
+            try {
+                new NewClass().setVisible(true);
+            } catch (IOException ex) {
+                Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else {
+            updateCategoriesLists(4);
+        }
     }//GEN-LAST:event_buttonClass5MouseClicked
 
     private void buttonClass6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass6MouseClicked
-        // TODO add your handling code here:
+        if(currentUser.classes.size() == 5) {
+            try {
+                new NewClass().setVisible(true);
+            } catch (IOException ex) {
+                Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else {
+            updateCategoriesLists(5);
+        }
     }//GEN-LAST:event_buttonClass6MouseClicked
 
     private void buttonClass7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass7MouseClicked
-        // TODO add your handling code here:
+        if(currentUser.classes.size() == 6) {
+            try {
+                new NewClass().setVisible(true);
+            } catch (IOException ex) {
+                Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else {
+            updateCategoriesLists(6);
+        }
     }//GEN-LAST:event_buttonClass7MouseClicked
 
     private void buttonClass8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass8MouseClicked
-        // TODO add your handling code here:
+        if(currentUser.classes.size() == 7) {
+            try {
+                new NewClass().setVisible(true);
+            } catch (IOException ex) {
+                Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else {
+            updateCategoriesLists(7);
+        }
     }//GEN-LAST:event_buttonClass8MouseClicked
     
     public void updateCategoriesLists(int classIndex) {
-        // clears list
-        DefaultListModel model=new DefaultListModel();
-        model.clear();
-        listClassCategories.setModel(model);
+        Vector <String> categoryNames = new Vector<String>();
         
-        // repopulates list with names
         for(ClassCategory category : currentUser.classes.get(classIndex).getCategories()) {
-            //listClassCategories.add(category.getName());
-        }       
+            categoryNames.add(category.getName());
+        }
+        listClassCategories.setListData(categoryNames);
+    }
+    
+    public void updateAssignmentLists() {
+        Vector <String> assignmentNames = new Vector<String>();
+        
+        // TO DO update assignment list based on indices
+                    
     }
     public void updateClassButtons() {
         buttonClass1.setVisible(false);
@@ -944,6 +1013,7 @@ public class Dashboard extends javax.swing.JFrame {
         panelClass8.setVisible(false);
         
         if(currentUser.classes.isEmpty()) {
+            // show button 1 as add new class
             buttonClass1.setVisible(true);
             labelClass1.setVisible(true);
             panelClass1.setVisible(true);
@@ -951,6 +1021,7 @@ public class Dashboard extends javax.swing.JFrame {
             panelClass1.setBackground(new java.awt.Color(150,0,0));
         }
         else if(currentUser.classes.size() == 1) {
+            // show button 1 as class 1 and button 2 as add new class
             buttonClass1.setVisible(true);
             labelClass1.setVisible(true);
             panelClass1.setVisible(true);
@@ -963,7 +1034,238 @@ public class Dashboard extends javax.swing.JFrame {
             labelClass2.setText("Add new class");
             panelClass2.setBackground(new java.awt.Color(150,0,0));
         }
-        //TO DO: rest of possible button scenarios and bugfix
+        else if (currentUser.classes.size() == 2) {
+            // show buttons 1, 2 as classes 1, 2 and button 3 as add new class
+            buttonClass1.setVisible(true);
+            labelClass1.setVisible(true);
+            panelClass1.setVisible(true);
+            buttonClass2.setVisible(true);
+            labelClass2.setVisible(true);
+            panelClass2.setVisible(true);
+            buttonClass3.setVisible(true);
+            labelClass3.setVisible(true);
+            panelClass3.setVisible(true);
+            
+            labelClass1.setText(currentUser.classes.get(0).getClassName());
+            panelClass1.setBackground(new java.awt.Color(0,0,51));
+            labelClass2.setText(currentUser.classes.get(1).getClassName());
+            panelClass2.setBackground(new java.awt.Color(0,0,51));
+            
+            // button 3 will act as the new class button
+            labelClass3.setText("Add new class");
+            panelClass3.setBackground(new java.awt.Color(150,0,0));
+        }
+        else if (currentUser.classes.size() == 3) {
+            // show buttons 1, 2, 3 as classes 1, 2, 3 and button 4 as add new class
+            buttonClass1.setVisible(true);
+            labelClass1.setVisible(true);
+            panelClass1.setVisible(true);
+            buttonClass2.setVisible(true);
+            labelClass2.setVisible(true);
+            panelClass2.setVisible(true);
+            buttonClass3.setVisible(true);
+            labelClass3.setVisible(true);
+            panelClass3.setVisible(true);
+            buttonClass4.setVisible(true);
+            labelClass4.setVisible(true);
+            panelClass4.setVisible(true);
+            
+            labelClass1.setText(currentUser.classes.get(0).getClassName());
+            panelClass1.setBackground(new java.awt.Color(0,0,51));
+            labelClass2.setText(currentUser.classes.get(1).getClassName());
+            panelClass2.setBackground(new java.awt.Color(0,0,51));
+            labelClass3.setText(currentUser.classes.get(2).getClassName());
+            panelClass3.setBackground(new java.awt.Color(0,0,51));
+            
+            labelClass4.setText("Add new class");
+            panelClass4.setBackground(new java.awt.Color(150,0,0));
+        }
+        else if(currentUser.classes.size() == 4) {
+            buttonClass1.setVisible(true);
+            labelClass1.setVisible(true);
+            panelClass1.setVisible(true);
+            buttonClass2.setVisible(true);
+            labelClass2.setVisible(true);
+            panelClass2.setVisible(true);
+            buttonClass3.setVisible(true);
+            labelClass3.setVisible(true);
+            panelClass3.setVisible(true);
+            buttonClass4.setVisible(true);
+            labelClass4.setVisible(true);
+            panelClass4.setVisible(true);
+            labelClass5.setVisible(true);
+            panelClass5.setVisible(true);
+            
+            labelClass1.setText(currentUser.classes.get(0).getClassName());
+            panelClass1.setBackground(new java.awt.Color(0,0,51));
+            labelClass2.setText(currentUser.classes.get(1).getClassName());
+            panelClass2.setBackground(new java.awt.Color(0,0,51));
+            labelClass3.setText(currentUser.classes.get(2).getClassName());
+            panelClass3.setBackground(new java.awt.Color(0,0,51));
+            labelClass4.setText(currentUser.classes.get(3).getClassName());
+            panelClass4.setBackground(new java.awt.Color(0,0,51));
+            
+            labelClass5.setText("Add new class");
+            panelClass5.setBackground(new java.awt.Color(150,0,0));
+        }
+        else if(currentUser.classes.size() == 5) {
+            buttonClass1.setVisible(true);
+            labelClass1.setVisible(true);
+            panelClass1.setVisible(true);
+            buttonClass2.setVisible(true);
+            labelClass2.setVisible(true);
+            panelClass2.setVisible(true);
+            buttonClass3.setVisible(true);
+            labelClass3.setVisible(true);
+            panelClass3.setVisible(true);
+            buttonClass4.setVisible(true);
+            labelClass4.setVisible(true);
+            panelClass4.setVisible(true);
+            labelClass5.setVisible(true);
+            panelClass5.setVisible(true);
+            buttonClass6.setVisible(true);
+            labelClass6.setVisible(true);
+            panelClass6.setVisible(true);
+            
+            labelClass1.setText(currentUser.classes.get(0).getClassName());
+            panelClass1.setBackground(new java.awt.Color(0,0,51));
+            labelClass2.setText(currentUser.classes.get(1).getClassName());
+            panelClass2.setBackground(new java.awt.Color(0,0,51));
+            labelClass3.setText(currentUser.classes.get(2).getClassName());
+            panelClass3.setBackground(new java.awt.Color(0,0,51));
+            labelClass4.setText(currentUser.classes.get(3).getClassName());
+            panelClass4.setBackground(new java.awt.Color(0,0,51));
+            labelClass5.setText(currentUser.classes.get(4).getClassName());
+            panelClass5.setBackground(new java.awt.Color(0,0,51));
+            
+            labelClass6.setText("Add new class");
+            panelClass6.setBackground(new java.awt.Color(150,0,0));
+        }
+        else if(currentUser.classes.size() == 6) {
+            buttonClass1.setVisible(true);
+            labelClass1.setVisible(true);
+            panelClass1.setVisible(true);
+            buttonClass2.setVisible(true);
+            labelClass2.setVisible(true);
+            panelClass2.setVisible(true);
+            buttonClass3.setVisible(true);
+            labelClass3.setVisible(true);
+            panelClass3.setVisible(true);
+            buttonClass4.setVisible(true);
+            labelClass4.setVisible(true);
+            panelClass4.setVisible(true);
+            labelClass5.setVisible(true);
+            panelClass5.setVisible(true);
+            buttonClass6.setVisible(true);
+            labelClass6.setVisible(true);
+            panelClass6.setVisible(true);
+            buttonClass7.setVisible(true);
+            labelClass7.setVisible(true);
+            panelClass7.setVisible(true);
+            
+            labelClass1.setText(currentUser.classes.get(0).getClassName());
+            panelClass1.setBackground(new java.awt.Color(0,0,51));
+            labelClass2.setText(currentUser.classes.get(1).getClassName());
+            panelClass2.setBackground(new java.awt.Color(0,0,51));
+            labelClass3.setText(currentUser.classes.get(2).getClassName());
+            panelClass3.setBackground(new java.awt.Color(0,0,51));
+            labelClass4.setText(currentUser.classes.get(3).getClassName());
+            panelClass4.setBackground(new java.awt.Color(0,0,51));
+            labelClass5.setText(currentUser.classes.get(4).getClassName());
+            panelClass5.setBackground(new java.awt.Color(0,0,51));
+            labelClass6.setText(currentUser.classes.get(5).getClassName());
+            panelClass6.setBackground(new java.awt.Color(0,0,51));
+            
+            labelClass7.setText("Add new class");
+            panelClass7.setBackground(new java.awt.Color(150,0,0));
+        }
+        else if(currentUser.classes.size() == 7) {
+            buttonClass1.setVisible(true);
+            labelClass1.setVisible(true);
+            panelClass1.setVisible(true);
+            buttonClass2.setVisible(true);
+            labelClass2.setVisible(true);
+            panelClass2.setVisible(true);
+            buttonClass3.setVisible(true);
+            labelClass3.setVisible(true);
+            panelClass3.setVisible(true);
+            buttonClass4.setVisible(true);
+            labelClass4.setVisible(true);
+            panelClass4.setVisible(true);
+            labelClass5.setVisible(true);
+            panelClass5.setVisible(true);
+            buttonClass6.setVisible(true);
+            labelClass6.setVisible(true);
+            panelClass6.setVisible(true);
+            buttonClass7.setVisible(true);
+            labelClass7.setVisible(true);
+            panelClass7.setVisible(true);
+            buttonClass8.setVisible(true);
+            labelClass8.setVisible(true);
+            panelClass8.setVisible(true);
+            
+            labelClass1.setText(currentUser.classes.get(0).getClassName());
+            panelClass1.setBackground(new java.awt.Color(0,0,51));
+            labelClass2.setText(currentUser.classes.get(1).getClassName());
+            panelClass2.setBackground(new java.awt.Color(0,0,51));
+            labelClass3.setText(currentUser.classes.get(2).getClassName());
+            panelClass3.setBackground(new java.awt.Color(0,0,51));
+            labelClass4.setText(currentUser.classes.get(3).getClassName());
+            panelClass4.setBackground(new java.awt.Color(0,0,51));
+            labelClass5.setText(currentUser.classes.get(4).getClassName());
+            panelClass5.setBackground(new java.awt.Color(0,0,51));
+            labelClass6.setText(currentUser.classes.get(5).getClassName());
+            panelClass6.setBackground(new java.awt.Color(0,0,51));
+            labelClass7.setText(currentUser.classes.get(6).getClassName());
+            panelClass7.setBackground(new java.awt.Color(0,0,51));
+            
+            labelClass7.setText("Add new class");
+            panelClass7.setBackground(new java.awt.Color(150,0,0));
+        }
+        else if(currentUser.classes.size() == 8) {
+            buttonClass1.setVisible(true);
+            labelClass1.setVisible(true);
+            panelClass1.setVisible(true);
+            buttonClass2.setVisible(true);
+            labelClass2.setVisible(true);
+            panelClass2.setVisible(true);
+            buttonClass3.setVisible(true);
+            labelClass3.setVisible(true);
+            panelClass3.setVisible(true);
+            buttonClass4.setVisible(true);
+            labelClass4.setVisible(true);
+            panelClass4.setVisible(true);
+            labelClass5.setVisible(true);
+            panelClass5.setVisible(true);
+            buttonClass6.setVisible(true);
+            labelClass6.setVisible(true);
+            panelClass6.setVisible(true);
+            buttonClass7.setVisible(true);
+            labelClass7.setVisible(true);
+            panelClass7.setVisible(true);
+            buttonClass8.setVisible(true);
+            labelClass8.setVisible(true);
+            panelClass8.setVisible(true);
+            
+            labelClass1.setText(currentUser.classes.get(0).getClassName());
+            panelClass1.setBackground(new java.awt.Color(0,0,51));
+            labelClass2.setText(currentUser.classes.get(1).getClassName());
+            panelClass2.setBackground(new java.awt.Color(0,0,51));
+            labelClass3.setText(currentUser.classes.get(2).getClassName());
+            panelClass3.setBackground(new java.awt.Color(0,0,51));
+            labelClass4.setText(currentUser.classes.get(3).getClassName());
+            panelClass4.setBackground(new java.awt.Color(0,0,51));
+            labelClass5.setText(currentUser.classes.get(4).getClassName());
+            panelClass5.setBackground(new java.awt.Color(0,0,51));
+            labelClass6.setText(currentUser.classes.get(5).getClassName());
+            panelClass6.setBackground(new java.awt.Color(0,0,51));
+            labelClass7.setText(currentUser.classes.get(6).getClassName());
+            panelClass7.setBackground(new java.awt.Color(0,0,51));
+            labelClass8.setText(currentUser.classes.get(7).getClassName());
+            panelClass8.setBackground(new java.awt.Color(0,0,51));
+            
+            // 8 is max number of classes
+        }
     }
     private void updateToDoList() {
         

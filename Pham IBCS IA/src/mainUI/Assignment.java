@@ -7,7 +7,7 @@ package mainUI;
 import java.io.Serializable;
 /**
  *
- * @author htvph
+ * @author Danny Pham
  */
 public class Assignment implements Serializable {
     private String name;
