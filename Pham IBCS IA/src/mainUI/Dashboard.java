@@ -109,6 +109,17 @@ public class Dashboard extends javax.swing.JFrame {
         listAssignments = new javax.swing.JList();
         jScrollPane3 = new javax.swing.JScrollPane();
         listClassCategories = new javax.swing.JList();
+        panelNewAssignment = new javax.swing.JPanel();
+        buttonNewAssignment = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        panelNewCategory = new javax.swing.JPanel();
+        buttonNewCategory = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox();
+        labelTargetGrade = new javax.swing.JLabel();
+        labelCurrentlyPending = new javax.swing.JLabel();
         panelCalendar = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         labelToDoName1 = new javax.swing.JLabel();
@@ -478,52 +489,103 @@ public class Dashboard extends javax.swing.JFrame {
 
         panelGrades.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 200, -1));
 
+        panelNewAssignment.setBackground(new java.awt.Color(0, 0, 51));
+        panelNewAssignment.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        buttonNewAssignment.setOpaque(false);
+        panelNewAssignment.add(buttonNewAssignment, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
+
+        jLabel6.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("New assignment");
+        panelNewAssignment.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, 20));
+
+        panelGrades.add(panelNewAssignment, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 240, 130, 40));
+
+        panelNewCategory.setBackground(new java.awt.Color(0, 0, 51));
+        panelNewCategory.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        buttonNewCategory.setOpaque(false);
+        buttonNewCategory.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelNewCategory.add(buttonNewCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
+
+        jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("New category");
+        panelNewCategory.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, 20));
+        panelNewCategory.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -30, -1, -1));
+
+        panelGrades.add(panelNewCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 190, 130, 40));
+
+        jLabel12.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("Goal for this class");
+        panelGrades.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, 160, -1));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "A", "A-", "B+", "B", "B-", "C+", "C", "C-" }));
+        panelGrades.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, -1, -1));
+
+        labelTargetGrade.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        labelTargetGrade.setForeground(new java.awt.Color(255, 255, 255));
+        labelTargetGrade.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelTargetGrade.setText("Your TargetGrade is");
+        panelGrades.add(labelTargetGrade, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, 550, -1));
+
+        labelCurrentlyPending.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        labelCurrentlyPending.setForeground(new java.awt.Color(255, 255, 255));
+        labelCurrentlyPending.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelCurrentlyPending.setText("Currently pending:");
+        panelGrades.add(labelCurrentlyPending, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 550, -1));
+
         getContentPane().add(panelGrades, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 440));
 
         panelCalendar.setBackground(new java.awt.Color(0, 153, 153));
         panelCalendar.setForeground(new java.awt.Color(255, 255, 255));
         panelCalendar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        panelCalendar.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, 200, 10));
+        panelCalendar.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 200, 10));
 
         labelToDoName1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         labelToDoName1.setForeground(new java.awt.Color(255, 255, 255));
         labelToDoName1.setText("jLabel8");
-        panelCalendar.add(labelToDoName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, -1, -1));
+        panelCalendar.add(labelToDoName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, -1, -1));
 
         labelToDoName2.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         labelToDoName2.setForeground(new java.awt.Color(255, 255, 255));
         labelToDoName2.setText("jLabel8");
-        panelCalendar.add(labelToDoName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, -1, -1));
+        panelCalendar.add(labelToDoName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 130, -1, -1));
 
         labelToDoName3.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         labelToDoName3.setForeground(new java.awt.Color(255, 255, 255));
         labelToDoName3.setText("jLabel8");
-        panelCalendar.add(labelToDoName3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, -1, -1));
+        panelCalendar.add(labelToDoName3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, -1, -1));
 
         labelToDoName4.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         labelToDoName4.setForeground(new java.awt.Color(255, 255, 255));
         labelToDoName4.setText("jLabel8");
-        panelCalendar.add(labelToDoName4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, -1, -1));
+        panelCalendar.add(labelToDoName4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 210, -1, -1));
 
         labelToDoName5.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         labelToDoName5.setForeground(new java.awt.Color(255, 255, 255));
         labelToDoName5.setText("jLabel8");
-        panelCalendar.add(labelToDoName5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, -1, -1));
+        panelCalendar.add(labelToDoName5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, -1, -1));
 
         labelToDoName6.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         labelToDoName6.setForeground(new java.awt.Color(255, 255, 255));
         labelToDoName6.setText("jLabel8");
-        panelCalendar.add(labelToDoName6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, -1, -1));
+        panelCalendar.add(labelToDoName6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, -1, -1));
 
         labelToDoName7.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         labelToDoName7.setForeground(new java.awt.Color(255, 255, 255));
         labelToDoName7.setText("jLabel8");
-        panelCalendar.add(labelToDoName7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, -1, -1));
+        panelCalendar.add(labelToDoName7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 330, -1, -1));
 
         labelToDoName8.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         labelToDoName8.setForeground(new java.awt.Color(255, 255, 255));
         labelToDoName8.setText("jLabel8");
-        panelCalendar.add(labelToDoName8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, -1, -1));
+        panelCalendar.add(labelToDoName8, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 370, -1, -1));
 
         checkBoxToDo1.setBackground(new java.awt.Color(0, 153, 153));
         checkBoxToDo1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -531,7 +593,7 @@ public class Dashboard extends javax.swing.JFrame {
                 checkBoxToDo1MouseClicked(evt);
             }
         });
-        panelCalendar.add(checkBoxToDo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 92, -1, -1));
+        panelCalendar.add(checkBoxToDo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, -1, -1));
 
         checkBoxToDo2.setBackground(new java.awt.Color(0, 153, 153));
         checkBoxToDo2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -539,7 +601,7 @@ public class Dashboard extends javax.swing.JFrame {
                 checkBoxToDo2MouseClicked(evt);
             }
         });
-        panelCalendar.add(checkBoxToDo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 132, -1, -1));
+        panelCalendar.add(checkBoxToDo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 130, -1, -1));
 
         checkBoxToDo3.setBackground(new java.awt.Color(0, 153, 153));
         checkBoxToDo3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -547,7 +609,7 @@ public class Dashboard extends javax.swing.JFrame {
                 checkBoxToDo3MouseClicked(evt);
             }
         });
-        panelCalendar.add(checkBoxToDo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 172, -1, -1));
+        panelCalendar.add(checkBoxToDo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, -1, -1));
 
         checkBoxToDo4.setBackground(new java.awt.Color(0, 153, 153));
         checkBoxToDo4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -555,7 +617,7 @@ public class Dashboard extends javax.swing.JFrame {
                 checkBoxToDo4MouseClicked(evt);
             }
         });
-        panelCalendar.add(checkBoxToDo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 212, -1, -1));
+        panelCalendar.add(checkBoxToDo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, -1, -1));
 
         checkBoxToDo5.setBackground(new java.awt.Color(0, 153, 153));
         checkBoxToDo5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -563,7 +625,7 @@ public class Dashboard extends javax.swing.JFrame {
                 checkBoxToDo5MouseClicked(evt);
             }
         });
-        panelCalendar.add(checkBoxToDo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 252, -1, -1));
+        panelCalendar.add(checkBoxToDo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 250, -1, -1));
 
         checkBoxToDo6.setBackground(new java.awt.Color(0, 153, 153));
         checkBoxToDo6.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -571,7 +633,7 @@ public class Dashboard extends javax.swing.JFrame {
                 checkBoxToDo6MouseClicked(evt);
             }
         });
-        panelCalendar.add(checkBoxToDo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 292, -1, -1));
+        panelCalendar.add(checkBoxToDo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, -1, -1));
 
         checkBoxToDo7.setBackground(new java.awt.Color(0, 153, 153));
         checkBoxToDo7.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -579,7 +641,7 @@ public class Dashboard extends javax.swing.JFrame {
                 checkBoxToDo7MouseClicked(evt);
             }
         });
-        panelCalendar.add(checkBoxToDo7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 332, -1, -1));
+        panelCalendar.add(checkBoxToDo7, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 330, -1, -1));
 
         checkBoxToDo8.setBackground(new java.awt.Color(0, 153, 153));
         checkBoxToDo8.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -587,13 +649,13 @@ public class Dashboard extends javax.swing.JFrame {
                 checkBoxToDo8MouseClicked(evt);
             }
         });
-        panelCalendar.add(checkBoxToDo8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 372, -1, -1));
+        panelCalendar.add(checkBoxToDo8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 370, -1, -1));
 
         textFieldTaskName.setBackground(new java.awt.Color(0, 153, 153));
         textFieldTaskName.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         textFieldTaskName.setForeground(new java.awt.Color(255, 255, 255));
         textFieldTaskName.setBorder(null);
-        panelCalendar.add(textFieldTaskName, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 210, 200, -1));
+        panelCalendar.add(textFieldTaskName, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 200, -1));
 
         jLabel8.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -623,13 +685,12 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel10.setText("Add Task");
         panelNewTask.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 200, -1));
 
-        panelCalendar.add(panelNewTask, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 250, 200, 40));
+        panelCalendar.add(panelNewTask, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 200, 40));
 
         jLabel9.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("New Task");
-        panelCalendar.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, 200, -1));
+        panelCalendar.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 200, -1));
 
         getContentPane().add(panelCalendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 440));
 
@@ -874,6 +935,8 @@ public class Dashboard extends javax.swing.JFrame {
         }
         else {
             updateCategoriesLists(0);
+            listClassCategories.setSelectedIndex(0);
+            updateAssignmentLists(0);
         }
         
     }//GEN-LAST:event_buttonClass1MouseClicked
@@ -888,6 +951,8 @@ public class Dashboard extends javax.swing.JFrame {
         }
         else {
             updateCategoriesLists(1);
+            listClassCategories.setSelectedIndex(0);
+            updateAssignmentLists(1);
         }
     }//GEN-LAST:event_buttonClass2MouseClicked
 
@@ -901,6 +966,8 @@ public class Dashboard extends javax.swing.JFrame {
         }
         else {
             updateCategoriesLists(2);
+            listClassCategories.setSelectedIndex(0);
+            updateAssignmentLists(2);
         }
     }//GEN-LAST:event_buttonClass3MouseClicked
 
@@ -914,6 +981,8 @@ public class Dashboard extends javax.swing.JFrame {
         }
         else {
             updateCategoriesLists(3);
+            listClassCategories.setSelectedIndex(0);
+            updateAssignmentLists(3);
         }
     }//GEN-LAST:event_buttonClass4MouseClicked
 
@@ -927,6 +996,8 @@ public class Dashboard extends javax.swing.JFrame {
         }
         else {
             updateCategoriesLists(4);
+            listClassCategories.setSelectedIndex(0);
+            updateAssignmentLists(4);
         }
     }//GEN-LAST:event_buttonClass5MouseClicked
 
@@ -940,6 +1011,8 @@ public class Dashboard extends javax.swing.JFrame {
         }
         else {
             updateCategoriesLists(5);
+            listClassCategories.setSelectedIndex(0);
+            updateAssignmentLists(5);
         }
     }//GEN-LAST:event_buttonClass6MouseClicked
 
@@ -953,6 +1026,8 @@ public class Dashboard extends javax.swing.JFrame {
         }
         else {
             updateCategoriesLists(6);
+            listClassCategories.setSelectedIndex(0);
+            updateAssignmentLists(6);
         }
     }//GEN-LAST:event_buttonClass7MouseClicked
 
@@ -966,11 +1041,13 @@ public class Dashboard extends javax.swing.JFrame {
         }
         else {
             updateCategoriesLists(7);
+            listClassCategories.setSelectedIndex(0);
+            updateAssignmentLists(7);
         }
     }//GEN-LAST:event_buttonClass8MouseClicked
     
     public void updateCategoriesLists(int classIndex) {
-        Vector <String> categoryNames = new Vector<String>();
+        Vector <String> categoryNames = new Vector<>();
         
         for(ClassCategory category : currentUser.classes.get(classIndex).getCategories()) {
             categoryNames.add(category.getName());
@@ -978,11 +1055,19 @@ public class Dashboard extends javax.swing.JFrame {
         listClassCategories.setListData(categoryNames);
     }
     
-    public void updateAssignmentLists() {
+    public void updateAssignmentLists(int classIndex) {
         Vector <String> assignmentNames = new Vector<String>();
         
-        // TO DO update assignment list based on indices
-                    
+        if(currentUser.classes.get(classIndex).getClassCategory(listClassCategories.getSelectedIndex()).assignments.isEmpty()) {
+            // make list empty if no categories yet
+            listAssignments.setListData(assignmentNames);
+        }
+        else {
+            for(Assignment assignment : currentUser.classes.get(classIndex).getClassCategory(listClassCategories.getSelectedIndex()).assignments) {
+            assignmentNames.add(assignment.getName());
+        }
+        listAssignments.setListData(assignmentNames);
+        }                  
     }
     public void updateClassButtons() {
         buttonClass1.setVisible(false);
@@ -1456,6 +1541,8 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel buttonClass6;
     private javax.swing.JPanel buttonClass7;
     private javax.swing.JPanel buttonClass8;
+    private javax.swing.JPanel buttonNewAssignment;
+    private javax.swing.JPanel buttonNewCategory;
     private javax.swing.JPanel buttonNewTask;
     private javax.swing.JPanel calendarButton;
     private javax.swing.JCheckBox checkBoxToDo1;
@@ -1468,16 +1555,21 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JCheckBox checkBoxToDo8;
     private javax.swing.JPanel gradesButton;
     private javax.swing.JPanel homeButton;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
@@ -1490,10 +1582,12 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel labelClass6;
     private javax.swing.JLabel labelClass7;
     private javax.swing.JLabel labelClass8;
+    private javax.swing.JLabel labelCurrentlyPending;
     private javax.swing.JLabel labelExit;
     private javax.swing.JLabel labelGradesIcon;
     private javax.swing.JLabel labelHomeIcon;
     private javax.swing.JLabel labelSettingsIcon;
+    private javax.swing.JLabel labelTargetGrade;
     private javax.swing.JLabel labelToDoName1;
     private javax.swing.JLabel labelToDoName2;
     private javax.swing.JLabel labelToDoName3;
@@ -1520,6 +1614,8 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel panelGradesButton;
     private javax.swing.JPanel panelHome;
     private javax.swing.JPanel panelHomeButton;
+    private javax.swing.JPanel panelNewAssignment;
+    private javax.swing.JPanel panelNewCategory;
     private javax.swing.JPanel panelNewTask;
     private javax.swing.JPanel panelSettings;
     private javax.swing.JPanel panelSettingsButton;
