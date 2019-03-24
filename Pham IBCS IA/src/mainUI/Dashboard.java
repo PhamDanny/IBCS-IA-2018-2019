@@ -24,6 +24,7 @@ public class Dashboard extends javax.swing.JFrame {
      */
     static int dashboardState = 0;
     static User currentUser;
+    static int currentClass;
     public Dashboard(User user) throws IOException {
         initComponents();
         
@@ -34,7 +35,7 @@ public class Dashboard extends javax.swing.JFrame {
         // puts form in center of screen
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
-        
+                     
         // sets greeting message on home page
         labelWelcome.setText("Welcome, " + user.getFirstName() + ".");
         
@@ -49,6 +50,10 @@ public class Dashboard extends javax.swing.JFrame {
         updateDashButtons();
         updateClassButtons();
         updateToDoList();
+        currentClass = 0;
+        
+        // adds dashboard to the Dashboard manager
+        DashboardManager.dashboards.add(this);
     }
 
     /**
@@ -112,14 +117,18 @@ public class Dashboard extends javax.swing.JFrame {
         panelNewAssignment = new javax.swing.JPanel();
         buttonNewAssignment = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        panelNewCategory = new javax.swing.JPanel();
-        buttonNewCategory = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox();
         labelTargetGrade = new javax.swing.JLabel();
         labelCurrentlyPending = new javax.swing.JLabel();
+        panelNewCategory = new javax.swing.JPanel();
+        buttonNewCategory = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        panelEdit = new javax.swing.JPanel();
+        buttonEdit = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         panelCalendar = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         labelToDoName1 = new javax.swing.JLabel();
@@ -191,11 +200,6 @@ public class Dashboard extends javax.swing.JFrame {
         getContentPane().add(panelExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 0, 40, 40));
 
         panelHomeButton.setBackground(new java.awt.Color(0, 0, 51));
-        panelHomeButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                panelHomeButtonMouseEntered(evt);
-            }
-        });
         panelHomeButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         homeButton.setOpaque(false);
@@ -327,6 +331,12 @@ public class Dashboard extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 buttonClass1MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                buttonClass1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonClass1MouseExited(evt);
+            }
         });
         panelClass1.add(buttonClass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
 
@@ -345,6 +355,12 @@ public class Dashboard extends javax.swing.JFrame {
         buttonClass2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 buttonClass2MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                buttonClass2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonClass2MouseExited(evt);
             }
         });
         panelClass2.add(buttonClass2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
@@ -365,6 +381,12 @@ public class Dashboard extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 buttonClass3MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                buttonClass3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonClass3MouseExited(evt);
+            }
         });
         panelClass3.add(buttonClass3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
 
@@ -383,6 +405,12 @@ public class Dashboard extends javax.swing.JFrame {
         buttonClass4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 buttonClass4MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                buttonClass4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonClass4MouseExited(evt);
             }
         });
         panelClass4.add(buttonClass4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
@@ -403,6 +431,12 @@ public class Dashboard extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 buttonClass5MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                buttonClass5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonClass5MouseExited(evt);
+            }
         });
         panelClass5.add(buttonClass5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
 
@@ -421,6 +455,12 @@ public class Dashboard extends javax.swing.JFrame {
         buttonClass6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 buttonClass6MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                buttonClass6MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonClass6MouseExited(evt);
             }
         });
         panelClass6.add(buttonClass6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
@@ -441,6 +481,12 @@ public class Dashboard extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 buttonClass7MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                buttonClass7MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonClass7MouseExited(evt);
+            }
         });
         panelClass7.add(buttonClass7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
 
@@ -460,6 +506,12 @@ public class Dashboard extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 buttonClass8MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                buttonClass8MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonClass8MouseExited(evt);
+            }
         });
         panelClass8.add(buttonClass8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
 
@@ -471,28 +523,26 @@ public class Dashboard extends javax.swing.JFrame {
 
         panelGrades.add(panelClass8, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, 130, 40));
 
-        listAssignments.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane2.setViewportView(listAssignments);
 
-        panelGrades.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, 200, -1));
+        panelGrades.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, 200, 120));
 
-        listClassCategories.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane3.setViewportView(listClassCategories);
 
-        panelGrades.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 200, -1));
+        panelGrades.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 200, 120));
 
         panelNewAssignment.setBackground(new java.awt.Color(0, 0, 51));
         panelNewAssignment.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         buttonNewAssignment.setOpaque(false);
+        buttonNewAssignment.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                buttonNewAssignmentMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonNewAssignmentMouseExited(evt);
+            }
+        });
         panelNewAssignment.add(buttonNewAssignment, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
 
         jLabel6.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
@@ -502,22 +552,6 @@ public class Dashboard extends javax.swing.JFrame {
         panelNewAssignment.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, 20));
 
         panelGrades.add(panelNewAssignment, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 240, 130, 40));
-
-        panelNewCategory.setBackground(new java.awt.Color(0, 0, 51));
-        panelNewCategory.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        buttonNewCategory.setOpaque(false);
-        buttonNewCategory.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        panelNewCategory.add(buttonNewCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
-
-        jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("New category");
-        panelNewCategory.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, 20));
-        panelNewCategory.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -30, -1, -1));
-
-        panelGrades.add(panelNewCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 190, 130, 40));
 
         jLabel12.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
@@ -532,13 +566,67 @@ public class Dashboard extends javax.swing.JFrame {
         labelTargetGrade.setForeground(new java.awt.Color(255, 255, 255));
         labelTargetGrade.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelTargetGrade.setText("Your TargetGrade is");
-        panelGrades.add(labelTargetGrade, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, 550, -1));
+        panelGrades.add(labelTargetGrade, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, 410, -1));
 
         labelCurrentlyPending.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
         labelCurrentlyPending.setForeground(new java.awt.Color(255, 255, 255));
         labelCurrentlyPending.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelCurrentlyPending.setText("Currently pending:");
-        panelGrades.add(labelCurrentlyPending, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 550, -1));
+        panelGrades.add(labelCurrentlyPending, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 410, -1));
+
+        panelNewCategory.setBackground(new java.awt.Color(0, 0, 51));
+        panelNewCategory.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        buttonNewCategory.setOpaque(false);
+        buttonNewCategory.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonNewCategoryMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                buttonNewCategoryMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonNewCategoryMouseExited(evt);
+            }
+        });
+        buttonNewCategory.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelNewCategory.add(buttonNewCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
+
+        jLabel13.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("New category");
+        panelNewCategory.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, 20));
+        panelNewCategory.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -30, -1, -1));
+
+        panelGrades.add(panelNewCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 190, 130, 40));
+
+        panelEdit.setBackground(new java.awt.Color(0, 0, 51));
+        panelEdit.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        buttonEdit.setOpaque(false);
+        buttonEdit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonEditMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                buttonEditMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonEditMouseExited(evt);
+            }
+        });
+        buttonEdit.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelEdit.add(buttonEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
+
+        jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("Edit class info");
+        panelEdit.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, 20));
+        panelEdit.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -30, -1, -1));
+
+        panelGrades.add(panelEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 390, 130, 40));
 
         getContentPane().add(panelGrades, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 440));
 
@@ -761,10 +849,6 @@ public class Dashboard extends javax.swing.JFrame {
             panelSettings.setVisible(true);
         }
     }
-    private void panelHomeButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelHomeButtonMouseEntered
-        
-    }//GEN-LAST:event_panelHomeButtonMouseEntered
-
     private void homeButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeButtonMouseEntered
         // when hovered over home panel change color
         panelHomeButton.setBackground(new java.awt.Color(0,0,150));
@@ -927,16 +1011,20 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void buttonClass1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass1MouseClicked
         if(currentUser.classes.isEmpty()) {
+            // user activates add new class
             try {
                 new NewClass().setVisible(true);
             } catch (IOException ex) {
                 Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
             }
+            System.out.println("test");
         }
         else {
+            // user selects a class
             updateCategoriesLists(0);
             listClassCategories.setSelectedIndex(0);
             updateAssignmentLists(0);
+            currentClass = 0;
         }
         
     }//GEN-LAST:event_buttonClass1MouseClicked
@@ -953,6 +1041,7 @@ public class Dashboard extends javax.swing.JFrame {
             updateCategoriesLists(1);
             listClassCategories.setSelectedIndex(0);
             updateAssignmentLists(1);
+            currentClass = 1;
         }
     }//GEN-LAST:event_buttonClass2MouseClicked
 
@@ -968,6 +1057,7 @@ public class Dashboard extends javax.swing.JFrame {
             updateCategoriesLists(2);
             listClassCategories.setSelectedIndex(0);
             updateAssignmentLists(2);
+            currentClass = 2;
         }
     }//GEN-LAST:event_buttonClass3MouseClicked
 
@@ -983,6 +1073,7 @@ public class Dashboard extends javax.swing.JFrame {
             updateCategoriesLists(3);
             listClassCategories.setSelectedIndex(0);
             updateAssignmentLists(3);
+            currentClass = 3;
         }
     }//GEN-LAST:event_buttonClass4MouseClicked
 
@@ -998,6 +1089,7 @@ public class Dashboard extends javax.swing.JFrame {
             updateCategoriesLists(4);
             listClassCategories.setSelectedIndex(0);
             updateAssignmentLists(4);
+            currentClass = 4;
         }
     }//GEN-LAST:event_buttonClass5MouseClicked
 
@@ -1013,6 +1105,7 @@ public class Dashboard extends javax.swing.JFrame {
             updateCategoriesLists(5);
             listClassCategories.setSelectedIndex(0);
             updateAssignmentLists(5);
+            currentClass = 5;
         }
     }//GEN-LAST:event_buttonClass6MouseClicked
 
@@ -1028,6 +1121,7 @@ public class Dashboard extends javax.swing.JFrame {
             updateCategoriesLists(6);
             listClassCategories.setSelectedIndex(0);
             updateAssignmentLists(6);
+            currentClass = 6;
         }
     }//GEN-LAST:event_buttonClass7MouseClicked
 
@@ -1043,32 +1137,225 @@ public class Dashboard extends javax.swing.JFrame {
             updateCategoriesLists(7);
             listClassCategories.setSelectedIndex(0);
             updateAssignmentLists(7);
+            currentClass = 7;
         }
     }//GEN-LAST:event_buttonClass8MouseClicked
+
+    private void buttonEditMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonEditMouseEntered
+        panelEdit.setBackground(new java.awt.Color(0,0,150));
+    }//GEN-LAST:event_buttonEditMouseEntered
+
+    private void buttonEditMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonEditMouseExited
+        panelEdit.setBackground(new java.awt.Color(0,0,51));
+    }//GEN-LAST:event_buttonEditMouseExited
+
+    private void buttonNewAssignmentMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonNewAssignmentMouseEntered
+        panelNewAssignment.setBackground(new java.awt.Color(0,0,150));
+    }//GEN-LAST:event_buttonNewAssignmentMouseEntered
+
+    private void buttonNewAssignmentMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonNewAssignmentMouseExited
+        panelNewAssignment.setBackground(new java.awt.Color(0,0,51));
+    }//GEN-LAST:event_buttonNewAssignmentMouseExited
+
+    private void buttonClass1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass1MouseEntered
+        if(currentUser.classes.isEmpty()) {
+            panelClass1.setBackground(new java.awt.Color(255,0,0));
+        }
+        else {
+            panelClass1.setBackground(new java.awt.Color(0,0,150));
+        }
+    }//GEN-LAST:event_buttonClass1MouseEntered
+
+    private void buttonClass1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass1MouseExited
+        if(currentUser.classes.isEmpty()) {
+            panelClass1.setBackground(new java.awt.Color(150,0,0));
+        }
+        else {
+            panelClass1.setBackground(new java.awt.Color(0,0,51));
+        }
+    }//GEN-LAST:event_buttonClass1MouseExited
+
+    private void buttonClass2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass2MouseEntered
+        if(currentUser.classes.size() == 1) {
+            panelClass2.setBackground(new java.awt.Color(255,0,0));
+        }else {
+            panelClass2.setBackground(new java.awt.Color(0,0,150));
+        }
+    }//GEN-LAST:event_buttonClass2MouseEntered
+
+    private void buttonClass2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass2MouseExited
+        if(currentUser.classes.size() == 1) {
+            panelClass2.setBackground(new java.awt.Color(150,0,0));
+        }
+        else {
+            panelClass2.setBackground(new java.awt.Color(0,0,51));
+        }
+    }//GEN-LAST:event_buttonClass2MouseExited
+
+    private void buttonClass3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass3MouseEntered
+        if(currentUser.classes.size() == 2) {
+            panelClass3.setBackground(new java.awt.Color(255,0,0));
+        }
+        else {
+            panelClass3.setBackground(new java.awt.Color(0,0,150));
+        }
+    }//GEN-LAST:event_buttonClass3MouseEntered
+
+    private void buttonClass3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass3MouseExited
+        if(currentUser.classes.size() == 2) {
+            panelClass3.setBackground(new java.awt.Color(150,0,0));
+        }
+        else {
+            panelClass3.setBackground(new java.awt.Color(0,0,51));
+        }
+    }//GEN-LAST:event_buttonClass3MouseExited
+
+    private void buttonClass4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass4MouseEntered
+        if(currentUser.classes.size() == 3) {
+            panelClass4.setBackground(new java.awt.Color(255,0,0));
+        }
+        else {
+            panelClass4.setBackground(new java.awt.Color(0,0,150));
+        }
+    }//GEN-LAST:event_buttonClass4MouseEntered
+
+    private void buttonClass4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass4MouseExited
+        if(currentUser.classes.size() == 3) {
+            panelClass4.setBackground(new java.awt.Color(150,0,0));
+        }
+        else {
+            panelClass4.setBackground(new java.awt.Color(0,0,51));
+        }
+    }//GEN-LAST:event_buttonClass4MouseExited
+
+    private void buttonClass5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass5MouseEntered
+        if(currentUser.classes.size() == 4) {
+            panelClass5.setBackground(new java.awt.Color(255,0,0));
+        }
+        else {
+            panelClass5.setBackground(new java.awt.Color(0,0,150));
+        }
+    }//GEN-LAST:event_buttonClass5MouseEntered
+
+    private void buttonClass5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass5MouseExited
+        if(currentUser.classes.size() == 4) {
+            panelClass5.setBackground(new java.awt.Color(150,0,0));
+        }
+        else {
+            panelClass5.setBackground(new java.awt.Color(0,0,51));
+        }
+    }//GEN-LAST:event_buttonClass5MouseExited
+
+    private void buttonClass6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass6MouseEntered
+        if(currentUser.classes.size() == 5) {
+            panelClass6.setBackground(new java.awt.Color(255,0,0));
+        }
+        else {
+            panelClass6.setBackground(new java.awt.Color(0,0,150));
+        }
+    }//GEN-LAST:event_buttonClass6MouseEntered
+
+    private void buttonClass6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass6MouseExited
+        if(currentUser.classes.size() == 5) {
+            panelClass6.setBackground(new java.awt.Color(150,0,0));
+        }
+        else {
+            panelClass6.setBackground(new java.awt.Color(0,0,51));
+        }
+    }//GEN-LAST:event_buttonClass6MouseExited
+
+    private void buttonClass7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass7MouseEntered
+        if(currentUser.classes.size() == 6) {
+            panelClass7.setBackground(new java.awt.Color(255,0,0));
+        }
+        else {
+            panelClass7.setBackground(new java.awt.Color(0,0,150));
+        }
+    }//GEN-LAST:event_buttonClass7MouseEntered
+
+    private void buttonClass7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass7MouseExited
+        if(currentUser.classes.size() == 6) {
+            panelClass7.setBackground(new java.awt.Color(150,0,0));
+        }
+        else {
+            panelClass7.setBackground(new java.awt.Color(0,0,51));
+        }
+    }//GEN-LAST:event_buttonClass7MouseExited
+
+    private void buttonClass8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass8MouseEntered
+        if(currentUser.classes.size() == 7) {
+            panelClass8.setBackground(new java.awt.Color(255,0,0));
+        }
+        else {
+            panelClass8.setBackground(new java.awt.Color(0,0,150));
+        }
+    }//GEN-LAST:event_buttonClass8MouseEntered
+
+    private void buttonClass8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonClass8MouseExited
+        if(currentUser.classes.size() == 7) {
+            panelClass8.setBackground(new java.awt.Color(150,0,0));
+        }
+        else {
+            panelClass8.setBackground(new java.awt.Color(0,0,51));
+        }
+    }//GEN-LAST:event_buttonClass8MouseExited
+
+    private void buttonEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonEditMouseClicked
+        try {
+            // edits class information
+            new EditClasses().setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_buttonEditMouseClicked
+
+    private void buttonNewCategoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonNewCategoryMouseClicked
+        // TO DO create new category
+    }//GEN-LAST:event_buttonNewCategoryMouseClicked
+
+    private void buttonNewCategoryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonNewCategoryMouseEntered
+        panelNewCategory.setBackground(new java.awt.Color(0,0,150));
+    }//GEN-LAST:event_buttonNewCategoryMouseEntered
+
+    private void buttonNewCategoryMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonNewCategoryMouseExited
+        panelNewCategory.setBackground(new java.awt.Color(0,0,51));
+    }//GEN-LAST:event_buttonNewCategoryMouseExited
     
     public void updateCategoriesLists(int classIndex) {
         Vector <String> categoryNames = new Vector<>();
         
-        for(ClassCategory category : currentUser.classes.get(classIndex).getCategories()) {
-            categoryNames.add(category.getName());
+        if(currentUser.classes.get(classIndex).categories.isEmpty()) {
+            // make list empty of no categories yet
+            listClassCategories.setListData(categoryNames);
         }
-        listClassCategories.setListData(categoryNames);
+        else {
+            for(ClassCategory category : currentUser.classes.get(classIndex).getCategories()) {
+                categoryNames.add(category.getName());
+            }
+            listClassCategories.setListData(categoryNames);
+        }
+        
     }
     
     public void updateAssignmentLists(int classIndex) {
         Vector <String> assignmentNames = new Vector<String>();
         
-        if(currentUser.classes.get(classIndex).getClassCategory(listClassCategories.getSelectedIndex()).assignments.isEmpty()) {
+        if(currentUser.classes.get(classIndex).categories.isEmpty()) {
             // make list empty if no categories yet
+            listAssignments.setListData(assignmentNames);
+        }
+        else if(currentUser.classes.get(classIndex).getClassCategory(listClassCategories.getSelectedIndex()).assignments.isEmpty()) {
+            // make list empty of no assignments in categories yet
             listAssignments.setListData(assignmentNames);
         }
         else {
             for(Assignment assignment : currentUser.classes.get(classIndex).getClassCategory(listClassCategories.getSelectedIndex()).assignments) {
-            assignmentNames.add(assignment.getName());
-        }
+                assignmentNames.add(assignment.getName());
+            }
         listAssignments.setListData(assignmentNames);
         }                  
     }
+
     public void updateClassButtons() {
         buttonClass1.setVisible(false);
         buttonClass2.setVisible(false);
@@ -1541,6 +1828,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel buttonClass6;
     private javax.swing.JPanel buttonClass7;
     private javax.swing.JPanel buttonClass8;
+    private javax.swing.JPanel buttonEdit;
     private javax.swing.JPanel buttonNewAssignment;
     private javax.swing.JPanel buttonNewCategory;
     private javax.swing.JPanel buttonNewTask;
@@ -1560,6 +1848,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1570,6 +1859,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
@@ -1609,6 +1899,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel panelClass6;
     private javax.swing.JPanel panelClass7;
     private javax.swing.JPanel panelClass8;
+    private javax.swing.JPanel panelEdit;
     private javax.swing.JPanel panelExit;
     private javax.swing.JPanel panelGrades;
     private javax.swing.JPanel panelGradesButton;

@@ -146,6 +146,7 @@ public class NewClass extends javax.swing.JFrame {
 
     private void buttonSubmitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonSubmitMouseClicked
         Dashboard.currentUser.classes.add(new Class(textFieldClassName.getText(), textFieldTeacherName.getText()));
+        DashboardManager.updateDashboards();
         this.dispose();
     }//GEN-LAST:event_buttonSubmitMouseClicked
 
