@@ -55,6 +55,8 @@ public class NewClass extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         textFieldTeacherName = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        comboBoxGoal = new javax.swing.JComboBox();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -117,7 +119,7 @@ public class NewClass extends javax.swing.JFrame {
         jLabel1.setText("Submit");
         panelSubmit.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 5, 100, -1));
 
-        jPanel1.add(panelSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 100, 30));
+        jPanel1.add(panelSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 100, 30));
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -136,17 +138,61 @@ public class NewClass extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Teacher Name");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 220, -1));
+        jLabel4.setText("Goal");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 50, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 240, 170));
+        comboBoxGoal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "F" }));
+        jPanel1.add(comboBoxGoal, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Teacher Name");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 220, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 240, 220));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonSubmitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonSubmitMouseClicked
-        Dashboard.currentUser.classes.add(new Class(textFieldClassName.getText(), textFieldTeacherName.getText()));
+        double goal = 1;
+        if(comboBoxGoal.getSelectedItem() == "A") {
+            goal = .925;
+        }
+        else if(comboBoxGoal.getSelectedItem() == "A-") {
+            goal = .895;
+        }
+        else if(comboBoxGoal.getSelectedItem() == "B+") {
+            goal = .865;
+        }
+        else if(comboBoxGoal.getSelectedItem() == "B") {
+            goal = .825;
+        }
+        else if(comboBoxGoal.getSelectedItem() == "B-") {
+            goal = .795;
+        }
+        else if(comboBoxGoal.getSelectedItem() == "C+") {
+            goal = .765;
+        }
+        else if(comboBoxGoal.getSelectedItem() == "C") {
+            goal = .725;
+        }
+        else if(comboBoxGoal.getSelectedItem() == "C-") {
+            goal = .695;
+        }
+        else if(comboBoxGoal.getSelectedItem() == "D+") {
+            goal = .665;
+        }
+        else if(comboBoxGoal.getSelectedItem() == "D") {
+            goal = .595;
+        }
+        else if(comboBoxGoal.getSelectedItem() == "F") {
+            goal = 0;
+        }
+        Dashboard.currentUser.classes.add(new Class(textFieldClassName.getText(), textFieldTeacherName.getText(), goal));
         DashboardManager.updateDashboards();
+        mainUI.saveUsers();
         this.dispose();
     }//GEN-LAST:event_buttonSubmitMouseClicked
 
@@ -199,10 +245,12 @@ public class NewClass extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel buttonSubmit;
+    private javax.swing.JComboBox comboBoxGoal;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator2;

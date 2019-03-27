@@ -15,10 +15,11 @@ import java.io.Serializable;
 public class Class implements Serializable {
     String className, teacherName;
     ArrayList<ClassCategory> categories = new ArrayList<>();
-
-    public Class(String className, String teacherName) {
+    double goal;
+    public Class(String className, String teacherName, double goal) {
         this.className = className;
         this.teacherName = teacherName;
+        this.goal = goal;
     }
 
     // getters and setters
@@ -55,6 +56,16 @@ public class Class implements Serializable {
         return overallGrade;
     }
     
+    public double getExclusiveGrade() {
+        // returns overall grade minus the category currently pending
+        double overallGrade = 0;
+        for (ClassCategory category : categories) {
+            if(category.getPendingAssignment() != null) {
+                overallGrade += category.getWeightedGrade();
+            }           
+        }
+        return overallGrade;
+    }
     public boolean havePendingAssignments() {
         // returns if there are currently pending assignments
         boolean havePending = false;
@@ -68,7 +79,7 @@ public class Class implements Serializable {
         return havePending;
     }
     
-    public ClassCategory getPendingCategoryIndex() {
+    public ClassCategory getPendingCategory() {
         // returns the category with the pending assignment
         if(havePendingAssignments()) {
             for (ClassCategory category: categories) {
@@ -85,10 +96,7 @@ public class Class implements Serializable {
         //
         if(havePendingAssignments()) {
             categories.get(categoryIndex).assignments.add(new Assignment(name, maxScore, score, true));
-        }
-        else {
-            // TO DO: tell user they cannot have multiple pending assignments
-        }
+        }        
     }
     public void addCompleteAssignment(int categoryIndex, String name, double maxScore, double score) {
         categories.get(categoryIndex).assignments.add(new Assignment(name, maxScore, score, false));
@@ -96,5 +104,20 @@ public class Class implements Serializable {
     
     public ClassCategory getClassCategory(int index) {
         return categories.get(index);
+    }
+    
+    public double getTargetGrade(double desiredGrade) {
+        if(havePendingAssignments()) {
+            double neededPercentageInCategory = desiredGrade - getExclusiveGrade();
+            if( ((neededPercentageInCategory / getPendingCategory().getWeight()) * getPendingCategory().getMaxPoints()) - getPendingCategory().getCurrentPoints() < 0) {
+                return 0;
+            }
+            else {
+                return ((neededPercentageInCategory / getPendingCategory().getWeight()) * getPendingCategory().getMaxPoints()) - getPendingCategory().getCurrentPoints();
+            }
+        }
+        else {
+            return -1;
+        }
     }
 }

@@ -32,177 +32,8 @@ public class EditClasses extends javax.swing.JFrame {
         // puts form in center of screen
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
-        // hide all textfields/seperators
-        textFieldClass1.setVisible(false);
-        textFieldClass2.setVisible(false);
-        textFieldClass3.setVisible(false);
-        textFieldClass4.setVisible(false);
-        textFieldClass5.setVisible(false);
-        textFieldClass6.setVisible(false);
-        textFieldClass7.setVisible(false);
-        textFieldClass8.setVisible(false);
-        seperator1.setVisible(false);
-        seperator2.setVisible(false);
-        seperator3.setVisible(false);
-        seperator4.setVisible(false);
-        seperator5.setVisible(false);
-        seperator6.setVisible(false);
-        seperator7.setVisible(false);
-        seperator8.setVisible(false);
         
-        // show the current class names in text fields
-        if(Dashboard.currentUser.classes.size() == 1) {
-            textFieldClass1.setVisible(true);
-            seperator1.setVisible(true);
-            textFieldClass1.setText(Dashboard.currentUser.classes.get(0).getClassName());
-        }
-        else if(Dashboard.currentUser.classes.size() == 2) {
-            textFieldClass1.setVisible(true);
-            seperator1.setVisible(true);
-            textFieldClass1.setText(Dashboard.currentUser.classes.get(0).getClassName());
-            
-            textFieldClass2.setVisible(true);
-            seperator2.setVisible(true);           
-            textFieldClass2.setText(Dashboard.currentUser.classes.get(1).getClassName());                    
-        }
-        else if(Dashboard.currentUser.classes.size() == 3) {
-            textFieldClass1.setVisible(true);
-            seperator1.setVisible(true);
-            textFieldClass1.setText(Dashboard.currentUser.classes.get(0).getClassName());
-            
-            textFieldClass2.setVisible(true);
-            seperator2.setVisible(true);           
-            textFieldClass2.setText(Dashboard.currentUser.classes.get(1).getClassName());
-            
-            textFieldClass3.setVisible(true);
-            seperator3.setVisible(true);           
-            textFieldClass3.setText(Dashboard.currentUser.classes.get(2).getClassName());
-        }
-        else if(Dashboard.currentUser.classes.size() == 4) {
-            textFieldClass1.setVisible(true);
-            seperator1.setVisible(true);
-            textFieldClass1.setText(Dashboard.currentUser.classes.get(0).getClassName());
-            
-            textFieldClass2.setVisible(true);
-            seperator2.setVisible(true);           
-            textFieldClass2.setText(Dashboard.currentUser.classes.get(1).getClassName());
-            
-            textFieldClass3.setVisible(true);
-            seperator3.setVisible(true);           
-            textFieldClass3.setText(Dashboard.currentUser.classes.get(2).getClassName());
-            
-            textFieldClass4.setVisible(true);
-            seperator4.setVisible(true);           
-            textFieldClass4.setText(Dashboard.currentUser.classes.get(3).getClassName());
-        }
-        else if(Dashboard.currentUser.classes.size() == 5) {
-            textFieldClass1.setVisible(true);
-            seperator1.setVisible(true);
-            textFieldClass1.setText(Dashboard.currentUser.classes.get(0).getClassName());
-            
-            textFieldClass2.setVisible(true);
-            seperator2.setVisible(true);           
-            textFieldClass2.setText(Dashboard.currentUser.classes.get(1).getClassName());
-            
-            textFieldClass3.setVisible(true);
-            seperator3.setVisible(true);           
-            textFieldClass3.setText(Dashboard.currentUser.classes.get(2).getClassName());
-            
-            textFieldClass4.setVisible(true);
-            seperator4.setVisible(true);           
-            textFieldClass4.setText(Dashboard.currentUser.classes.get(3).getClassName());
-            
-            textFieldClass5.setVisible(true);
-            seperator5.setVisible(true);           
-            textFieldClass5.setText(Dashboard.currentUser.classes.get(4).getClassName());
-        }
-        else if(Dashboard.currentUser.classes.size() == 6) {
-            textFieldClass1.setVisible(true);
-            seperator1.setVisible(true);
-            textFieldClass1.setText(Dashboard.currentUser.classes.get(0).getClassName());
-            
-            textFieldClass2.setVisible(true);
-            seperator2.setVisible(true);           
-            textFieldClass2.setText(Dashboard.currentUser.classes.get(1).getClassName());
-            
-            textFieldClass3.setVisible(true);
-            seperator3.setVisible(true);           
-            textFieldClass3.setText(Dashboard.currentUser.classes.get(2).getClassName());
-            
-            textFieldClass4.setVisible(true);
-            seperator4.setVisible(true);           
-            textFieldClass4.setText(Dashboard.currentUser.classes.get(3).getClassName());
-            
-            textFieldClass5.setVisible(true);
-            seperator5.setVisible(true);           
-            textFieldClass5.setText(Dashboard.currentUser.classes.get(4).getClassName());
-            
-            textFieldClass6.setVisible(true);
-            seperator6.setVisible(true);           
-            textFieldClass6.setText(Dashboard.currentUser.classes.get(5).getClassName());
-        }
-        else if(Dashboard.currentUser.classes.size() == 7) {
-            textFieldClass1.setVisible(true);
-            seperator1.setVisible(true);
-            textFieldClass1.setText(Dashboard.currentUser.classes.get(0).getClassName());
-            
-            textFieldClass2.setVisible(true);
-            seperator2.setVisible(true);           
-            textFieldClass2.setText(Dashboard.currentUser.classes.get(1).getClassName());
-            
-            textFieldClass3.setVisible(true);
-            seperator3.setVisible(true);           
-            textFieldClass3.setText(Dashboard.currentUser.classes.get(2).getClassName());
-            
-            textFieldClass4.setVisible(true);
-            seperator4.setVisible(true);           
-            textFieldClass4.setText(Dashboard.currentUser.classes.get(3).getClassName());
-            
-            textFieldClass5.setVisible(true);
-            seperator5.setVisible(true);           
-            textFieldClass5.setText(Dashboard.currentUser.classes.get(4).getClassName());
-            
-            textFieldClass6.setVisible(true);
-            seperator6.setVisible(true);           
-            textFieldClass6.setText(Dashboard.currentUser.classes.get(5).getClassName());
-            
-            textFieldClass7.setVisible(true);
-            seperator7.setVisible(true);           
-            textFieldClass7.setText(Dashboard.currentUser.classes.get(6).getClassName());
-        }
-        else if(Dashboard.currentUser.classes.size() == 8) {
-            textFieldClass1.setVisible(true);
-            seperator1.setVisible(true);
-            textFieldClass1.setText(Dashboard.currentUser.classes.get(0).getClassName());
-            
-            textFieldClass2.setVisible(true);
-            seperator2.setVisible(true);           
-            textFieldClass2.setText(Dashboard.currentUser.classes.get(1).getClassName());
-            
-            textFieldClass3.setVisible(true);
-            seperator3.setVisible(true);           
-            textFieldClass3.setText(Dashboard.currentUser.classes.get(2).getClassName());
-            
-            textFieldClass4.setVisible(true);
-            seperator4.setVisible(true);           
-            textFieldClass4.setText(Dashboard.currentUser.classes.get(3).getClassName());
-            
-            textFieldClass5.setVisible(true);
-            seperator5.setVisible(true);           
-            textFieldClass5.setText(Dashboard.currentUser.classes.get(4).getClassName());
-            
-            textFieldClass6.setVisible(true);
-            seperator6.setVisible(true);           
-            textFieldClass6.setText(Dashboard.currentUser.classes.get(5).getClassName());
-            
-            textFieldClass7.setVisible(true);
-            seperator7.setVisible(true);           
-            textFieldClass7.setText(Dashboard.currentUser.classes.get(6).getClassName());
-            
-            textFieldClass8.setVisible(true);
-            seperator8.setVisible(true);           
-            textFieldClass8.setText(Dashboard.currentUser.classes.get(7).getClassName());
-        }
+        updateUI();
     }
 
     /**
@@ -237,8 +68,32 @@ public class EditClasses extends javax.swing.JFrame {
         seperator6 = new javax.swing.JSeparator();
         textFieldClass7 = new javax.swing.JTextField();
         seperator7 = new javax.swing.JSeparator();
-        jPanel1 = new javax.swing.JPanel();
+        panelInstructions = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        panelDelete1 = new javax.swing.JPanel();
+        buttonDelete1 = new javax.swing.JPanel();
+        labelDelete1 = new javax.swing.JLabel();
+        panelDelete2 = new javax.swing.JPanel();
+        buttonDelete2 = new javax.swing.JPanel();
+        labelDelete2 = new javax.swing.JLabel();
+        panelDelete3 = new javax.swing.JPanel();
+        buttonDelete3 = new javax.swing.JPanel();
+        labelDelete3 = new javax.swing.JLabel();
+        panelDelete4 = new javax.swing.JPanel();
+        buttonDelete4 = new javax.swing.JPanel();
+        labelDelete4 = new javax.swing.JLabel();
+        panelDelete5 = new javax.swing.JPanel();
+        buttonDelete5 = new javax.swing.JPanel();
+        labelDelete5 = new javax.swing.JLabel();
+        panelDelete6 = new javax.swing.JPanel();
+        buttonDelete6 = new javax.swing.JPanel();
+        labelDelete6 = new javax.swing.JLabel();
+        panelDelete7 = new javax.swing.JPanel();
+        buttonDelete7 = new javax.swing.JPanel();
+        labelDelete7 = new javax.swing.JLabel();
+        panelDelete8 = new javax.swing.JPanel();
+        buttonDelete8 = new javax.swing.JPanel();
+        labelDelete8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -281,7 +136,7 @@ public class EditClasses extends javax.swing.JFrame {
 
         panelSave.add(buttonSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 40));
 
-        panelEdit.add(panelSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, 140, 40));
+        panelEdit.add(panelSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, 140, 40));
 
         panelExit.setBackground(new java.awt.Color(0, 0, 51));
         panelExit.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -318,7 +173,7 @@ public class EditClasses extends javax.swing.JFrame {
         jLabel2.setText("Exit without saving");
         panelExit.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 140, -1));
 
-        panelEdit.add(panelExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, -1, 40));
+        panelEdit.add(panelExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, -1, 40));
 
         textFieldClass8.setBackground(new java.awt.Color(0, 153, 153));
         textFieldClass8.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
@@ -376,22 +231,536 @@ public class EditClasses extends javax.swing.JFrame {
         panelEdit.add(textFieldClass7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, 140, -1));
         panelEdit.add(seperator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 140, 5));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 51));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelInstructions.setBackground(new java.awt.Color(0, 0, 51));
+        panelInstructions.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Edit class names below. You can also delete any unneccesary classes.");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 510, 30));
+        panelInstructions.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 510, 30));
 
-        panelEdit.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 50));
+        panelEdit.add(panelInstructions, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 50));
+
+        panelDelete1.setBackground(new java.awt.Color(0, 0, 51));
+        panelDelete1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        buttonDelete1.setOpaque(false);
+        buttonDelete1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonDelete1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                buttonDelete1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonDelete1MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout buttonDelete1Layout = new javax.swing.GroupLayout(buttonDelete1);
+        buttonDelete1.setLayout(buttonDelete1Layout);
+        buttonDelete1Layout.setHorizontalGroup(
+            buttonDelete1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        buttonDelete1Layout.setVerticalGroup(
+            buttonDelete1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        panelDelete1.add(buttonDelete1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 20));
+
+        labelDelete1.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        labelDelete1.setForeground(new java.awt.Color(255, 255, 255));
+        labelDelete1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelDelete1.setText("Delete");
+        panelDelete1.add(labelDelete1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 20));
+
+        panelEdit.add(panelDelete1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 70, 20));
+
+        panelDelete2.setBackground(new java.awt.Color(0, 0, 51));
+        panelDelete2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        buttonDelete2.setOpaque(false);
+        buttonDelete2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonDelete2MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                buttonDelete2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonDelete2MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout buttonDelete2Layout = new javax.swing.GroupLayout(buttonDelete2);
+        buttonDelete2.setLayout(buttonDelete2Layout);
+        buttonDelete2Layout.setHorizontalGroup(
+            buttonDelete2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        buttonDelete2Layout.setVerticalGroup(
+            buttonDelete2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        panelDelete2.add(buttonDelete2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 20));
+
+        labelDelete2.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        labelDelete2.setForeground(new java.awt.Color(255, 255, 255));
+        labelDelete2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelDelete2.setText("Delete");
+        panelDelete2.add(labelDelete2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 20));
+
+        panelEdit.add(panelDelete2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, -1, 20));
+
+        panelDelete3.setBackground(new java.awt.Color(0, 0, 51));
+        panelDelete3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        buttonDelete3.setOpaque(false);
+        buttonDelete3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonDelete3MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                buttonDelete3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonDelete3MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout buttonDelete3Layout = new javax.swing.GroupLayout(buttonDelete3);
+        buttonDelete3.setLayout(buttonDelete3Layout);
+        buttonDelete3Layout.setHorizontalGroup(
+            buttonDelete3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        buttonDelete3Layout.setVerticalGroup(
+            buttonDelete3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        panelDelete3.add(buttonDelete3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 20));
+
+        labelDelete3.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        labelDelete3.setForeground(new java.awt.Color(255, 255, 255));
+        labelDelete3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelDelete3.setText("Delete");
+        panelDelete3.add(labelDelete3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 20));
+
+        panelEdit.add(panelDelete3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, -1, -1));
+
+        panelDelete4.setBackground(new java.awt.Color(0, 0, 51));
+        panelDelete4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        buttonDelete4.setOpaque(false);
+        buttonDelete4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonDelete4MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                buttonDelete4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonDelete4MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout buttonDelete4Layout = new javax.swing.GroupLayout(buttonDelete4);
+        buttonDelete4.setLayout(buttonDelete4Layout);
+        buttonDelete4Layout.setHorizontalGroup(
+            buttonDelete4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        buttonDelete4Layout.setVerticalGroup(
+            buttonDelete4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        panelDelete4.add(buttonDelete4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 20));
+
+        labelDelete4.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        labelDelete4.setForeground(new java.awt.Color(255, 255, 255));
+        labelDelete4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelDelete4.setText("Delete");
+        panelDelete4.add(labelDelete4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 20));
+
+        panelEdit.add(panelDelete4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 70, 20));
+
+        panelDelete5.setBackground(new java.awt.Color(0, 0, 51));
+        panelDelete5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        buttonDelete5.setOpaque(false);
+        buttonDelete5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonDelete5MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                buttonDelete5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonDelete5MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout buttonDelete5Layout = new javax.swing.GroupLayout(buttonDelete5);
+        buttonDelete5.setLayout(buttonDelete5Layout);
+        buttonDelete5Layout.setHorizontalGroup(
+            buttonDelete5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        buttonDelete5Layout.setVerticalGroup(
+            buttonDelete5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        panelDelete5.add(buttonDelete5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 20));
+
+        labelDelete5.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        labelDelete5.setForeground(new java.awt.Color(255, 255, 255));
+        labelDelete5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelDelete5.setText("Delete");
+        panelDelete5.add(labelDelete5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 20));
+
+        panelEdit.add(panelDelete5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, 70, 20));
+
+        panelDelete6.setBackground(new java.awt.Color(0, 0, 51));
+        panelDelete6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        buttonDelete6.setOpaque(false);
+        buttonDelete6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonDelete6MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                buttonDelete6MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonDelete6MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout buttonDelete6Layout = new javax.swing.GroupLayout(buttonDelete6);
+        buttonDelete6.setLayout(buttonDelete6Layout);
+        buttonDelete6Layout.setHorizontalGroup(
+            buttonDelete6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        buttonDelete6Layout.setVerticalGroup(
+            buttonDelete6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        panelDelete6.add(buttonDelete6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 20));
+
+        labelDelete6.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        labelDelete6.setForeground(new java.awt.Color(255, 255, 255));
+        labelDelete6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelDelete6.setText("Delete");
+        panelDelete6.add(labelDelete6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 20));
+
+        panelEdit.add(panelDelete6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 110, 70, 20));
+
+        panelDelete7.setBackground(new java.awt.Color(0, 0, 51));
+        panelDelete7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        buttonDelete7.setOpaque(false);
+        buttonDelete7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonDelete7MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                buttonDelete7MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonDelete7MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout buttonDelete7Layout = new javax.swing.GroupLayout(buttonDelete7);
+        buttonDelete7.setLayout(buttonDelete7Layout);
+        buttonDelete7Layout.setHorizontalGroup(
+            buttonDelete7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        buttonDelete7Layout.setVerticalGroup(
+            buttonDelete7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        panelDelete7.add(buttonDelete7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 20));
+
+        labelDelete7.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        labelDelete7.setForeground(new java.awt.Color(255, 255, 255));
+        labelDelete7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelDelete7.setText("Delete");
+        panelDelete7.add(labelDelete7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 20));
+
+        panelEdit.add(panelDelete7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 70, 20));
+
+        panelDelete8.setBackground(new java.awt.Color(0, 0, 51));
+        panelDelete8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        buttonDelete8.setOpaque(false);
+        buttonDelete8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonDelete8MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                buttonDelete8MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonDelete8MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout buttonDelete8Layout = new javax.swing.GroupLayout(buttonDelete8);
+        buttonDelete8.setLayout(buttonDelete8Layout);
+        buttonDelete8Layout.setHorizontalGroup(
+            buttonDelete8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+        buttonDelete8Layout.setVerticalGroup(
+            buttonDelete8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        panelDelete8.add(buttonDelete8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 20));
+
+        labelDelete8.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        labelDelete8.setForeground(new java.awt.Color(255, 255, 255));
+        labelDelete8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelDelete8.setText("Delete");
+        panelDelete8.add(labelDelete8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 20));
+
+        panelEdit.add(panelDelete8, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, 70, 20));
 
         getContentPane().add(panelEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 350));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void updateUI() {
+        // hide all textfields/seperators
+        textFieldClass1.setVisible(false);
+        textFieldClass2.setVisible(false);
+        textFieldClass3.setVisible(false);
+        textFieldClass4.setVisible(false);
+        textFieldClass5.setVisible(false);
+        textFieldClass6.setVisible(false);
+        textFieldClass7.setVisible(false);
+        textFieldClass8.setVisible(false);
+        seperator1.setVisible(false);
+        seperator2.setVisible(false);
+        seperator3.setVisible(false);
+        seperator4.setVisible(false);
+        seperator5.setVisible(false);
+        seperator6.setVisible(false);
+        seperator7.setVisible(false);
+        seperator8.setVisible(false);
+        panelDelete1.setVisible(false);
+        panelDelete2.setVisible(false);
+        panelDelete3.setVisible(false);
+        panelDelete4.setVisible(false);
+        panelDelete5.setVisible(false);
+        panelDelete6.setVisible(false);
+        panelDelete7.setVisible(false);
+        panelDelete8.setVisible(false);       
+        
+        // show the current class names in text fields
+        if(Dashboard.currentUser.classes.size() == 1) {
+            textFieldClass1.setVisible(true);
+            seperator1.setVisible(true);
+            textFieldClass1.setText(Dashboard.currentUser.classes.get(0).getClassName());
+            panelDelete1.setVisible(true);
+            
+        }
+        else if(Dashboard.currentUser.classes.size() == 2) {
+            textFieldClass1.setVisible(true);
+            seperator1.setVisible(true);
+            textFieldClass1.setText(Dashboard.currentUser.classes.get(0).getClassName());
+            panelDelete1.setVisible(true);
+            
+            textFieldClass2.setVisible(true);
+            seperator2.setVisible(true);           
+            textFieldClass2.setText(Dashboard.currentUser.classes.get(1).getClassName());
+            panelDelete2.setVisible(true);
+        }
+        else if(Dashboard.currentUser.classes.size() == 3) {
+            textFieldClass1.setVisible(true);
+            seperator1.setVisible(true);
+            textFieldClass1.setText(Dashboard.currentUser.classes.get(0).getClassName());
+            panelDelete1.setVisible(true);
+            
+            textFieldClass2.setVisible(true);
+            seperator2.setVisible(true);           
+            textFieldClass2.setText(Dashboard.currentUser.classes.get(1).getClassName());
+            panelDelete2.setVisible(true);
+            
+            textFieldClass3.setVisible(true);
+            seperator3.setVisible(true);           
+            textFieldClass3.setText(Dashboard.currentUser.classes.get(2).getClassName());
+            panelDelete3.setVisible(true);
+        }
+        else if(Dashboard.currentUser.classes.size() == 4) {
+            textFieldClass1.setVisible(true);
+            seperator1.setVisible(true);
+            textFieldClass1.setText(Dashboard.currentUser.classes.get(0).getClassName());
+            panelDelete1.setVisible(true);
+            
+            textFieldClass2.setVisible(true);
+            seperator2.setVisible(true);           
+            textFieldClass2.setText(Dashboard.currentUser.classes.get(1).getClassName());
+            panelDelete2.setVisible(true);
+            
+            textFieldClass3.setVisible(true);
+            seperator3.setVisible(true);           
+            textFieldClass3.setText(Dashboard.currentUser.classes.get(2).getClassName());
+            panelDelete3.setVisible(true);
+            
+            textFieldClass4.setVisible(true);
+            seperator4.setVisible(true);           
+            textFieldClass4.setText(Dashboard.currentUser.classes.get(3).getClassName());
+            panelDelete4.setVisible(true);
+        }
+        else if(Dashboard.currentUser.classes.size() == 5) {
+            textFieldClass1.setVisible(true);
+            seperator1.setVisible(true);
+            textFieldClass1.setText(Dashboard.currentUser.classes.get(0).getClassName());
+            panelDelete1.setVisible(true);
+            
+            textFieldClass2.setVisible(true);
+            seperator2.setVisible(true);           
+            textFieldClass2.setText(Dashboard.currentUser.classes.get(1).getClassName());
+            panelDelete2.setVisible(true);
+            
+            textFieldClass3.setVisible(true);
+            seperator3.setVisible(true);           
+            textFieldClass3.setText(Dashboard.currentUser.classes.get(2).getClassName());
+            panelDelete3.setVisible(true);
+            
+            textFieldClass4.setVisible(true);
+            seperator4.setVisible(true);           
+            textFieldClass4.setText(Dashboard.currentUser.classes.get(3).getClassName());
+            panelDelete4.setVisible(true);
+            
+            textFieldClass5.setVisible(true);
+            seperator5.setVisible(true);           
+            textFieldClass5.setText(Dashboard.currentUser.classes.get(4).getClassName());
+            panelDelete5.setVisible(true);
+        }
+        else if(Dashboard.currentUser.classes.size() == 6) {
+            textFieldClass1.setVisible(true);
+            seperator1.setVisible(true);
+            textFieldClass1.setText(Dashboard.currentUser.classes.get(0).getClassName());
+            panelDelete1.setVisible(true);
+            
+            textFieldClass2.setVisible(true);
+            seperator2.setVisible(true);           
+            textFieldClass2.setText(Dashboard.currentUser.classes.get(1).getClassName());
+            panelDelete2.setVisible(true);
+            
+            textFieldClass3.setVisible(true);
+            seperator3.setVisible(true);           
+            textFieldClass3.setText(Dashboard.currentUser.classes.get(2).getClassName());
+            panelDelete3.setVisible(true);
+            
+            textFieldClass4.setVisible(true);
+            seperator4.setVisible(true);           
+            textFieldClass4.setText(Dashboard.currentUser.classes.get(3).getClassName());
+            panelDelete4.setVisible(true);
+            
+            textFieldClass5.setVisible(true);
+            seperator5.setVisible(true);           
+            textFieldClass5.setText(Dashboard.currentUser.classes.get(4).getClassName());
+            panelDelete5.setVisible(true);
+            
+            textFieldClass6.setVisible(true);
+            seperator6.setVisible(true);           
+            textFieldClass6.setText(Dashboard.currentUser.classes.get(5).getClassName());
+            panelDelete6.setVisible(true);
+        }
+        else if(Dashboard.currentUser.classes.size() == 7) {
+            textFieldClass1.setVisible(true);
+            seperator1.setVisible(true);
+            textFieldClass1.setText(Dashboard.currentUser.classes.get(0).getClassName());
+            panelDelete1.setVisible(true);
+            
+            textFieldClass2.setVisible(true);
+            seperator2.setVisible(true);           
+            textFieldClass2.setText(Dashboard.currentUser.classes.get(1).getClassName());
+            panelDelete2.setVisible(true);
+            
+            textFieldClass3.setVisible(true);
+            seperator3.setVisible(true);           
+            textFieldClass3.setText(Dashboard.currentUser.classes.get(2).getClassName());
+            panelDelete3.setVisible(true);
+            
+            textFieldClass4.setVisible(true);
+            seperator4.setVisible(true);           
+            textFieldClass4.setText(Dashboard.currentUser.classes.get(3).getClassName());       
+            panelDelete4.setVisible(true);
+            
+            textFieldClass5.setVisible(true);
+            seperator5.setVisible(true);           
+            textFieldClass5.setText(Dashboard.currentUser.classes.get(4).getClassName());
+            panelDelete5.setVisible(true);
+            
+            textFieldClass6.setVisible(true);
+            seperator6.setVisible(true);           
+            textFieldClass6.setText(Dashboard.currentUser.classes.get(5).getClassName());
+            panelDelete6.setVisible(true);
+            
+            textFieldClass7.setVisible(true);
+            seperator7.setVisible(true);           
+            textFieldClass7.setText(Dashboard.currentUser.classes.get(6).getClassName());
+            panelDelete7.setVisible(true);
+        }
+        else if(Dashboard.currentUser.classes.size() == 8) {
+            textFieldClass1.setVisible(true);
+            seperator1.setVisible(true);
+            textFieldClass1.setText(Dashboard.currentUser.classes.get(0).getClassName());
+            panelDelete1.setVisible(true);
+            
+            textFieldClass2.setVisible(true);
+            seperator2.setVisible(true);           
+            textFieldClass2.setText(Dashboard.currentUser.classes.get(1).getClassName());
+            panelDelete2.setVisible(true);
+            
+            textFieldClass3.setVisible(true);
+            seperator3.setVisible(true);           
+            textFieldClass3.setText(Dashboard.currentUser.classes.get(2).getClassName());
+            panelDelete3.setVisible(true);
+            
+            textFieldClass4.setVisible(true);
+            seperator4.setVisible(true);           
+            textFieldClass4.setText(Dashboard.currentUser.classes.get(3).getClassName());
+            panelDelete4.setVisible(true);
+            
+            textFieldClass5.setVisible(true);
+            seperator5.setVisible(true);           
+            textFieldClass5.setText(Dashboard.currentUser.classes.get(4).getClassName());
+            panelDelete5.setVisible(true);
+            
+            textFieldClass6.setVisible(true);
+            seperator6.setVisible(true);           
+            textFieldClass6.setText(Dashboard.currentUser.classes.get(5).getClassName());
+            panelDelete6.setVisible(true);
+            
+            textFieldClass7.setVisible(true);
+            seperator7.setVisible(true);           
+            textFieldClass7.setText(Dashboard.currentUser.classes.get(6).getClassName());
+            panelDelete7.setVisible(true);
+            
+            textFieldClass8.setVisible(true);
+            seperator8.setVisible(true);           
+            textFieldClass8.setText(Dashboard.currentUser.classes.get(7).getClassName());
+            panelDelete8.setVisible(true);
+        }
+    }
     private void buttonExitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonExitMouseEntered
         panelExit.setBackground(new java.awt.Color(0, 0, 150));
     }//GEN-LAST:event_buttonExitMouseEntered
@@ -429,41 +798,41 @@ public class EditClasses extends javax.swing.JFrame {
             Dashboard.currentUser.classes.get(0).setClassName(textFieldClass1.getText());
             Dashboard.currentUser.classes.get(1).setClassName(textFieldClass2.getText());
             Dashboard.currentUser.classes.get(2).setClassName(textFieldClass3.getText());
-            Dashboard.currentUser.classes.get(3).setClassName(textFieldClass3.getText());
+            Dashboard.currentUser.classes.get(3).setClassName(textFieldClass4.getText());
         }
         else if(Dashboard.currentUser.classes.size() == 5) {
             Dashboard.currentUser.classes.get(0).setClassName(textFieldClass1.getText());
             Dashboard.currentUser.classes.get(1).setClassName(textFieldClass2.getText());
             Dashboard.currentUser.classes.get(2).setClassName(textFieldClass3.getText());
-            Dashboard.currentUser.classes.get(3).setClassName(textFieldClass3.getText());
-            Dashboard.currentUser.classes.get(4).setClassName(textFieldClass3.getText());
+            Dashboard.currentUser.classes.get(3).setClassName(textFieldClass4.getText());
+            Dashboard.currentUser.classes.get(4).setClassName(textFieldClass5.getText());
         }
         else if(Dashboard.currentUser.classes.size() == 6) {
             Dashboard.currentUser.classes.get(0).setClassName(textFieldClass1.getText());
             Dashboard.currentUser.classes.get(1).setClassName(textFieldClass2.getText());
             Dashboard.currentUser.classes.get(2).setClassName(textFieldClass3.getText());
-            Dashboard.currentUser.classes.get(3).setClassName(textFieldClass3.getText());
-            Dashboard.currentUser.classes.get(4).setClassName(textFieldClass3.getText());
-            Dashboard.currentUser.classes.get(5).setClassName(textFieldClass3.getText());
+            Dashboard.currentUser.classes.get(3).setClassName(textFieldClass4.getText());
+            Dashboard.currentUser.classes.get(4).setClassName(textFieldClass5.getText());
+            Dashboard.currentUser.classes.get(5).setClassName(textFieldClass6.getText());
         }
         else if(Dashboard.currentUser.classes.size() == 7) {
             Dashboard.currentUser.classes.get(0).setClassName(textFieldClass1.getText());
             Dashboard.currentUser.classes.get(1).setClassName(textFieldClass2.getText());
             Dashboard.currentUser.classes.get(2).setClassName(textFieldClass3.getText());
-            Dashboard.currentUser.classes.get(3).setClassName(textFieldClass3.getText());
-            Dashboard.currentUser.classes.get(4).setClassName(textFieldClass3.getText());
-            Dashboard.currentUser.classes.get(5).setClassName(textFieldClass3.getText());
-            Dashboard.currentUser.classes.get(6).setClassName(textFieldClass3.getText());
+            Dashboard.currentUser.classes.get(3).setClassName(textFieldClass4.getText());
+            Dashboard.currentUser.classes.get(4).setClassName(textFieldClass5.getText());
+            Dashboard.currentUser.classes.get(5).setClassName(textFieldClass6.getText());
+            Dashboard.currentUser.classes.get(6).setClassName(textFieldClass7.getText());
         }
         else if(Dashboard.currentUser.classes.size() == 7) {
             Dashboard.currentUser.classes.get(0).setClassName(textFieldClass1.getText());
             Dashboard.currentUser.classes.get(1).setClassName(textFieldClass2.getText());
             Dashboard.currentUser.classes.get(2).setClassName(textFieldClass3.getText());
-            Dashboard.currentUser.classes.get(3).setClassName(textFieldClass3.getText());
-            Dashboard.currentUser.classes.get(4).setClassName(textFieldClass3.getText());
-            Dashboard.currentUser.classes.get(5).setClassName(textFieldClass3.getText());
-            Dashboard.currentUser.classes.get(6).setClassName(textFieldClass3.getText());
-            Dashboard.currentUser.classes.get(7).setClassName(textFieldClass3.getText());
+            Dashboard.currentUser.classes.get(3).setClassName(textFieldClass4.getText());
+            Dashboard.currentUser.classes.get(4).setClassName(textFieldClass5.getText());
+            Dashboard.currentUser.classes.get(5).setClassName(textFieldClass6.getText());
+            Dashboard.currentUser.classes.get(6).setClassName(textFieldClass7.getText());
+            Dashboard.currentUser.classes.get(7).setClassName(textFieldClass8.getText());
         }
         
         // save the changes
@@ -478,6 +847,118 @@ public class EditClasses extends javax.swing.JFrame {
         // close without saving
         this.dispose();
     }//GEN-LAST:event_buttonExitMouseClicked
+
+    private void buttonDelete1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDelete1MouseEntered
+        panelDelete1.setBackground(new java.awt.Color(0, 0, 150));
+    }//GEN-LAST:event_buttonDelete1MouseEntered
+
+    private void buttonDelete2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDelete2MouseEntered
+        panelDelete2.setBackground(new java.awt.Color(0, 0, 150));
+    }//GEN-LAST:event_buttonDelete2MouseEntered
+
+    private void buttonDelete3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDelete3MouseEntered
+        panelDelete3.setBackground(new java.awt.Color(0, 0, 150));
+    }//GEN-LAST:event_buttonDelete3MouseEntered
+
+    private void buttonDelete4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDelete4MouseEntered
+        panelDelete4.setBackground(new java.awt.Color(0, 0, 150));
+    }//GEN-LAST:event_buttonDelete4MouseEntered
+
+    private void buttonDelete5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDelete5MouseEntered
+        panelDelete5.setBackground(new java.awt.Color(0, 0, 150));
+    }//GEN-LAST:event_buttonDelete5MouseEntered
+
+    private void buttonDelete6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDelete6MouseEntered
+        panelDelete6.setBackground(new java.awt.Color(0, 0, 150));
+    }//GEN-LAST:event_buttonDelete6MouseEntered
+
+    private void buttonDelete7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDelete7MouseEntered
+        panelDelete7.setBackground(new java.awt.Color(0, 0, 150));
+    }//GEN-LAST:event_buttonDelete7MouseEntered
+
+    private void buttonDelete8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDelete8MouseEntered
+        panelDelete8.setBackground(new java.awt.Color(0, 0, 150));
+    }//GEN-LAST:event_buttonDelete8MouseEntered
+
+    private void buttonDelete1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDelete1MouseExited
+        panelDelete1.setBackground(new java.awt.Color(0, 0, 51));
+    }//GEN-LAST:event_buttonDelete1MouseExited
+
+    private void buttonDelete2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDelete2MouseExited
+        panelDelete2.setBackground(new java.awt.Color(0, 0, 51));
+    }//GEN-LAST:event_buttonDelete2MouseExited
+
+    private void buttonDelete3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDelete3MouseExited
+        panelDelete3.setBackground(new java.awt.Color(0, 0, 51));
+    }//GEN-LAST:event_buttonDelete3MouseExited
+
+    private void buttonDelete4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDelete4MouseExited
+        panelDelete4.setBackground(new java.awt.Color(0, 0, 51));
+    }//GEN-LAST:event_buttonDelete4MouseExited
+
+    private void buttonDelete5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDelete5MouseExited
+        panelDelete5.setBackground(new java.awt.Color(0, 0, 51));
+    }//GEN-LAST:event_buttonDelete5MouseExited
+
+    private void buttonDelete6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDelete6MouseExited
+        panelDelete6.setBackground(new java.awt.Color(0, 0, 51));
+    }//GEN-LAST:event_buttonDelete6MouseExited
+
+    private void buttonDelete7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDelete7MouseExited
+        panelDelete7.setBackground(new java.awt.Color(0, 0, 51));
+    }//GEN-LAST:event_buttonDelete7MouseExited
+
+    private void buttonDelete8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDelete8MouseExited
+        panelDelete8.setBackground(new java.awt.Color(0, 0, 51));
+    }//GEN-LAST:event_buttonDelete8MouseExited
+
+    private void buttonDelete1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDelete1MouseClicked
+        Dashboard.currentUser.classes.remove(0);
+        mainUI.saveUsers();
+        updateUI();
+    }//GEN-LAST:event_buttonDelete1MouseClicked
+
+    private void buttonDelete2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDelete2MouseClicked
+        Dashboard.currentUser.classes.remove(1);
+        mainUI.saveUsers();
+        updateUI();
+    }//GEN-LAST:event_buttonDelete2MouseClicked
+
+    private void buttonDelete3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDelete3MouseClicked
+        Dashboard.currentUser.classes.remove(2);
+        mainUI.saveUsers();
+        updateUI();
+    }//GEN-LAST:event_buttonDelete3MouseClicked
+
+    private void buttonDelete4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDelete4MouseClicked
+        Dashboard.currentUser.classes.remove(3);
+        mainUI.saveUsers();
+        updateUI();
+    }//GEN-LAST:event_buttonDelete4MouseClicked
+
+    private void buttonDelete5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDelete5MouseClicked
+        Dashboard.currentUser.classes.remove(4);
+        mainUI.saveUsers();
+        updateUI();
+    }//GEN-LAST:event_buttonDelete5MouseClicked
+
+    private void buttonDelete6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDelete6MouseClicked
+        Dashboard.currentUser.classes.remove(5);
+        mainUI.saveUsers();
+        updateUI();
+    }//GEN-LAST:event_buttonDelete6MouseClicked
+
+    private void buttonDelete7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDelete7MouseClicked
+        Dashboard.currentUser.classes.remove(6);
+        mainUI.saveUsers();
+        updateUI();
+    }//GEN-LAST:event_buttonDelete7MouseClicked
+
+    private void buttonDelete8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDelete8MouseClicked
+        Dashboard.currentUser.classes.remove(7);
+        mainUI.saveUsers();
+        updateUI();
+    }//GEN-LAST:event_buttonDelete8MouseClicked
 
     /**
      * @param args the command line arguments
@@ -519,14 +1000,38 @@ public class EditClasses extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel buttonDelete1;
+    private javax.swing.JPanel buttonDelete2;
+    private javax.swing.JPanel buttonDelete3;
+    private javax.swing.JPanel buttonDelete4;
+    private javax.swing.JPanel buttonDelete5;
+    private javax.swing.JPanel buttonDelete6;
+    private javax.swing.JPanel buttonDelete7;
+    private javax.swing.JPanel buttonDelete8;
     private javax.swing.JPanel buttonExit;
     private javax.swing.JPanel buttonSave;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel labelDelete1;
+    private javax.swing.JLabel labelDelete2;
+    private javax.swing.JLabel labelDelete3;
+    private javax.swing.JLabel labelDelete4;
+    private javax.swing.JLabel labelDelete5;
+    private javax.swing.JLabel labelDelete6;
+    private javax.swing.JLabel labelDelete7;
+    private javax.swing.JLabel labelDelete8;
+    private javax.swing.JPanel panelDelete1;
+    private javax.swing.JPanel panelDelete2;
+    private javax.swing.JPanel panelDelete3;
+    private javax.swing.JPanel panelDelete4;
+    private javax.swing.JPanel panelDelete5;
+    private javax.swing.JPanel panelDelete6;
+    private javax.swing.JPanel panelDelete7;
+    private javax.swing.JPanel panelDelete8;
     private javax.swing.JPanel panelEdit;
     private javax.swing.JPanel panelExit;
+    private javax.swing.JPanel panelInstructions;
     private javax.swing.JPanel panelSave;
     private javax.swing.JSeparator seperator1;
     private javax.swing.JSeparator seperator2;

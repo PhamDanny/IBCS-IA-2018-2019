@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mainUI;
 
 import java.awt.*;
@@ -12,6 +7,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.DefaultListModel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 
 /**
  *
@@ -51,9 +48,22 @@ public class Dashboard extends javax.swing.JFrame {
         updateClassButtons();
         updateToDoList();
         currentClass = 0;
+        updateCategoriesLists(currentClass);
+        updateAssignmentLists(currentClass);
+        
         
         // adds dashboard to the Dashboard manager
         DashboardManager.dashboards.add(this);
+        
+        listClassCategories.addListSelectionListener(new ListSelectionListener() {
+
+            @Override
+            public void valueChanged(ListSelectionEvent arg0) {
+                if (!arg0.getValueIsAdjusting()) {
+                  updateAssignmentLists(currentClass);
+                }
+            }
+        });
     }
 
     /**
@@ -118,7 +128,7 @@ public class Dashboard extends javax.swing.JFrame {
         buttonNewAssignment = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        comboBoxGoal = new javax.swing.JComboBox();
         labelTargetGrade = new javax.swing.JLabel();
         labelCurrentlyPending = new javax.swing.JLabel();
         panelNewCategory = new javax.swing.JPanel();
@@ -536,6 +546,9 @@ public class Dashboard extends javax.swing.JFrame {
 
         buttonNewAssignment.setOpaque(false);
         buttonNewAssignment.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonNewAssignmentMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonNewAssignmentMouseEntered(evt);
             }
@@ -559,8 +572,8 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel12.setText("Goal for this class");
         panelGrades.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, 160, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "A", "A-", "B+", "B", "B-", "C+", "C", "C-" }));
-        panelGrades.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, -1, -1));
+        comboBoxGoal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "F" }));
+        panelGrades.add(comboBoxGoal, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, -1, -1));
 
         labelTargetGrade.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
         labelTargetGrade.setForeground(new java.awt.Color(255, 255, 255));
@@ -1025,6 +1038,7 @@ public class Dashboard extends javax.swing.JFrame {
             listClassCategories.setSelectedIndex(0);
             updateAssignmentLists(0);
             currentClass = 0;
+            updateClassButtons();
         }
         
     }//GEN-LAST:event_buttonClass1MouseClicked
@@ -1042,6 +1056,7 @@ public class Dashboard extends javax.swing.JFrame {
             listClassCategories.setSelectedIndex(0);
             updateAssignmentLists(1);
             currentClass = 1;
+            updateClassButtons();
         }
     }//GEN-LAST:event_buttonClass2MouseClicked
 
@@ -1058,6 +1073,7 @@ public class Dashboard extends javax.swing.JFrame {
             listClassCategories.setSelectedIndex(0);
             updateAssignmentLists(2);
             currentClass = 2;
+            updateClassButtons();
         }
     }//GEN-LAST:event_buttonClass3MouseClicked
 
@@ -1074,6 +1090,7 @@ public class Dashboard extends javax.swing.JFrame {
             listClassCategories.setSelectedIndex(0);
             updateAssignmentLists(3);
             currentClass = 3;
+            updateClassButtons();
         }
     }//GEN-LAST:event_buttonClass4MouseClicked
 
@@ -1090,6 +1107,7 @@ public class Dashboard extends javax.swing.JFrame {
             listClassCategories.setSelectedIndex(0);
             updateAssignmentLists(4);
             currentClass = 4;
+            updateClassButtons();
         }
     }//GEN-LAST:event_buttonClass5MouseClicked
 
@@ -1106,6 +1124,7 @@ public class Dashboard extends javax.swing.JFrame {
             listClassCategories.setSelectedIndex(0);
             updateAssignmentLists(5);
             currentClass = 5;
+            updateClassButtons();
         }
     }//GEN-LAST:event_buttonClass6MouseClicked
 
@@ -1122,6 +1141,7 @@ public class Dashboard extends javax.swing.JFrame {
             listClassCategories.setSelectedIndex(0);
             updateAssignmentLists(6);
             currentClass = 6;
+            updateClassButtons();
         }
     }//GEN-LAST:event_buttonClass7MouseClicked
 
@@ -1138,6 +1158,7 @@ public class Dashboard extends javax.swing.JFrame {
             listClassCategories.setSelectedIndex(0);
             updateAssignmentLists(7);
             currentClass = 7;
+            updateClassButtons();
         }
     }//GEN-LAST:event_buttonClass8MouseClicked
 
@@ -1163,6 +1184,7 @@ public class Dashboard extends javax.swing.JFrame {
         }
         else {
             panelClass1.setBackground(new java.awt.Color(0,0,150));
+            
         }
     }//GEN-LAST:event_buttonClass1MouseEntered
 
@@ -1172,6 +1194,7 @@ public class Dashboard extends javax.swing.JFrame {
         }
         else {
             panelClass1.setBackground(new java.awt.Color(0,0,51));
+            updateClassButtons();
         }
     }//GEN-LAST:event_buttonClass1MouseExited
 
@@ -1189,6 +1212,7 @@ public class Dashboard extends javax.swing.JFrame {
         }
         else {
             panelClass2.setBackground(new java.awt.Color(0,0,51));
+            updateClassButtons();
         }
     }//GEN-LAST:event_buttonClass2MouseExited
 
@@ -1207,6 +1231,7 @@ public class Dashboard extends javax.swing.JFrame {
         }
         else {
             panelClass3.setBackground(new java.awt.Color(0,0,51));
+            updateClassButtons();
         }
     }//GEN-LAST:event_buttonClass3MouseExited
 
@@ -1225,6 +1250,7 @@ public class Dashboard extends javax.swing.JFrame {
         }
         else {
             panelClass4.setBackground(new java.awt.Color(0,0,51));
+            updateClassButtons();
         }
     }//GEN-LAST:event_buttonClass4MouseExited
 
@@ -1243,6 +1269,7 @@ public class Dashboard extends javax.swing.JFrame {
         }
         else {
             panelClass5.setBackground(new java.awt.Color(0,0,51));
+            updateClassButtons();
         }
     }//GEN-LAST:event_buttonClass5MouseExited
 
@@ -1261,6 +1288,7 @@ public class Dashboard extends javax.swing.JFrame {
         }
         else {
             panelClass6.setBackground(new java.awt.Color(0,0,51));
+            updateClassButtons();
         }
     }//GEN-LAST:event_buttonClass6MouseExited
 
@@ -1279,6 +1307,7 @@ public class Dashboard extends javax.swing.JFrame {
         }
         else {
             panelClass7.setBackground(new java.awt.Color(0,0,51));
+            updateClassButtons();
         }
     }//GEN-LAST:event_buttonClass7MouseExited
 
@@ -1297,6 +1326,7 @@ public class Dashboard extends javax.swing.JFrame {
         }
         else {
             panelClass8.setBackground(new java.awt.Color(0,0,51));
+            updateClassButtons();
         }
     }//GEN-LAST:event_buttonClass8MouseExited
 
@@ -1310,7 +1340,11 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonEditMouseClicked
 
     private void buttonNewCategoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonNewCategoryMouseClicked
-        // TO DO create new category
+        try {
+            new NewCategory().setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_buttonNewCategoryMouseClicked
 
     private void buttonNewCategoryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonNewCategoryMouseEntered
@@ -1320,42 +1354,57 @@ public class Dashboard extends javax.swing.JFrame {
     private void buttonNewCategoryMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonNewCategoryMouseExited
         panelNewCategory.setBackground(new java.awt.Color(0,0,51));
     }//GEN-LAST:event_buttonNewCategoryMouseExited
+
+    private void buttonNewAssignmentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonNewAssignmentMouseClicked
+        try {
+            new NewAssignment(listClassCategories.getSelectedIndex()).setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_buttonNewAssignmentMouseClicked
     
     public void updateCategoriesLists(int classIndex) {
         Vector <String> categoryNames = new Vector<>();
-        
-        if(currentUser.classes.get(classIndex).categories.isEmpty()) {
-            // make list empty of no categories yet
-            listClassCategories.setListData(categoryNames);
-        }
-        else {
-            for(ClassCategory category : currentUser.classes.get(classIndex).getCategories()) {
-                categoryNames.add(category.getName());
+        if(!currentUser.classes.isEmpty()) {
+            if(currentUser.classes.get(classIndex).categories.isEmpty()) {
+                // make list empty of no categories yet
+                listClassCategories.setListData(categoryNames);
             }
-            listClassCategories.setListData(categoryNames);
-        }
-        
+            else {
+                for(ClassCategory category : currentUser.classes.get(classIndex).getCategories()) {
+                    categoryNames.add(category.getName());
+                }
+                listClassCategories.setListData(categoryNames);
+            }
+        }     
     }
     
     public void updateAssignmentLists(int classIndex) {
         Vector <String> assignmentNames = new Vector<String>();
-        
-        if(currentUser.classes.get(classIndex).categories.isEmpty()) {
-            // make list empty if no categories yet
-            listAssignments.setListData(assignmentNames);
-        }
-        else if(currentUser.classes.get(classIndex).getClassCategory(listClassCategories.getSelectedIndex()).assignments.isEmpty()) {
-            // make list empty of no assignments in categories yet
-            listAssignments.setListData(assignmentNames);
-        }
-        else {
-            for(Assignment assignment : currentUser.classes.get(classIndex).getClassCategory(listClassCategories.getSelectedIndex()).assignments) {
-                assignmentNames.add(assignment.getName());
+        if(!currentUser.classes.isEmpty()) {
+            if(listClassCategories.getSelectedIndex() == -1) {
+                listClassCategories.setSelectedIndex(0);
             }
-        listAssignments.setListData(assignmentNames);
-        }                  
+            if(currentUser.classes.get(classIndex).categories.isEmpty()) {
+            // make list empty if no categories yet
+                System.out.println("1");
+                listAssignments.setListData(assignmentNames);
+            }
+            else if(currentUser.classes.get(classIndex).getClassCategory(listClassCategories.getSelectedIndex()).assignments.isEmpty()) {
+                // make list empty of no assignments in categories yet
+                System.out.println("3");
+                listAssignments.setListData(assignmentNames);
+            }
+            else {
+                for(Assignment assignment : currentUser.classes.get(classIndex).getClassCategory(listClassCategories.getSelectedIndex()).assignments) {
+                    assignmentNames.add(assignment.getName());
+                }
+            listAssignments.setListData(assignmentNames);
+            }
+        }     
     }
-
+    
+    
     public void updateClassButtons() {
         buttonClass1.setVisible(false);
         buttonClass2.setVisible(false);
@@ -1467,6 +1516,7 @@ public class Dashboard extends javax.swing.JFrame {
             panelClass4.setVisible(true);
             labelClass5.setVisible(true);
             panelClass5.setVisible(true);
+            buttonClass5.setVisible(true);
             
             labelClass1.setText(currentUser.classes.get(0).getClassName());
             panelClass1.setBackground(new java.awt.Color(0,0,51));
@@ -1495,6 +1545,7 @@ public class Dashboard extends javax.swing.JFrame {
             panelClass4.setVisible(true);
             labelClass5.setVisible(true);
             panelClass5.setVisible(true);
+            buttonClass5.setVisible(true);
             buttonClass6.setVisible(true);
             labelClass6.setVisible(true);
             panelClass6.setVisible(true);
@@ -1526,6 +1577,7 @@ public class Dashboard extends javax.swing.JFrame {
             buttonClass4.setVisible(true);
             labelClass4.setVisible(true);
             panelClass4.setVisible(true);
+            buttonClass5.setVisible(true);
             labelClass5.setVisible(true);
             panelClass5.setVisible(true);
             buttonClass6.setVisible(true);
@@ -1564,6 +1616,7 @@ public class Dashboard extends javax.swing.JFrame {
             buttonClass4.setVisible(true);
             labelClass4.setVisible(true);
             panelClass4.setVisible(true);
+            buttonClass5.setVisible(true);
             labelClass5.setVisible(true);
             panelClass5.setVisible(true);
             buttonClass6.setVisible(true);
@@ -1607,6 +1660,7 @@ public class Dashboard extends javax.swing.JFrame {
             buttonClass4.setVisible(true);
             labelClass4.setVisible(true);
             panelClass4.setVisible(true);
+            buttonClass5.setVisible(true);
             labelClass5.setVisible(true);
             panelClass5.setVisible(true);
             buttonClass6.setVisible(true);
@@ -1637,7 +1691,85 @@ public class Dashboard extends javax.swing.JFrame {
             panelClass8.setBackground(new java.awt.Color(0,0,51));
             
             // 8 is max number of classes
+                     
         }
+            // show currently selected class
+            if(currentClass == 0) {
+                panelClass1.setBackground(new java.awt.Color(0,0,100));
+            }
+            else if (currentClass == 1) {
+                panelClass2.setBackground(new java.awt.Color(0,0,100));
+            }
+            else if (currentClass == 2) {
+                panelClass3.setBackground(new java.awt.Color(0,0,100));
+            }
+            else if (currentClass == 3) {
+                panelClass4.setBackground(new java.awt.Color(0,0,100));
+            }
+            else if (currentClass == 4) {
+                panelClass5.setBackground(new java.awt.Color(0,0,100));
+            }
+            else if (currentClass == 5) {
+                panelClass6.setBackground(new java.awt.Color(0,0,100));
+            }
+            else if (currentClass == 6) {
+                panelClass7.setBackground(new java.awt.Color(0,0,100));
+            }
+            else if (currentClass == 7) {
+                panelClass8.setBackground(new java.awt.Color(0,0,100));
+            }
+            // set selectedIndex of goal
+            if(!currentUser.classes.isEmpty()) {
+                if(currentUser.classes.get(currentClass).goal == .925) {
+                comboBoxGoal.setSelectedIndex(0);
+                }
+                else if(currentUser.classes.get(currentClass).goal == .895) {
+                    comboBoxGoal.setSelectedIndex(1);
+                }
+                else if(currentUser.classes.get(currentClass).goal == .865) {
+                    comboBoxGoal.setSelectedIndex(2);
+                }
+                else if(currentUser.classes.get(currentClass).goal == .825) {
+                    comboBoxGoal.setSelectedIndex(3);
+                }
+                else if(currentUser.classes.get(currentClass).goal == .795) {
+                    comboBoxGoal.setSelectedIndex(4);
+                }
+                else if(currentUser.classes.get(currentClass).goal == .765) {
+                    comboBoxGoal.setSelectedIndex(5);
+                }
+                else if(currentUser.classes.get(currentClass).goal == .725) {
+                    comboBoxGoal.setSelectedIndex(6);
+                }
+                else if(currentUser.classes.get(currentClass).goal == .695) {
+                    comboBoxGoal.setSelectedIndex(7);
+                }
+                else if(currentUser.classes.get(currentClass).goal == .665) {
+                    comboBoxGoal.setSelectedIndex(8);
+                }
+                else if(currentUser.classes.get(currentClass).goal == .595) {
+                    comboBoxGoal.setSelectedIndex(9);
+                }
+                else if(currentUser.classes.get(currentClass).goal == 0) {
+                    comboBoxGoal.setSelectedIndex(10);
+                }
+                // show pending assignment if there is one
+                // show target grade if there is one
+                if(currentUser.classes.get(currentClass).havePendingAssignments()) {               
+                    labelCurrentlyPending.setText("Pending: " + currentUser.classes.get(currentClass).getPendingCategory().getPendingAssignment().getName());
+                    labelCurrentlyPending.setVisible(true);               
+                }
+                else {
+                    labelCurrentlyPending.setVisible(false);
+                }
+
+                if(currentUser.classes.get(currentClass).getTargetGrade(currentUser.classes.get(currentClass).goal) == -1) {
+                    labelTargetGrade.setVisible(false);
+                    labelTargetGrade.setText(Double.toString(currentUser.classes.get(currentClass).getTargetGrade(currentUser.classes.get(currentClass).goal)));
+                }
+            }
+            
+            
     }
     private void updateToDoList() {
         
@@ -1841,9 +1973,9 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JCheckBox checkBoxToDo6;
     private javax.swing.JCheckBox checkBoxToDo7;
     private javax.swing.JCheckBox checkBoxToDo8;
+    private javax.swing.JComboBox comboBoxGoal;
     private javax.swing.JPanel gradesButton;
     private javax.swing.JPanel homeButton;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

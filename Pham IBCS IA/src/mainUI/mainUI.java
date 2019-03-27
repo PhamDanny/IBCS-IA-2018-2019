@@ -392,7 +392,6 @@ public class mainUI extends javax.swing.JFrame {
         for(User validatedUser : savedUsers) {
             // cycles through all users
             if(validatedUser.getUsername().equals(username) && validatedUser.getPassword().equals(password)) {
-                System.out.println("Successful login.");
                 signedInUser = validatedUser;
                 successful = true;
                 // break out of loop when correct user has been found

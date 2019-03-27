@@ -57,4 +57,29 @@ public class ClassCategory implements Serializable{
     public void setWeight(double weight) {
         this.weight = weight;
     }
+    
+    public Assignment getPendingAssignment() {
+        // returns the pending assignment in the category
+        for(Assignment assignment : assignments) {
+            if(assignment.isPending()) {
+                return assignment;
+            }
+        }
+        return null;
+    }
+    
+    public double getCurrentPoints() {
+        double currentPoints = 0;
+        for(Assignment assignment : assignments) {
+            currentPoints += assignment.getScore();
+        }
+        return currentPoints;
+    }
+    public double getMaxPoints() {
+        double maxPoints = 0;
+        for(Assignment assignment : assignments) {
+            maxPoints += assignment.getMaxScore();
+        }
+        return maxPoints;
+    }
 }

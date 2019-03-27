@@ -18,12 +18,13 @@ import javax.imageio.ImageIO;
  *
  * @author htvph
  */
-public class NewCategory extends javax.swing.JFrame implements Serializable{
+public class NewAssignment extends javax.swing.JFrame implements Serializable{
 
     /**
      * Creates new form NewCategory
      */
-    public NewCategory() throws IOException {
+    int categoryIndex;
+    public NewAssignment(int selectedCategoryIndex) throws IOException {
         initComponents();
         
         // set up form's icon image
@@ -33,6 +34,18 @@ public class NewCategory extends javax.swing.JFrame implements Serializable{
         // puts form in center of screen
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        
+        this.categoryIndex = selectedCategoryIndex;
+        
+        // enable pending checkbox if there is already a pending assignment
+        // disable the pending checkbox if there is already a pending assignment
+        if(Dashboard.currentUser.classes.get(Dashboard.currentClass).getPendingCategory() == null) {
+            checkBoxPending.setVisible(true);
+        }
+        else {
+            checkBoxPending.setSelected(false);
+            checkBoxPending.setVisible(false);
+        }
     }
 
     /**
@@ -46,16 +59,20 @@ public class NewCategory extends javax.swing.JFrame implements Serializable{
 
         jPanel1 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
-        textFieldCategoryName = new javax.swing.JTextField();
+        textFieldAssignmentName = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         panelSubmit = new javax.swing.JPanel();
         buttonSubmit = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        textFieldWeight = new javax.swing.JTextField();
+        textFieldScore = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
+        textFieldMaxScore = new javax.swing.JTextField();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel5 = new javax.swing.JLabel();
+        checkBoxPending = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -65,12 +82,12 @@ public class NewCategory extends javax.swing.JFrame implements Serializable{
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 190, 10));
 
-        textFieldCategoryName.setBackground(new java.awt.Color(0, 153, 153));
-        textFieldCategoryName.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        textFieldCategoryName.setForeground(new java.awt.Color(255, 255, 255));
-        textFieldCategoryName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        textFieldCategoryName.setBorder(null);
-        jPanel1.add(textFieldCategoryName, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 190, -1));
+        textFieldAssignmentName.setBackground(new java.awt.Color(0, 153, 153));
+        textFieldAssignmentName.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        textFieldAssignmentName.setForeground(new java.awt.Color(255, 255, 255));
+        textFieldAssignmentName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textFieldAssignmentName.setBorder(null);
+        jPanel1.add(textFieldAssignmentName, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 190, -1));
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 51));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -78,7 +95,7 @@ public class NewCategory extends javax.swing.JFrame implements Serializable{
         jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Add new category");
+        jLabel1.setText("Add new assignment");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 30));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 30));
@@ -123,22 +140,41 @@ public class NewCategory extends javax.swing.JFrame implements Serializable{
         jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Weight (decimal)");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 190, -1));
+        jLabel3.setText("Score");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 190, -1));
 
-        textFieldWeight.setBackground(new java.awt.Color(0, 153, 153));
-        textFieldWeight.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        textFieldWeight.setForeground(new java.awt.Color(255, 255, 255));
-        textFieldWeight.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        textFieldWeight.setBorder(null);
-        jPanel1.add(textFieldWeight, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 50, -1));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 50, 10));
+        textFieldScore.setBackground(new java.awt.Color(0, 153, 153));
+        textFieldScore.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        textFieldScore.setForeground(new java.awt.Color(255, 255, 255));
+        textFieldScore.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textFieldScore.setBorder(null);
+        jPanel1.add(textFieldScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 50, -1));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 50, 10));
 
         jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Category Name");
+        jLabel4.setText("Assignment name");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 190, 20));
+
+        textFieldMaxScore.setBackground(new java.awt.Color(0, 153, 153));
+        textFieldMaxScore.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        textFieldMaxScore.setForeground(new java.awt.Color(255, 255, 255));
+        textFieldMaxScore.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textFieldMaxScore.setBorder(null);
+        jPanel1.add(textFieldMaxScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 50, -1));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 50, 10));
+
+        jLabel5.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("/");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, -1, -1));
+
+        checkBoxPending.setBackground(new java.awt.Color(0, 153, 153));
+        checkBoxPending.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        checkBoxPending.setForeground(new java.awt.Color(255, 255, 255));
+        checkBoxPending.setText("Pending?");
+        jPanel1.add(checkBoxPending, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 230));
 
@@ -154,7 +190,8 @@ public class NewCategory extends javax.swing.JFrame implements Serializable{
     }//GEN-LAST:event_buttonSubmitMouseExited
 
     private void buttonSubmitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonSubmitMouseClicked
-        Dashboard.currentUser.classes.get(Dashboard.currentClass).categories.add(new ClassCategory(textFieldCategoryName.getText(), Double.parseDouble(textFieldWeight.getText())));
+        // adds new assignment to currently selected class category
+        Dashboard.currentUser.classes.get(Dashboard.currentClass).categories.get(categoryIndex).assignments.add(new Assignment(textFieldAssignmentName.getText(), Double.parseDouble(textFieldMaxScore.getText()), Double.parseDouble(textFieldScore.getText()), checkBoxPending.isSelected()));
         DashboardManager.updateDashboards();
         mainUI.saveUsers();
         this.dispose();
@@ -177,23 +214,24 @@ public class NewCategory extends javax.swing.JFrame implements Serializable{
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewCategory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NewAssignment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewCategory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NewAssignment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewCategory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NewAssignment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewCategory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NewAssignment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    new NewCategory().setVisible(true);
+                    new NewAssignment(0).setVisible(true);
                 } catch (IOException ex) {
-                    Logger.getLogger(NewCategory.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(NewAssignment.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
@@ -201,16 +239,20 @@ public class NewCategory extends javax.swing.JFrame implements Serializable{
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel buttonSubmit;
+    private javax.swing.JCheckBox checkBoxPending;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JPanel panelSubmit;
-    private javax.swing.JTextField textFieldCategoryName;
-    private javax.swing.JTextField textFieldWeight;
+    private javax.swing.JTextField textFieldAssignmentName;
+    private javax.swing.JTextField textFieldMaxScore;
+    private javax.swing.JTextField textFieldScore;
     // End of variables declaration//GEN-END:variables
 }

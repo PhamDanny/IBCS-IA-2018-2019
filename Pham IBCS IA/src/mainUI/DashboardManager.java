@@ -20,6 +20,8 @@ public class DashboardManager {
     public static void updateDashboards() {
         for(Dashboard dashboard : dashboards) {
             dashboard.updateClassButtons();
+            dashboard.updateCategoriesLists(Dashboard.currentClass);
+            dashboard.updateAssignmentLists(Dashboard.currentClass);
         }
     }
 }
