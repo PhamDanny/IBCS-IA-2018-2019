@@ -28,14 +28,14 @@ public class ClassCategory implements Serializable{
         }
         else {
             double totalScore = 0, maxScore = 0;
-        for(Assignment addedAssignment : assignments) {
-            if(!addedAssignment.isPending()) {
-            // only add non-pending assignments
-            totalScore += addedAssignment.getScore();
-            maxScore += addedAssignment.getMaxScore();
-            }
-        }       
-        return (totalScore / maxScore) * weight;
+            for(Assignment addedAssignment : assignments) {
+                if(!addedAssignment.isPending()) {
+                    // only add non-pending assignments
+                    totalScore += addedAssignment.getScore();
+                    maxScore += addedAssignment.getMaxScore();
+                }
+            }       
+            return (totalScore / maxScore) * weight;
         }      
     }
     public double getCategoryGrade() {

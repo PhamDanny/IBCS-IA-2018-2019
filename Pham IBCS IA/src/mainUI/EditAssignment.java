@@ -18,13 +18,14 @@ import javax.imageio.ImageIO;
  *
  * @author htvph
  */
-public class NewAssignment extends javax.swing.JFrame implements Serializable{
+public class EditAssignment extends javax.swing.JFrame implements Serializable{
 
     /**
      * Creates new form NewCategory
      */
     int categoryIndex;
-    public NewAssignment(int selectedCategoryIndex) throws IOException {
+    int assignmentIndex;
+    public EditAssignment(int selectedCategoryIndex, int selectedAssignmentIndex) throws IOException {
         initComponents();
         
         // set up form's icon image
@@ -36,16 +37,22 @@ public class NewAssignment extends javax.swing.JFrame implements Serializable{
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         
         this.categoryIndex = selectedCategoryIndex;
+        this.assignmentIndex = selectedAssignmentIndex;
         
         // enable pending checkbox if there is already a pending assignment
         // disable the pending checkbox if there is already a pending assignment
-        if(Dashboard.currentUser.classes.get(Dashboard.currentClass).getPendingCategory() == null) {
+        if(Dashboard.currentUser.classes.get(Dashboard.currentClass).getPendingCategory() == null || Dashboard.currentUser.classes.get(Dashboard.currentClass).categories.get(categoryIndex).assignments.get(assignmentIndex).isPending()) {
             checkBoxPending.setVisible(true);
         }
         else {
             checkBoxPending.setSelected(false);
             checkBoxPending.setVisible(false);
         }
+        
+        textFieldAssignmentName.setText(Dashboard.currentUser.classes.get(Dashboard.currentClass).categories.get(categoryIndex).assignments.get(assignmentIndex).getName());
+        textFieldScore.setText(Double.toString(Dashboard.currentUser.classes.get(Dashboard.currentClass).categories.get(categoryIndex).assignments.get(assignmentIndex).getScore()));
+        textFieldMaxScore.setText(Double.toString(Dashboard.currentUser.classes.get(Dashboard.currentClass).categories.get(categoryIndex).assignments.get(assignmentIndex).getMaxScore()));
+        
     }
 
     /**
@@ -75,6 +82,7 @@ public class NewAssignment extends javax.swing.JFrame implements Serializable{
         checkBoxPending = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
@@ -196,10 +204,10 @@ public class NewAssignment extends javax.swing.JFrame implements Serializable{
     private void buttonSubmitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonSubmitMouseClicked
         // adds new assignment to currently selected class category
         if(!checkBoxPending.isSelected()) {
-            Dashboard.currentUser.classes.get(Dashboard.currentClass).categories.get(categoryIndex).assignments.add(new Assignment(textFieldAssignmentName.getText(), Double.parseDouble(textFieldMaxScore.getText()), Double.parseDouble(textFieldScore.getText()), false));
+            Dashboard.currentUser.classes.get(Dashboard.currentClass).categories.get(categoryIndex).assignments.set(assignmentIndex, new Assignment(textFieldAssignmentName.getText(), Double.parseDouble(textFieldMaxScore.getText()), Double.parseDouble(textFieldScore.getText()), false));
         }
         else {
-            Dashboard.currentUser.classes.get(Dashboard.currentClass).categories.get(categoryIndex).assignments.add(new Assignment(textFieldAssignmentName.getText(), Double.parseDouble(textFieldMaxScore.getText()), 0, true));
+            Dashboard.currentUser.classes.get(Dashboard.currentClass).categories.get(categoryIndex).assignments.set(assignmentIndex, new Assignment(textFieldAssignmentName.getText(), Double.parseDouble(textFieldMaxScore.getText()), 0, true));
         }
         
         DashboardManager.updateDashboards();
@@ -235,14 +243,16 @@ public class NewAssignment extends javax.swing.JFrame implements Serializable{
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewAssignment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditAssignment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewAssignment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditAssignment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewAssignment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditAssignment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewAssignment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EditAssignment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
@@ -250,9 +260,9 @@ public class NewAssignment extends javax.swing.JFrame implements Serializable{
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    new NewAssignment(0).setVisible(true);
+                    new EditAssignment(0, 0).setVisible(true);
                 } catch (IOException ex) {
-                    Logger.getLogger(NewAssignment.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(EditAssignment.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });

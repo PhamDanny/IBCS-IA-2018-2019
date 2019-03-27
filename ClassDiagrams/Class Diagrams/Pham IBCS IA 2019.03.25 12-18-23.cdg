@@ -79,7 +79,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="ClassCategory" package="mainUI" visibility="public" xPosition="676.0" yPosition="39.0">
+    <Class name="ClassCategory" package="mainUI" visibility="public" xPosition="927.0" yPosition="20.0">
       <Fields>
         <Field name="name" type="String" visibility="private"/>
         <Field name="weight" type="double" visibility="private"/>
@@ -473,7 +473,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="mainUI" package="mainUI" visibility="public" xPosition="2192.0" yPosition="239.0">
+    <Class name="mainUI" package="mainUI" visibility="public" xPosition="2227.0" yPosition="207.0">
       <Fields>
         <Field name="username" type="String" visibility="package"/>
         <Field name="savedUsers" type="ArrayList&lt;User&gt;" visibility="package" isStatic="true"/>
@@ -759,7 +759,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="User" package="mainUI" visibility="public" xPosition="1292.0" yPosition="869.0">
+    <Class name="User" package="mainUI" visibility="public" xPosition="1460.0" yPosition="869.0">
       <Fields>
         <Field name="username" type="String" visibility="private"/>
         <Field name="gradeLevel" type="int" visibility="private"/>
@@ -803,13 +803,13 @@
     </Class>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
+    <HasRelation name="categories" source="mainUI.Class" target="mainUI.ClassCategory" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;ClassCategory&gt;"/>
     <HasRelation name="savedUsers" source="mainUI.mainUI" target="mainUI.User" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;User&gt;"/>
-    <HasRelation name="dashboards" source="mainUI.DashboardManager" target="mainUI.Dashboard" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Dashboard&gt;"/>
+    <HasRelation name="currentUser" source="mainUI.Dashboard" target="mainUI.User" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="toDoList" source="mainUI.User" target="mainUI.ToDo" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;ToDo&gt;"/>
     <HasRelation name="assignments" source="mainUI.ClassCategory" target="mainUI.Assignment" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Assignment&gt;"/>
-    <HasRelation name="categories" source="mainUI.Class" target="mainUI.ClassCategory" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;ClassCategory&gt;"/>
-    <HasRelation name="currentUser" source="mainUI.Dashboard" target="mainUI.User" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="classes" source="mainUI.User" target="mainUI.Class" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Class&gt;"/>
     <UseRelation source="mainUI.Class" target="mainUI.ClassCategory" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="dashboards" source="mainUI.DashboardManager" target="mainUI.Dashboard" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Dashboard&gt;"/>
+    <HasRelation name="classes" source="mainUI.User" target="mainUI.Class" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Class&gt;"/>
   </ClassDiagramRelations>
 </ClassDiagram>

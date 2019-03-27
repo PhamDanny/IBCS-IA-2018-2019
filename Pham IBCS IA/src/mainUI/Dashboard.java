@@ -2,11 +2,15 @@ package mainUI;
 
 import java.awt.*;
 import java.io.IOException;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.DefaultListModel;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
@@ -45,6 +49,7 @@ public class Dashboard extends javax.swing.JFrame {
         dashboardState = 1;
         this.currentUser = user;
         updateDashButtons();
+        updateHomePanels();
         updateClassButtons();
         updateToDoList();
         currentClass = 0;
@@ -94,6 +99,42 @@ public class Dashboard extends javax.swing.JFrame {
         settingsButton = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         labelSettingsIcon = new javax.swing.JLabel();
+        panelHome = new javax.swing.JPanel();
+        labelWelcome = new javax.swing.JLabel();
+        labelIntro = new javax.swing.JLabel();
+        panelSummary1 = new javax.swing.JPanel();
+        labelClassName1 = new javax.swing.JLabel();
+        labelLetterGrade1 = new javax.swing.JLabel();
+        labelClassPercentage1 = new javax.swing.JLabel();
+        panelSummary2 = new javax.swing.JPanel();
+        labelClassName2 = new javax.swing.JLabel();
+        labelLetterGrade2 = new javax.swing.JLabel();
+        labelClassPercentage2 = new javax.swing.JLabel();
+        panelSummary3 = new javax.swing.JPanel();
+        labelClassName3 = new javax.swing.JLabel();
+        labelLetterGrade3 = new javax.swing.JLabel();
+        labelClassPercentage3 = new javax.swing.JLabel();
+        panelSummary4 = new javax.swing.JPanel();
+        labelClassName4 = new javax.swing.JLabel();
+        labelLetterGrade4 = new javax.swing.JLabel();
+        labelClassPercentage4 = new javax.swing.JLabel();
+        panelSummary5 = new javax.swing.JPanel();
+        labelClassName5 = new javax.swing.JLabel();
+        labelLetterGrade5 = new javax.swing.JLabel();
+        labelClassPercentage5 = new javax.swing.JLabel();
+        panelSummary6 = new javax.swing.JPanel();
+        labelClassName6 = new javax.swing.JLabel();
+        labelLetterGrade6 = new javax.swing.JLabel();
+        labelClassPercentage6 = new javax.swing.JLabel();
+        panelSummary7 = new javax.swing.JPanel();
+        labelClassName7 = new javax.swing.JLabel();
+        labelLetterGrade7 = new javax.swing.JLabel();
+        labelClassPercentage7 = new javax.swing.JLabel();
+        panelSummary8 = new javax.swing.JPanel();
+        labelClassName8 = new javax.swing.JLabel();
+        labelLetterGrade8 = new javax.swing.JLabel();
+        labelClassPercentage8 = new javax.swing.JLabel();
+        labelGoalsMet = new javax.swing.JLabel();
         panelGrades = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         panelClass1 = new javax.swing.JPanel();
@@ -139,6 +180,10 @@ public class Dashboard extends javax.swing.JFrame {
         buttonEdit = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        panelEditAssignment = new javax.swing.JPanel();
+        buttonEditAssignment = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        labelOverall = new javax.swing.JLabel();
         panelCalendar = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         labelToDoName1 = new javax.swing.JLabel();
@@ -163,8 +208,6 @@ public class Dashboard extends javax.swing.JFrame {
         buttonNewTask = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        panelHome = new javax.swing.JPanel();
-        labelWelcome = new javax.swing.JLabel();
         panelSettings = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
 
@@ -324,6 +367,210 @@ public class Dashboard extends javax.swing.JFrame {
         panelSettingsButton.add(labelSettingsIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 7, -1, -1));
 
         getContentPane().add(panelSettingsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 110, 110));
+
+        panelHome.setBackground(new java.awt.Color(0, 153, 153));
+        panelHome.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        labelWelcome.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
+        labelWelcome.setForeground(new java.awt.Color(255, 255, 255));
+        labelWelcome.setText("Welcome, name.");
+        panelHome.add(labelWelcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, -1));
+
+        labelIntro.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        labelIntro.setForeground(new java.awt.Color(255, 255, 255));
+        labelIntro.setText("Here's how you're doing...");
+        panelHome.add(labelIntro, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, -1, -1));
+
+        panelSummary1.setBackground(new java.awt.Color(0, 102, 153));
+        panelSummary1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        labelClassName1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        labelClassName1.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassName1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassName1.setText("IB Lang and Lit");
+        panelSummary1.add(labelClassName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
+
+        labelLetterGrade1.setFont(new java.awt.Font("Century Gothic", 0, 54)); // NOI18N
+        labelLetterGrade1.setForeground(new java.awt.Color(255, 255, 255));
+        labelLetterGrade1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelLetterGrade1.setText("A");
+        panelSummary1.add(labelLetterGrade1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 130, 60));
+
+        labelClassPercentage1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        labelClassPercentage1.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassPercentage1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassPercentage1.setText("96%");
+        panelSummary1.add(labelClassPercentage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 130, -1));
+
+        panelHome.add(panelSummary1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 130, 120));
+
+        panelSummary2.setBackground(new java.awt.Color(0, 102, 153));
+        panelSummary2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        labelClassName2.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        labelClassName2.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassName2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassName2.setText("IB Lang and Lit");
+        panelSummary2.add(labelClassName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
+
+        labelLetterGrade2.setFont(new java.awt.Font("Century Gothic", 0, 54)); // NOI18N
+        labelLetterGrade2.setForeground(new java.awt.Color(255, 255, 255));
+        labelLetterGrade2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelLetterGrade2.setText("A");
+        panelSummary2.add(labelLetterGrade2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 130, 60));
+
+        labelClassPercentage2.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        labelClassPercentage2.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassPercentage2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassPercentage2.setText("96%");
+        panelSummary2.add(labelClassPercentage2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 130, -1));
+
+        panelHome.add(panelSummary2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 130, 120));
+
+        panelSummary3.setBackground(new java.awt.Color(0, 102, 153));
+        panelSummary3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        labelClassName3.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        labelClassName3.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassName3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassName3.setText("IB Lang and Lit");
+        panelSummary3.add(labelClassName3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
+
+        labelLetterGrade3.setFont(new java.awt.Font("Century Gothic", 0, 54)); // NOI18N
+        labelLetterGrade3.setForeground(new java.awt.Color(255, 255, 255));
+        labelLetterGrade3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelLetterGrade3.setText("A");
+        panelSummary3.add(labelLetterGrade3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 130, 60));
+
+        labelClassPercentage3.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        labelClassPercentage3.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassPercentage3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassPercentage3.setText("96%");
+        panelSummary3.add(labelClassPercentage3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 130, -1));
+
+        panelHome.add(panelSummary3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 100, 130, 120));
+
+        panelSummary4.setBackground(new java.awt.Color(0, 102, 153));
+        panelSummary4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        labelClassName4.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        labelClassName4.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassName4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassName4.setText("IB Lang and Lit");
+        panelSummary4.add(labelClassName4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
+
+        labelLetterGrade4.setFont(new java.awt.Font("Century Gothic", 0, 54)); // NOI18N
+        labelLetterGrade4.setForeground(new java.awt.Color(255, 255, 255));
+        labelLetterGrade4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelLetterGrade4.setText("A");
+        panelSummary4.add(labelLetterGrade4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 130, 60));
+
+        labelClassPercentage4.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        labelClassPercentage4.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassPercentage4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassPercentage4.setText("96%");
+        panelSummary4.add(labelClassPercentage4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 130, -1));
+
+        panelHome.add(panelSummary4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 100, 130, 120));
+
+        panelSummary5.setBackground(new java.awt.Color(255, 102, 102));
+        panelSummary5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        labelClassName5.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        labelClassName5.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassName5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassName5.setText("IB Lang and Lit");
+        panelSummary5.add(labelClassName5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
+
+        labelLetterGrade5.setFont(new java.awt.Font("Century Gothic", 0, 54)); // NOI18N
+        labelLetterGrade5.setForeground(new java.awt.Color(255, 255, 255));
+        labelLetterGrade5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelLetterGrade5.setText("A");
+        panelSummary5.add(labelLetterGrade5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 130, 60));
+
+        labelClassPercentage5.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        labelClassPercentage5.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassPercentage5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassPercentage5.setText("96%");
+        panelSummary5.add(labelClassPercentage5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 130, -1));
+
+        panelHome.add(panelSummary5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 130, 120));
+
+        panelSummary6.setBackground(new java.awt.Color(0, 102, 153));
+        panelSummary6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        labelClassName6.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        labelClassName6.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassName6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassName6.setText("IB Lang and Lit");
+        panelSummary6.add(labelClassName6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
+
+        labelLetterGrade6.setFont(new java.awt.Font("Century Gothic", 0, 54)); // NOI18N
+        labelLetterGrade6.setForeground(new java.awt.Color(255, 255, 255));
+        labelLetterGrade6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelLetterGrade6.setText("A");
+        panelSummary6.add(labelLetterGrade6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 130, 60));
+
+        labelClassPercentage6.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        labelClassPercentage6.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassPercentage6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassPercentage6.setText("96%");
+        panelSummary6.add(labelClassPercentage6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 130, -1));
+
+        panelHome.add(panelSummary6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 130, 120));
+
+        panelSummary7.setBackground(new java.awt.Color(0, 102, 153));
+        panelSummary7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        labelClassName7.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        labelClassName7.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassName7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassName7.setText("IB Lang and Lit");
+        panelSummary7.add(labelClassName7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
+
+        labelLetterGrade7.setFont(new java.awt.Font("Century Gothic", 0, 54)); // NOI18N
+        labelLetterGrade7.setForeground(new java.awt.Color(255, 255, 255));
+        labelLetterGrade7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelLetterGrade7.setText("A");
+        panelSummary7.add(labelLetterGrade7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 130, 60));
+
+        labelClassPercentage7.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        labelClassPercentage7.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassPercentage7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassPercentage7.setText("96%");
+        panelSummary7.add(labelClassPercentage7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 130, -1));
+
+        panelHome.add(panelSummary7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, 130, 120));
+
+        panelSummary8.setBackground(new java.awt.Color(0, 102, 153));
+        panelSummary8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        labelClassName8.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        labelClassName8.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassName8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassName8.setText("IB Lang and Lit");
+        panelSummary8.add(labelClassName8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
+
+        labelLetterGrade8.setFont(new java.awt.Font("Century Gothic", 0, 54)); // NOI18N
+        labelLetterGrade8.setForeground(new java.awt.Color(255, 255, 255));
+        labelLetterGrade8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelLetterGrade8.setText("A");
+        panelSummary8.add(labelLetterGrade8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 130, 60));
+
+        labelClassPercentage8.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        labelClassPercentage8.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassPercentage8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassPercentage8.setText("96%");
+        panelSummary8.add(labelClassPercentage8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 130, -1));
+
+        panelHome.add(panelSummary8, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 230, 130, 120));
+
+        labelGoalsMet.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        labelGoalsMet.setForeground(new java.awt.Color(255, 255, 255));
+        labelGoalsMet.setText("Goals met: 7/8");
+        panelHome.add(labelGoalsMet, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 380, -1, -1));
+
+        getContentPane().add(panelHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 440));
 
         panelGrades.setBackground(new java.awt.Color(0, 153, 153));
         panelGrades.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -578,14 +825,14 @@ public class Dashboard extends javax.swing.JFrame {
         labelTargetGrade.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
         labelTargetGrade.setForeground(new java.awt.Color(255, 255, 255));
         labelTargetGrade.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelTargetGrade.setText("Your TargetGrade is");
+        labelTargetGrade.setText("Target");
         panelGrades.add(labelTargetGrade, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, 410, -1));
 
         labelCurrentlyPending.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
         labelCurrentlyPending.setForeground(new java.awt.Color(255, 255, 255));
         labelCurrentlyPending.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelCurrentlyPending.setText("Currently pending:");
-        panelGrades.add(labelCurrentlyPending, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 410, -1));
+        labelCurrentlyPending.setText("Pending");
+        panelGrades.add(labelCurrentlyPending, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, 410, -1));
 
         panelNewCategory.setBackground(new java.awt.Color(0, 0, 51));
         panelNewCategory.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -640,6 +887,37 @@ public class Dashboard extends javax.swing.JFrame {
         panelEdit.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -30, -1, -1));
 
         panelGrades.add(panelEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 390, 130, 40));
+
+        panelEditAssignment.setBackground(new java.awt.Color(0, 0, 51));
+        panelEditAssignment.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        buttonEditAssignment.setOpaque(false);
+        buttonEditAssignment.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonEditAssignmentMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                buttonEditAssignmentMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonEditAssignmentMouseExited(evt);
+            }
+        });
+        panelEditAssignment.add(buttonEditAssignment, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
+
+        jLabel14.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("Edit Assignment");
+        panelEditAssignment.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, 20));
+
+        panelGrades.add(panelEditAssignment, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 340, 130, 40));
+
+        labelOverall.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        labelOverall.setForeground(new java.awt.Color(255, 255, 255));
+        labelOverall.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelOverall.setText("Overall");
+        panelGrades.add(labelOverall, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, 410, -1));
 
         getContentPane().add(panelGrades, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 440));
 
@@ -794,16 +1072,6 @@ public class Dashboard extends javax.swing.JFrame {
         panelCalendar.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 200, -1));
 
         getContentPane().add(panelCalendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 440));
-
-        panelHome.setBackground(new java.awt.Color(0, 153, 153));
-        panelHome.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        labelWelcome.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
-        labelWelcome.setForeground(new java.awt.Color(255, 255, 255));
-        labelWelcome.setText("Welcome, name.");
-        panelHome.add(labelWelcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, -1));
-
-        getContentPane().add(panelHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 440));
 
         panelSettings.setBackground(new java.awt.Color(0, 153, 153));
         panelSettings.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1362,6 +1630,27 @@ public class Dashboard extends javax.swing.JFrame {
             Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_buttonNewAssignmentMouseClicked
+
+    private void buttonEditAssignmentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonEditAssignmentMouseClicked
+        if(listClassCategories.getSelectedIndex() != -1 && listAssignments.getSelectedIndex() != -1) {
+            try {
+            new EditAssignment(listClassCategories.getSelectedIndex(), listAssignments.getSelectedIndex()).setVisible(true);
+            } catch (IOException ex) {
+            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else {
+            JOptionPane.showMessageDialog(new JFrame(), "Please select an assignment to edit.", "No Assignment Selected", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_buttonEditAssignmentMouseClicked
+
+    private void buttonEditAssignmentMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonEditAssignmentMouseEntered
+        panelEditAssignment.setBackground(new java.awt.Color(0,0,150));
+    }//GEN-LAST:event_buttonEditAssignmentMouseEntered
+
+    private void buttonEditAssignmentMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonEditAssignmentMouseExited
+        panelEditAssignment.setBackground(new java.awt.Color(0,0,51));
+    }//GEN-LAST:event_buttonEditAssignmentMouseExited
     
     public void updateCategoriesLists(int classIndex) {
         Vector <String> categoryNames = new Vector<>();
@@ -1383,16 +1672,14 @@ public class Dashboard extends javax.swing.JFrame {
         Vector <String> assignmentNames = new Vector<String>();
         if(!currentUser.classes.isEmpty()) {
             if(listClassCategories.getSelectedIndex() == -1) {
-                listClassCategories.setSelectedIndex(0);
+                listAssignments.setListData(assignmentNames);
             }
-            if(currentUser.classes.get(classIndex).categories.isEmpty()) {
-            // make list empty if no categories yet
-                System.out.println("1");
+            else if(currentUser.classes.get(classIndex).categories.isEmpty()) {
+                // make list empty if no categories yet
                 listAssignments.setListData(assignmentNames);
             }
             else if(currentUser.classes.get(classIndex).getClassCategory(listClassCategories.getSelectedIndex()).assignments.isEmpty()) {
                 // make list empty of no assignments in categories yet
-                System.out.println("3");
                 listAssignments.setListData(assignmentNames);
             }
             else {
@@ -1764,9 +2051,15 @@ public class Dashboard extends javax.swing.JFrame {
                 }
 
                 if(currentUser.classes.get(currentClass).getTargetGrade(currentUser.classes.get(currentClass).goal) == -1) {
-                    labelTargetGrade.setVisible(false);
-                    labelTargetGrade.setText(Double.toString(currentUser.classes.get(currentClass).getTargetGrade(currentUser.classes.get(currentClass).goal)));
+                    labelTargetGrade.setVisible(false);                   
                 }
+                else {
+                    labelTargetGrade.setVisible(true);
+                    labelTargetGrade.setText("Your target is: " + Math.ceil(currentUser.classes.get(currentClass).getTargetGrade(currentUser.classes.get(currentClass).goal)) + "/" + currentUser.classes.get(currentClass).getPendingCategory().getPendingAssignment().getMaxScore());
+                }
+                
+                // show current overall grade
+                labelOverall.setText("Overall grade: " + (int)((currentUser.classes.get(currentClass).getOverallGrade() * 100) + .5) + "%");
             }
             
             
@@ -1912,6 +2205,267 @@ public class Dashboard extends javax.swing.JFrame {
         
         mainUI.saveUsers();
     }
+    
+    private String numToLetterGrade(double num) {
+        if(num > .925) {
+            return "A";
+        }
+        else if(num > .895) {
+            return "A-";
+        }
+        else if(num > .865) {
+            return "B+";
+        }
+        else if(num > .825) {
+            return "B";
+        }
+        else if(num > .795) {
+            return "B-";
+        }
+        else if(num > .765) {
+            return "C+";
+        }
+        else if(num > .725) {
+            return "C";
+        }
+        else if(num > .695) {
+            return "C";
+        }
+        else if(num > .665) {
+            return "D+";
+        }
+        else if(num > .595) {
+            return "D";
+        }
+        else {
+            return "F";
+        }
+    }
+    public void updateHomePanels() {
+        panelSummary1.setVisible(false);
+        panelSummary2.setVisible(false);
+        panelSummary3.setVisible(false);
+        panelSummary4.setVisible(false);
+        panelSummary5.setVisible(false);
+        panelSummary6.setVisible(false);
+        panelSummary7.setVisible(false);
+        panelSummary8.setVisible(false);
+        
+        if(currentUser.classes.isEmpty()) {
+            labelIntro.setText("Add classes in the grades tab to see your overall progress here.");
+        }
+        else if(currentUser.classes.size() == 1) {
+            labelIntro.setText("Here's how you're doing...");
+            
+            panelSummary1.setVisible(true);
+            labelClassName1.setText(currentUser.classes.get(0).getClassName());
+            labelLetterGrade1.setText(numToLetterGrade(currentUser.classes.get(0).getOverallGrade()));
+            labelClassPercentage1.setText((int)((currentUser.classes.get(0).getOverallGrade() * 100) + .5) + "%");
+        }
+        else if(currentUser.classes.size() == 2) {
+            labelIntro.setText("Here's how you're doing...");
+            
+            panelSummary1.setVisible(true);
+            labelClassName1.setText(currentUser.classes.get(0).getClassName());
+            labelLetterGrade1.setText(numToLetterGrade(currentUser.classes.get(0).getOverallGrade()));
+            labelClassPercentage1.setText((int)((currentUser.classes.get(0).getOverallGrade() * 100) + .5) + "%");
+            
+            panelSummary2.setVisible(true);
+            labelClassName2.setText(currentUser.classes.get(1).getClassName());
+            labelLetterGrade2.setText(numToLetterGrade(currentUser.classes.get(1).getOverallGrade()));
+            labelClassPercentage2.setText((int)((currentUser.classes.get(1).getOverallGrade() * 100) + .5) + "%");
+        }
+        else if(currentUser.classes.size() == 3) {
+            labelIntro.setText("Here's how you're doing...");
+            
+            panelSummary1.setVisible(true);
+            labelClassName1.setText(currentUser.classes.get(0).getClassName());
+            labelLetterGrade1.setText(numToLetterGrade(currentUser.classes.get(0).getOverallGrade()));
+            labelClassPercentage1.setText((int)((currentUser.classes.get(0).getOverallGrade() * 100) + .5) + "%");
+            
+            panelSummary2.setVisible(true);
+            labelClassName2.setText(currentUser.classes.get(1).getClassName());
+            labelLetterGrade2.setText(numToLetterGrade(currentUser.classes.get(1).getOverallGrade()));
+            labelClassPercentage2.setText((int)((currentUser.classes.get(1).getOverallGrade() * 100) + .5) + "%");
+            
+            panelSummary3.setVisible(true);
+            labelClassName3.setText(currentUser.classes.get(2).getClassName());
+            labelLetterGrade3.setText(numToLetterGrade(currentUser.classes.get(2).getOverallGrade()));
+            labelClassPercentage3.setText((int)((currentUser.classes.get(2).getOverallGrade() * 100) + .5) + "%");
+        }
+        else if(currentUser.classes.size() == 4) {
+            labelIntro.setText("Here's how you're doing...");
+            
+            panelSummary1.setVisible(true);
+            labelClassName1.setText(currentUser.classes.get(0).getClassName());
+            labelLetterGrade1.setText(numToLetterGrade(currentUser.classes.get(0).getOverallGrade()));
+            labelClassPercentage1.setText((int)((currentUser.classes.get(0).getOverallGrade() * 100) + .5) + "%");
+            
+            panelSummary2.setVisible(true);
+            labelClassName2.setText(currentUser.classes.get(1).getClassName());
+            labelLetterGrade2.setText(numToLetterGrade(currentUser.classes.get(1).getOverallGrade()));
+            labelClassPercentage2.setText((int)((currentUser.classes.get(1).getOverallGrade() * 100) + .5) + "%");
+            
+            panelSummary3.setVisible(true);
+            labelClassName3.setText(currentUser.classes.get(2).getClassName());
+            labelLetterGrade3.setText(numToLetterGrade(currentUser.classes.get(2).getOverallGrade()));
+            labelClassPercentage3.setText((int)((currentUser.classes.get(2).getOverallGrade() * 100) + .5) + "%");
+            
+            panelSummary4.setVisible(true);
+            labelClassName4.setText(currentUser.classes.get(3).getClassName());
+            labelLetterGrade4.setText(numToLetterGrade(currentUser.classes.get(3).getOverallGrade()));
+            labelClassPercentage4.setText((int)((currentUser.classes.get(3).getOverallGrade() * 100) + .5) + "%");
+        }
+        else if(currentUser.classes.size() == 5) {
+            labelIntro.setText("Here's how you're doing...");
+            
+            panelSummary1.setVisible(true);
+            labelClassName1.setText(currentUser.classes.get(0).getClassName());
+            labelLetterGrade1.setText(numToLetterGrade(currentUser.classes.get(0).getOverallGrade()));
+            labelClassPercentage1.setText((int)((currentUser.classes.get(0).getOverallGrade() * 100) + .5) + "%");
+            
+            panelSummary2.setVisible(true);
+            labelClassName2.setText(currentUser.classes.get(1).getClassName());
+            labelLetterGrade2.setText(numToLetterGrade(currentUser.classes.get(1).getOverallGrade()));
+            labelClassPercentage2.setText((int)((currentUser.classes.get(1).getOverallGrade() * 100) + .5) + "%");
+            
+            panelSummary3.setVisible(true);
+            labelClassName3.setText(currentUser.classes.get(2).getClassName());
+            labelLetterGrade3.setText(numToLetterGrade(currentUser.classes.get(2).getOverallGrade()));
+            labelClassPercentage3.setText((int)((currentUser.classes.get(2).getOverallGrade() * 100) + .5) + "%");
+            
+            panelSummary4.setVisible(true);
+            labelClassName4.setText(currentUser.classes.get(3).getClassName());
+            labelLetterGrade4.setText(numToLetterGrade(currentUser.classes.get(3).getOverallGrade()));
+            labelClassPercentage4.setText((int)((currentUser.classes.get(3).getOverallGrade() * 100) + .5) + "%");
+            
+            panelSummary5.setVisible(true);
+            labelClassName5.setText(currentUser.classes.get(4).getClassName());
+            labelLetterGrade5.setText(numToLetterGrade(currentUser.classes.get(4).getOverallGrade()));
+            labelClassPercentage5.setText((int)((currentUser.classes.get(4).getOverallGrade() * 100) + .5) + "%");
+        }        
+        else if(currentUser.classes.size() == 6) {
+            labelIntro.setText("Here's how you're doing...");
+            
+            panelSummary1.setVisible(true);
+            labelClassName1.setText(currentUser.classes.get(0).getClassName());
+            labelLetterGrade1.setText(numToLetterGrade(currentUser.classes.get(0).getOverallGrade()));
+            labelClassPercentage1.setText((int)((currentUser.classes.get(0).getOverallGrade() * 100) + .5) + "%");
+            
+            panelSummary2.setVisible(true);
+            labelClassName2.setText(currentUser.classes.get(1).getClassName());
+            labelLetterGrade2.setText(numToLetterGrade(currentUser.classes.get(1).getOverallGrade()));
+            labelClassPercentage2.setText((int)((currentUser.classes.get(1).getOverallGrade() * 100) + .5) + "%");
+            
+            panelSummary3.setVisible(true);
+            labelClassName3.setText(currentUser.classes.get(2).getClassName());
+            labelLetterGrade3.setText(numToLetterGrade(currentUser.classes.get(2).getOverallGrade()));
+            labelClassPercentage3.setText((int)((currentUser.classes.get(2).getOverallGrade() * 100) + .5) + "%");
+            
+            panelSummary4.setVisible(true);
+            labelClassName4.setText(currentUser.classes.get(3).getClassName());
+            labelLetterGrade4.setText(numToLetterGrade(currentUser.classes.get(3).getOverallGrade()));
+            labelClassPercentage4.setText((int)((currentUser.classes.get(3).getOverallGrade() * 100) + .5) + "%");
+            
+            panelSummary5.setVisible(true);
+            labelClassName5.setText(currentUser.classes.get(4).getClassName());
+            labelLetterGrade5.setText(numToLetterGrade(currentUser.classes.get(4).getOverallGrade()));
+            labelClassPercentage5.setText((int)((currentUser.classes.get(4).getOverallGrade() * 100) + .5) + "%");
+            
+            panelSummary6.setVisible(true);
+            labelClassName6.setText(currentUser.classes.get(5).getClassName());
+            labelLetterGrade6.setText(numToLetterGrade(currentUser.classes.get(5).getOverallGrade()));
+            labelClassPercentage6.setText((int)((currentUser.classes.get(5).getOverallGrade() * 100) + .5) + "%");
+        }
+        else if(currentUser.classes.size() == 7) {
+            labelIntro.setText("Here's how you're doing...");
+            
+            panelSummary1.setVisible(true);
+            labelClassName1.setText(currentUser.classes.get(0).getClassName());
+            labelLetterGrade1.setText(numToLetterGrade(currentUser.classes.get(0).getOverallGrade()));
+            labelClassPercentage1.setText((int)((currentUser.classes.get(0).getOverallGrade() * 100) + .5) + "%");
+            
+            panelSummary2.setVisible(true);
+            labelClassName2.setText(currentUser.classes.get(1).getClassName());
+            labelLetterGrade2.setText(numToLetterGrade(currentUser.classes.get(1).getOverallGrade()));
+            labelClassPercentage2.setText((int)((currentUser.classes.get(1).getOverallGrade() * 100) + .5) + "%");
+            
+            panelSummary3.setVisible(true);
+            labelClassName3.setText(currentUser.classes.get(2).getClassName());
+            labelLetterGrade3.setText(numToLetterGrade(currentUser.classes.get(2).getOverallGrade()));
+            labelClassPercentage3.setText((int)((currentUser.classes.get(2).getOverallGrade() * 100) + .5) + "%");
+            
+            panelSummary4.setVisible(true);
+            labelClassName4.setText(currentUser.classes.get(3).getClassName());
+            labelLetterGrade4.setText(numToLetterGrade(currentUser.classes.get(3).getOverallGrade()));
+            labelClassPercentage4.setText((int)((currentUser.classes.get(3).getOverallGrade() * 100) + .5) + "%");
+            
+            panelSummary5.setVisible(true);
+            labelClassName5.setText(currentUser.classes.get(4).getClassName());
+            labelLetterGrade5.setText(numToLetterGrade(currentUser.classes.get(4).getOverallGrade()));
+            labelClassPercentage5.setText((int)((currentUser.classes.get(4).getOverallGrade() * 100) + .5) + "%");
+            
+            panelSummary6.setVisible(true);
+            labelClassName6.setText(currentUser.classes.get(5).getClassName());
+            labelLetterGrade6.setText(numToLetterGrade(currentUser.classes.get(5).getOverallGrade()));
+            labelClassPercentage6.setText((int)((currentUser.classes.get(5).getOverallGrade() * 100) + .5) + "%");
+            
+            panelSummary7.setVisible(true);
+            labelClassName7.setText(currentUser.classes.get(6).getClassName());
+            labelLetterGrade7.setText(numToLetterGrade(currentUser.classes.get(6).getOverallGrade()));
+            labelClassPercentage7.setText((int)((currentUser.classes.get(6).getOverallGrade() * 100) + .5) + "%");
+        }
+        else if(currentUser.classes.size() == 8) {
+            labelIntro.setText("Here's how you're doing...");
+            
+            panelSummary1.setVisible(true);
+            labelClassName1.setText(currentUser.classes.get(0).getClassName());
+            labelLetterGrade1.setText(numToLetterGrade(currentUser.classes.get(0).getOverallGrade()));
+            labelClassPercentage1.setText((int)((currentUser.classes.get(0).getOverallGrade() * 100) + .5) + "%");
+            
+            panelSummary2.setVisible(true);
+            labelClassName2.setText(currentUser.classes.get(1).getClassName());
+            labelLetterGrade2.setText(numToLetterGrade(currentUser.classes.get(1).getOverallGrade()));
+            labelClassPercentage2.setText((int)((currentUser.classes.get(1).getOverallGrade() * 100) + .5) + "%");
+            
+            panelSummary3.setVisible(true);
+            labelClassName3.setText(currentUser.classes.get(2).getClassName());
+            labelLetterGrade3.setText(numToLetterGrade(currentUser.classes.get(2).getOverallGrade()));
+            labelClassPercentage3.setText((int)((currentUser.classes.get(2).getOverallGrade() * 100) + .5) + "%");
+            
+            panelSummary4.setVisible(true);
+            labelClassName4.setText(currentUser.classes.get(3).getClassName());
+            labelLetterGrade4.setText(numToLetterGrade(currentUser.classes.get(3).getOverallGrade()));
+            labelClassPercentage4.setText((int)((currentUser.classes.get(3).getOverallGrade() * 100) + .5) + "%");
+            
+            panelSummary5.setVisible(true);
+            labelClassName5.setText(currentUser.classes.get(4).getClassName());
+            labelLetterGrade5.setText(numToLetterGrade(currentUser.classes.get(4).getOverallGrade()));
+            labelClassPercentage5.setText((int)((currentUser.classes.get(4).getOverallGrade() * 100) + .5) + "%");
+            
+            panelSummary6.setVisible(true);
+            labelClassName6.setText(currentUser.classes.get(5).getClassName());
+            labelLetterGrade6.setText(numToLetterGrade(currentUser.classes.get(5).getOverallGrade()));
+            labelClassPercentage6.setText((int)((currentUser.classes.get(5).getOverallGrade() * 100) + .5) + "%");
+            
+            panelSummary7.setVisible(true);
+            labelClassName7.setText(currentUser.classes.get(6).getClassName());
+            labelLetterGrade7.setText(numToLetterGrade(currentUser.classes.get(6).getOverallGrade()));
+            labelClassPercentage7.setText((int)((currentUser.classes.get(6).getOverallGrade() * 100) + .5) + "%");
+            
+            panelSummary8.setVisible(true);
+            labelClassName8.setText(currentUser.classes.get(7).getClassName());
+            labelLetterGrade8.setText(numToLetterGrade(currentUser.classes.get(7).getOverallGrade()));
+            labelClassPercentage8.setText((int)((currentUser.classes.get(7).getOverallGrade() * 100) + .5) + "%");
+        }
+        int metGoals = 0;
+        for(Class classGrade : currentUser.classes) {
+            if(classGrade.getOverallGrade() >= classGrade.getGoal()) {
+                metGoals++;
+            }
+        }
+        labelGoalsMet.setText("Goals met: " + metGoals + "/" + currentUser.classes.size());
+    }
     /**
      * @param args the command line arguments
      */
@@ -1961,6 +2515,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel buttonClass7;
     private javax.swing.JPanel buttonClass8;
     private javax.swing.JPanel buttonEdit;
+    private javax.swing.JPanel buttonEditAssignment;
     private javax.swing.JPanel buttonNewAssignment;
     private javax.swing.JPanel buttonNewCategory;
     private javax.swing.JPanel buttonNewTask;
@@ -1981,6 +2536,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -2004,10 +2560,37 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel labelClass6;
     private javax.swing.JLabel labelClass7;
     private javax.swing.JLabel labelClass8;
+    private javax.swing.JLabel labelClassName1;
+    private javax.swing.JLabel labelClassName2;
+    private javax.swing.JLabel labelClassName3;
+    private javax.swing.JLabel labelClassName4;
+    private javax.swing.JLabel labelClassName5;
+    private javax.swing.JLabel labelClassName6;
+    private javax.swing.JLabel labelClassName7;
+    private javax.swing.JLabel labelClassName8;
+    private javax.swing.JLabel labelClassPercentage1;
+    private javax.swing.JLabel labelClassPercentage2;
+    private javax.swing.JLabel labelClassPercentage3;
+    private javax.swing.JLabel labelClassPercentage4;
+    private javax.swing.JLabel labelClassPercentage5;
+    private javax.swing.JLabel labelClassPercentage6;
+    private javax.swing.JLabel labelClassPercentage7;
+    private javax.swing.JLabel labelClassPercentage8;
     private javax.swing.JLabel labelCurrentlyPending;
     private javax.swing.JLabel labelExit;
+    private javax.swing.JLabel labelGoalsMet;
     private javax.swing.JLabel labelGradesIcon;
     private javax.swing.JLabel labelHomeIcon;
+    private javax.swing.JLabel labelIntro;
+    private javax.swing.JLabel labelLetterGrade1;
+    private javax.swing.JLabel labelLetterGrade2;
+    private javax.swing.JLabel labelLetterGrade3;
+    private javax.swing.JLabel labelLetterGrade4;
+    private javax.swing.JLabel labelLetterGrade5;
+    private javax.swing.JLabel labelLetterGrade6;
+    private javax.swing.JLabel labelLetterGrade7;
+    private javax.swing.JLabel labelLetterGrade8;
+    private javax.swing.JLabel labelOverall;
     private javax.swing.JLabel labelSettingsIcon;
     private javax.swing.JLabel labelTargetGrade;
     private javax.swing.JLabel labelToDoName1;
@@ -2032,6 +2615,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel panelClass7;
     private javax.swing.JPanel panelClass8;
     private javax.swing.JPanel panelEdit;
+    private javax.swing.JPanel panelEditAssignment;
     private javax.swing.JPanel panelExit;
     private javax.swing.JPanel panelGrades;
     private javax.swing.JPanel panelGradesButton;
@@ -2042,6 +2626,14 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel panelNewTask;
     private javax.swing.JPanel panelSettings;
     private javax.swing.JPanel panelSettingsButton;
+    private javax.swing.JPanel panelSummary1;
+    private javax.swing.JPanel panelSummary2;
+    private javax.swing.JPanel panelSummary3;
+    private javax.swing.JPanel panelSummary4;
+    private javax.swing.JPanel panelSummary5;
+    private javax.swing.JPanel panelSummary6;
+    private javax.swing.JPanel panelSummary7;
+    private javax.swing.JPanel panelSummary8;
     private javax.swing.JPanel settingsButton;
     private javax.swing.JTextField textFieldTaskName;
     // End of variables declaration//GEN-END:variables

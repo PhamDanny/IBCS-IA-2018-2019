@@ -46,6 +46,14 @@ public class Class implements Serializable {
     public void setCategories(ArrayList<ClassCategory> categories) {
         this.categories = categories;
     }
+
+    public double getGoal() {
+        return goal;
+    }
+
+    public void setGoal(double goal) {
+        this.goal = goal;
+    }
     
     // methods
     public double getOverallGrade() {
@@ -58,13 +66,7 @@ public class Class implements Serializable {
     
     public double getExclusiveGrade() {
         // returns overall grade minus the category currently pending
-        double overallGrade = 0;
-        for (ClassCategory category : categories) {
-            if(category.getPendingAssignment() != null) {
-                overallGrade += category.getWeightedGrade();
-            }           
-        }
-        return overallGrade;
+        return getOverallGrade() - getPendingCategory().getWeightedGrade();
     }
     public boolean havePendingAssignments() {
         // returns if there are currently pending assignments
@@ -108,6 +110,7 @@ public class Class implements Serializable {
     
     public double getTargetGrade(double desiredGrade) {
         if(havePendingAssignments()) {
+            
             double neededPercentageInCategory = desiredGrade - getExclusiveGrade();
             if( ((neededPercentageInCategory / getPendingCategory().getWeight()) * getPendingCategory().getMaxPoints()) - getPendingCategory().getCurrentPoints() < 0) {
                 return 0;
