@@ -99,6 +99,25 @@ public class Dashboard extends javax.swing.JFrame {
         settingsButton = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         labelSettingsIcon = new javax.swing.JLabel();
+        panelSettings = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        panelEdit = new javax.swing.JPanel();
+        buttonEdit = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        textFieldName = new javax.swing.JTextField();
+        seperator1 = new javax.swing.JSeparator();
+        textFieldUsername = new javax.swing.JTextField();
+        seperator2 = new javax.swing.JSeparator();
+        textFieldGrade = new javax.swing.JTextField();
+        seperator3 = new javax.swing.JSeparator();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        buttonDelete = new javax.swing.JButton();
+        textFieldDelete = new javax.swing.JTextField();
+        seperator4 = new javax.swing.JSeparator();
         panelHome = new javax.swing.JPanel();
         labelWelcome = new javax.swing.JLabel();
         labelIntro = new javax.swing.JLabel();
@@ -176,10 +195,6 @@ public class Dashboard extends javax.swing.JFrame {
         buttonNewCategory = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        panelEdit = new javax.swing.JPanel();
-        buttonEdit = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
         panelEditAssignment = new javax.swing.JPanel();
         buttonEditAssignment = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
@@ -208,8 +223,6 @@ public class Dashboard extends javax.swing.JFrame {
         buttonNewTask = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        panelSettings = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -367,6 +380,99 @@ public class Dashboard extends javax.swing.JFrame {
         panelSettingsButton.add(labelSettingsIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 7, -1, -1));
 
         getContentPane().add(panelSettingsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 110, 110));
+
+        panelSettings.setBackground(new java.awt.Color(0, 153, 153));
+        panelSettings.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Username");
+        panelSettings.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, -1, -1));
+
+        panelEdit.setBackground(new java.awt.Color(0, 0, 51));
+        panelEdit.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        buttonEdit.setOpaque(false);
+        buttonEdit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonEditMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                buttonEditMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                buttonEditMouseExited(evt);
+            }
+        });
+        buttonEdit.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelEdit.add(buttonEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
+
+        jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("Edit class info");
+        panelEdit.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, 20));
+        panelEdit.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -30, -1, -1));
+
+        panelSettings.add(panelEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 130, 40));
+
+        jLabel16.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("Settings");
+        panelSettings.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, -1));
+
+        textFieldName.setBackground(new java.awt.Color(0, 153, 153));
+        textFieldName.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        textFieldName.setForeground(new java.awt.Color(255, 255, 255));
+        textFieldName.setBorder(null);
+        panelSettings.add(textFieldName, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 140, -1));
+        panelSettings.add(seperator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 140, 5));
+
+        textFieldUsername.setBackground(new java.awt.Color(0, 153, 153));
+        textFieldUsername.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        textFieldUsername.setForeground(new java.awt.Color(255, 255, 255));
+        textFieldUsername.setBorder(null);
+        panelSettings.add(textFieldUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 140, -1));
+        panelSettings.add(seperator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 140, 5));
+
+        textFieldGrade.setBackground(new java.awt.Color(0, 153, 153));
+        textFieldGrade.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        textFieldGrade.setForeground(new java.awt.Color(255, 255, 255));
+        textFieldGrade.setBorder(null);
+        panelSettings.add(textFieldGrade, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 50, -1));
+        panelSettings.add(seperator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, 50, 5));
+
+        jLabel15.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("Edit user info");
+        panelSettings.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, -1, -1));
+
+        jLabel17.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setText("Grade");
+        panelSettings.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, -1, -1));
+
+        jLabel18.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setText("Name");
+        panelSettings.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, -1));
+
+        buttonDelete.setText("Delete Account");
+        buttonDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonDeleteActionPerformed(evt);
+            }
+        });
+        panelSettings.add(buttonDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, 140, -1));
+
+        textFieldDelete.setBackground(new java.awt.Color(0, 153, 153));
+        textFieldDelete.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        textFieldDelete.setForeground(new java.awt.Color(255, 255, 255));
+        textFieldDelete.setBorder(null);
+        panelSettings.add(textFieldDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, 140, -1));
+        panelSettings.add(seperator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 140, 5));
+
+        getContentPane().add(panelSettings, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 440));
 
         panelHome.setBackground(new java.awt.Color(0, 153, 153));
         panelHome.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -861,33 +967,6 @@ public class Dashboard extends javax.swing.JFrame {
 
         panelGrades.add(panelNewCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 190, 130, 40));
 
-        panelEdit.setBackground(new java.awt.Color(0, 0, 51));
-        panelEdit.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        buttonEdit.setOpaque(false);
-        buttonEdit.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                buttonEditMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                buttonEditMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                buttonEditMouseExited(evt);
-            }
-        });
-        buttonEdit.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        panelEdit.add(buttonEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
-
-        jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("Edit class info");
-        panelEdit.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, 20));
-        panelEdit.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -30, -1, -1));
-
-        panelGrades.add(panelEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 390, 130, 40));
-
         panelEditAssignment.setBackground(new java.awt.Color(0, 0, 51));
         panelEditAssignment.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1072,14 +1151,6 @@ public class Dashboard extends javax.swing.JFrame {
         panelCalendar.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 200, -1));
 
         getContentPane().add(panelCalendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 440));
-
-        panelSettings.setBackground(new java.awt.Color(0, 153, 153));
-        panelSettings.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel5.setText("Settings");
-        panelSettings.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, -1, -1));
-
-        getContentPane().add(panelSettings, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1651,6 +1722,15 @@ public class Dashboard extends javax.swing.JFrame {
     private void buttonEditAssignmentMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonEditAssignmentMouseExited
         panelEditAssignment.setBackground(new java.awt.Color(0,0,51));
     }//GEN-LAST:event_buttonEditAssignmentMouseExited
+
+    private void buttonDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDeleteActionPerformed
+        if(textFieldDelete.getText().equals("DELETE")) {
+            mainUI.savedUsers.remove(currentUser);
+        }
+        else {
+            JOptionPane.showMessageDialog(new JFrame(), "You must type \"DELETE\" in the above textbox to confirm your deletion.", "Failed to confirm deletion", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_buttonDeleteActionPerformed
     
     public void updateCategoriesLists(int classIndex) {
         Vector <String> categoryNames = new Vector<>();
@@ -2514,6 +2594,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel buttonClass6;
     private javax.swing.JPanel buttonClass7;
     private javax.swing.JPanel buttonClass8;
+    private javax.swing.JButton buttonDelete;
     private javax.swing.JPanel buttonEdit;
     private javax.swing.JPanel buttonEditAssignment;
     private javax.swing.JPanel buttonNewAssignment;
@@ -2537,6 +2618,10 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -2634,7 +2719,15 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel panelSummary6;
     private javax.swing.JPanel panelSummary7;
     private javax.swing.JPanel panelSummary8;
+    private javax.swing.JSeparator seperator1;
+    private javax.swing.JSeparator seperator2;
+    private javax.swing.JSeparator seperator3;
+    private javax.swing.JSeparator seperator4;
     private javax.swing.JPanel settingsButton;
+    private javax.swing.JTextField textFieldDelete;
+    private javax.swing.JTextField textFieldGrade;
+    private javax.swing.JTextField textFieldName;
     private javax.swing.JTextField textFieldTaskName;
+    private javax.swing.JTextField textFieldUsername;
     // End of variables declaration//GEN-END:variables
 }
