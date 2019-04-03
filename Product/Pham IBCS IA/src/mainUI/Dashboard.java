@@ -99,6 +99,42 @@ public class Dashboard extends javax.swing.JFrame {
         settingsButton = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         labelSettingsIcon = new javax.swing.JLabel();
+        panelHome = new javax.swing.JPanel();
+        labelWelcome = new javax.swing.JLabel();
+        labelIntro = new javax.swing.JLabel();
+        panelSummary1 = new javax.swing.JPanel();
+        labelClassName1 = new javax.swing.JLabel();
+        labelLetterGrade1 = new javax.swing.JLabel();
+        labelClassPercentage1 = new javax.swing.JLabel();
+        panelSummary2 = new javax.swing.JPanel();
+        labelClassName2 = new javax.swing.JLabel();
+        labelLetterGrade2 = new javax.swing.JLabel();
+        labelClassPercentage2 = new javax.swing.JLabel();
+        panelSummary3 = new javax.swing.JPanel();
+        labelClassName3 = new javax.swing.JLabel();
+        labelLetterGrade3 = new javax.swing.JLabel();
+        labelClassPercentage3 = new javax.swing.JLabel();
+        panelSummary4 = new javax.swing.JPanel();
+        labelClassName4 = new javax.swing.JLabel();
+        labelLetterGrade4 = new javax.swing.JLabel();
+        labelClassPercentage4 = new javax.swing.JLabel();
+        panelSummary5 = new javax.swing.JPanel();
+        labelClassName5 = new javax.swing.JLabel();
+        labelLetterGrade5 = new javax.swing.JLabel();
+        labelClassPercentage5 = new javax.swing.JLabel();
+        panelSummary6 = new javax.swing.JPanel();
+        labelClassName6 = new javax.swing.JLabel();
+        labelLetterGrade6 = new javax.swing.JLabel();
+        labelClassPercentage6 = new javax.swing.JLabel();
+        panelSummary7 = new javax.swing.JPanel();
+        labelClassName7 = new javax.swing.JLabel();
+        labelLetterGrade7 = new javax.swing.JLabel();
+        labelClassPercentage7 = new javax.swing.JLabel();
+        panelSummary8 = new javax.swing.JPanel();
+        labelClassName8 = new javax.swing.JLabel();
+        labelLetterGrade8 = new javax.swing.JLabel();
+        labelClassPercentage8 = new javax.swing.JLabel();
+        labelGoalsMet = new javax.swing.JLabel();
         panelSettings = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         panelEdit = new javax.swing.JPanel();
@@ -163,42 +199,6 @@ public class Dashboard extends javax.swing.JFrame {
         buttonEditAssignment = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         labelOverall = new javax.swing.JLabel();
-        panelHome = new javax.swing.JPanel();
-        labelWelcome = new javax.swing.JLabel();
-        labelIntro = new javax.swing.JLabel();
-        panelSummary1 = new javax.swing.JPanel();
-        labelClassName1 = new javax.swing.JLabel();
-        labelLetterGrade1 = new javax.swing.JLabel();
-        labelClassPercentage1 = new javax.swing.JLabel();
-        panelSummary2 = new javax.swing.JPanel();
-        labelClassName2 = new javax.swing.JLabel();
-        labelLetterGrade2 = new javax.swing.JLabel();
-        labelClassPercentage2 = new javax.swing.JLabel();
-        panelSummary3 = new javax.swing.JPanel();
-        labelClassName3 = new javax.swing.JLabel();
-        labelLetterGrade3 = new javax.swing.JLabel();
-        labelClassPercentage3 = new javax.swing.JLabel();
-        panelSummary4 = new javax.swing.JPanel();
-        labelClassName4 = new javax.swing.JLabel();
-        labelLetterGrade4 = new javax.swing.JLabel();
-        labelClassPercentage4 = new javax.swing.JLabel();
-        panelSummary5 = new javax.swing.JPanel();
-        labelClassName5 = new javax.swing.JLabel();
-        labelLetterGrade5 = new javax.swing.JLabel();
-        labelClassPercentage5 = new javax.swing.JLabel();
-        panelSummary6 = new javax.swing.JPanel();
-        labelClassName6 = new javax.swing.JLabel();
-        labelLetterGrade6 = new javax.swing.JLabel();
-        labelClassPercentage6 = new javax.swing.JLabel();
-        panelSummary7 = new javax.swing.JPanel();
-        labelClassName7 = new javax.swing.JLabel();
-        labelLetterGrade7 = new javax.swing.JLabel();
-        labelClassPercentage7 = new javax.swing.JLabel();
-        panelSummary8 = new javax.swing.JPanel();
-        labelClassName8 = new javax.swing.JLabel();
-        labelLetterGrade8 = new javax.swing.JLabel();
-        labelClassPercentage8 = new javax.swing.JLabel();
-        labelGoalsMet = new javax.swing.JLabel();
         panelCalendar = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         labelToDoName1 = new javax.swing.JLabel();
@@ -380,6 +380,210 @@ public class Dashboard extends javax.swing.JFrame {
         panelSettingsButton.add(labelSettingsIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 7, -1, -1));
 
         getContentPane().add(panelSettingsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 110, 110));
+
+        panelHome.setBackground(new java.awt.Color(0, 153, 153));
+        panelHome.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        labelWelcome.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
+        labelWelcome.setForeground(new java.awt.Color(255, 255, 255));
+        labelWelcome.setText("Welcome, name.");
+        panelHome.add(labelWelcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, -1));
+
+        labelIntro.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        labelIntro.setForeground(new java.awt.Color(255, 255, 255));
+        labelIntro.setText("Here's how you're doing...");
+        panelHome.add(labelIntro, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, -1, -1));
+
+        panelSummary1.setBackground(new java.awt.Color(0, 102, 153));
+        panelSummary1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        labelClassName1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        labelClassName1.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassName1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassName1.setText("IB Lang and Lit");
+        panelSummary1.add(labelClassName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
+
+        labelLetterGrade1.setFont(new java.awt.Font("Century Gothic", 0, 54)); // NOI18N
+        labelLetterGrade1.setForeground(new java.awt.Color(255, 255, 255));
+        labelLetterGrade1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelLetterGrade1.setText("A");
+        panelSummary1.add(labelLetterGrade1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 130, 60));
+
+        labelClassPercentage1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        labelClassPercentage1.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassPercentage1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassPercentage1.setText("96%");
+        panelSummary1.add(labelClassPercentage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 130, -1));
+
+        panelHome.add(panelSummary1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 130, 120));
+
+        panelSummary2.setBackground(new java.awt.Color(0, 102, 153));
+        panelSummary2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        labelClassName2.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        labelClassName2.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassName2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassName2.setText("IB Lang and Lit");
+        panelSummary2.add(labelClassName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
+
+        labelLetterGrade2.setFont(new java.awt.Font("Century Gothic", 0, 54)); // NOI18N
+        labelLetterGrade2.setForeground(new java.awt.Color(255, 255, 255));
+        labelLetterGrade2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelLetterGrade2.setText("A");
+        panelSummary2.add(labelLetterGrade2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 130, 60));
+
+        labelClassPercentage2.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        labelClassPercentage2.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassPercentage2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassPercentage2.setText("96%");
+        panelSummary2.add(labelClassPercentage2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 130, -1));
+
+        panelHome.add(panelSummary2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 130, 120));
+
+        panelSummary3.setBackground(new java.awt.Color(0, 102, 153));
+        panelSummary3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        labelClassName3.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        labelClassName3.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassName3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassName3.setText("IB Lang and Lit");
+        panelSummary3.add(labelClassName3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
+
+        labelLetterGrade3.setFont(new java.awt.Font("Century Gothic", 0, 54)); // NOI18N
+        labelLetterGrade3.setForeground(new java.awt.Color(255, 255, 255));
+        labelLetterGrade3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelLetterGrade3.setText("A");
+        panelSummary3.add(labelLetterGrade3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 130, 60));
+
+        labelClassPercentage3.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        labelClassPercentage3.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassPercentage3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassPercentage3.setText("96%");
+        panelSummary3.add(labelClassPercentage3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 130, -1));
+
+        panelHome.add(panelSummary3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 100, 130, 120));
+
+        panelSummary4.setBackground(new java.awt.Color(0, 102, 153));
+        panelSummary4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        labelClassName4.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        labelClassName4.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassName4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassName4.setText("IB Lang and Lit");
+        panelSummary4.add(labelClassName4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
+
+        labelLetterGrade4.setFont(new java.awt.Font("Century Gothic", 0, 54)); // NOI18N
+        labelLetterGrade4.setForeground(new java.awt.Color(255, 255, 255));
+        labelLetterGrade4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelLetterGrade4.setText("A");
+        panelSummary4.add(labelLetterGrade4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 130, 60));
+
+        labelClassPercentage4.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        labelClassPercentage4.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassPercentage4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassPercentage4.setText("96%");
+        panelSummary4.add(labelClassPercentage4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 130, -1));
+
+        panelHome.add(panelSummary4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 100, 130, 120));
+
+        panelSummary5.setBackground(new java.awt.Color(255, 102, 102));
+        panelSummary5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        labelClassName5.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        labelClassName5.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassName5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassName5.setText("IB Lang and Lit");
+        panelSummary5.add(labelClassName5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
+
+        labelLetterGrade5.setFont(new java.awt.Font("Century Gothic", 0, 54)); // NOI18N
+        labelLetterGrade5.setForeground(new java.awt.Color(255, 255, 255));
+        labelLetterGrade5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelLetterGrade5.setText("A");
+        panelSummary5.add(labelLetterGrade5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 130, 60));
+
+        labelClassPercentage5.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        labelClassPercentage5.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassPercentage5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassPercentage5.setText("96%");
+        panelSummary5.add(labelClassPercentage5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 130, -1));
+
+        panelHome.add(panelSummary5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 130, 120));
+
+        panelSummary6.setBackground(new java.awt.Color(0, 102, 153));
+        panelSummary6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        labelClassName6.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        labelClassName6.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassName6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassName6.setText("IB Lang and Lit");
+        panelSummary6.add(labelClassName6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
+
+        labelLetterGrade6.setFont(new java.awt.Font("Century Gothic", 0, 54)); // NOI18N
+        labelLetterGrade6.setForeground(new java.awt.Color(255, 255, 255));
+        labelLetterGrade6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelLetterGrade6.setText("A");
+        panelSummary6.add(labelLetterGrade6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 130, 60));
+
+        labelClassPercentage6.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        labelClassPercentage6.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassPercentage6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassPercentage6.setText("96%");
+        panelSummary6.add(labelClassPercentage6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 130, -1));
+
+        panelHome.add(panelSummary6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 130, 120));
+
+        panelSummary7.setBackground(new java.awt.Color(0, 102, 153));
+        panelSummary7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        labelClassName7.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        labelClassName7.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassName7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassName7.setText("IB Lang and Lit");
+        panelSummary7.add(labelClassName7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
+
+        labelLetterGrade7.setFont(new java.awt.Font("Century Gothic", 0, 54)); // NOI18N
+        labelLetterGrade7.setForeground(new java.awt.Color(255, 255, 255));
+        labelLetterGrade7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelLetterGrade7.setText("A");
+        panelSummary7.add(labelLetterGrade7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 130, 60));
+
+        labelClassPercentage7.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        labelClassPercentage7.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassPercentage7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassPercentage7.setText("96%");
+        panelSummary7.add(labelClassPercentage7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 130, -1));
+
+        panelHome.add(panelSummary7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, 130, 120));
+
+        panelSummary8.setBackground(new java.awt.Color(0, 102, 153));
+        panelSummary8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        labelClassName8.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        labelClassName8.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassName8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassName8.setText("IB Lang and Lit");
+        panelSummary8.add(labelClassName8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
+
+        labelLetterGrade8.setFont(new java.awt.Font("Century Gothic", 0, 54)); // NOI18N
+        labelLetterGrade8.setForeground(new java.awt.Color(255, 255, 255));
+        labelLetterGrade8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelLetterGrade8.setText("A");
+        panelSummary8.add(labelLetterGrade8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 130, 60));
+
+        labelClassPercentage8.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        labelClassPercentage8.setForeground(new java.awt.Color(255, 255, 255));
+        labelClassPercentage8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelClassPercentage8.setText("96%");
+        panelSummary8.add(labelClassPercentage8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 130, -1));
+
+        panelHome.add(panelSummary8, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 230, 130, 120));
+
+        labelGoalsMet.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        labelGoalsMet.setForeground(new java.awt.Color(255, 255, 255));
+        labelGoalsMet.setText("Goals met: 7/8");
+        panelHome.add(labelGoalsMet, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 380, -1, -1));
+
+        getContentPane().add(panelHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 440));
 
         panelSettings.setBackground(new java.awt.Color(0, 153, 153));
         panelSettings.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -795,210 +999,6 @@ public class Dashboard extends javax.swing.JFrame {
         panelGrades.add(labelOverall, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 300, 410, -1));
 
         getContentPane().add(panelGrades, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 440));
-
-        panelHome.setBackground(new java.awt.Color(0, 153, 153));
-        panelHome.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        labelWelcome.setFont(new java.awt.Font("Century Gothic", 0, 30)); // NOI18N
-        labelWelcome.setForeground(new java.awt.Color(255, 255, 255));
-        labelWelcome.setText("Welcome, name.");
-        panelHome.add(labelWelcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, -1));
-
-        labelIntro.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        labelIntro.setForeground(new java.awt.Color(255, 255, 255));
-        labelIntro.setText("Here's how you're doing...");
-        panelHome.add(labelIntro, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, -1, -1));
-
-        panelSummary1.setBackground(new java.awt.Color(0, 102, 153));
-        panelSummary1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        labelClassName1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        labelClassName1.setForeground(new java.awt.Color(255, 255, 255));
-        labelClassName1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelClassName1.setText("IB Lang and Lit");
-        panelSummary1.add(labelClassName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
-
-        labelLetterGrade1.setFont(new java.awt.Font("Century Gothic", 0, 54)); // NOI18N
-        labelLetterGrade1.setForeground(new java.awt.Color(255, 255, 255));
-        labelLetterGrade1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelLetterGrade1.setText("A");
-        panelSummary1.add(labelLetterGrade1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 130, 60));
-
-        labelClassPercentage1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        labelClassPercentage1.setForeground(new java.awt.Color(255, 255, 255));
-        labelClassPercentage1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelClassPercentage1.setText("96%");
-        panelSummary1.add(labelClassPercentage1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 130, -1));
-
-        panelHome.add(panelSummary1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 130, 120));
-
-        panelSummary2.setBackground(new java.awt.Color(0, 102, 153));
-        panelSummary2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        labelClassName2.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        labelClassName2.setForeground(new java.awt.Color(255, 255, 255));
-        labelClassName2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelClassName2.setText("IB Lang and Lit");
-        panelSummary2.add(labelClassName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
-
-        labelLetterGrade2.setFont(new java.awt.Font("Century Gothic", 0, 54)); // NOI18N
-        labelLetterGrade2.setForeground(new java.awt.Color(255, 255, 255));
-        labelLetterGrade2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelLetterGrade2.setText("A");
-        panelSummary2.add(labelLetterGrade2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 130, 60));
-
-        labelClassPercentage2.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        labelClassPercentage2.setForeground(new java.awt.Color(255, 255, 255));
-        labelClassPercentage2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelClassPercentage2.setText("96%");
-        panelSummary2.add(labelClassPercentage2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 130, -1));
-
-        panelHome.add(panelSummary2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 130, 120));
-
-        panelSummary3.setBackground(new java.awt.Color(0, 102, 153));
-        panelSummary3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        labelClassName3.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        labelClassName3.setForeground(new java.awt.Color(255, 255, 255));
-        labelClassName3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelClassName3.setText("IB Lang and Lit");
-        panelSummary3.add(labelClassName3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
-
-        labelLetterGrade3.setFont(new java.awt.Font("Century Gothic", 0, 54)); // NOI18N
-        labelLetterGrade3.setForeground(new java.awt.Color(255, 255, 255));
-        labelLetterGrade3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelLetterGrade3.setText("A");
-        panelSummary3.add(labelLetterGrade3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 130, 60));
-
-        labelClassPercentage3.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        labelClassPercentage3.setForeground(new java.awt.Color(255, 255, 255));
-        labelClassPercentage3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelClassPercentage3.setText("96%");
-        panelSummary3.add(labelClassPercentage3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 130, -1));
-
-        panelHome.add(panelSummary3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 100, 130, 120));
-
-        panelSummary4.setBackground(new java.awt.Color(0, 102, 153));
-        panelSummary4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        labelClassName4.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        labelClassName4.setForeground(new java.awt.Color(255, 255, 255));
-        labelClassName4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelClassName4.setText("IB Lang and Lit");
-        panelSummary4.add(labelClassName4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
-
-        labelLetterGrade4.setFont(new java.awt.Font("Century Gothic", 0, 54)); // NOI18N
-        labelLetterGrade4.setForeground(new java.awt.Color(255, 255, 255));
-        labelLetterGrade4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelLetterGrade4.setText("A");
-        panelSummary4.add(labelLetterGrade4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 130, 60));
-
-        labelClassPercentage4.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        labelClassPercentage4.setForeground(new java.awt.Color(255, 255, 255));
-        labelClassPercentage4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelClassPercentage4.setText("96%");
-        panelSummary4.add(labelClassPercentage4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 130, -1));
-
-        panelHome.add(panelSummary4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 100, 130, 120));
-
-        panelSummary5.setBackground(new java.awt.Color(255, 102, 102));
-        panelSummary5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        labelClassName5.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        labelClassName5.setForeground(new java.awt.Color(255, 255, 255));
-        labelClassName5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelClassName5.setText("IB Lang and Lit");
-        panelSummary5.add(labelClassName5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
-
-        labelLetterGrade5.setFont(new java.awt.Font("Century Gothic", 0, 54)); // NOI18N
-        labelLetterGrade5.setForeground(new java.awt.Color(255, 255, 255));
-        labelLetterGrade5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelLetterGrade5.setText("A");
-        panelSummary5.add(labelLetterGrade5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 130, 60));
-
-        labelClassPercentage5.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        labelClassPercentage5.setForeground(new java.awt.Color(255, 255, 255));
-        labelClassPercentage5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelClassPercentage5.setText("96%");
-        panelSummary5.add(labelClassPercentage5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 130, -1));
-
-        panelHome.add(panelSummary5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 130, 120));
-
-        panelSummary6.setBackground(new java.awt.Color(0, 102, 153));
-        panelSummary6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        labelClassName6.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        labelClassName6.setForeground(new java.awt.Color(255, 255, 255));
-        labelClassName6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelClassName6.setText("IB Lang and Lit");
-        panelSummary6.add(labelClassName6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
-
-        labelLetterGrade6.setFont(new java.awt.Font("Century Gothic", 0, 54)); // NOI18N
-        labelLetterGrade6.setForeground(new java.awt.Color(255, 255, 255));
-        labelLetterGrade6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelLetterGrade6.setText("A");
-        panelSummary6.add(labelLetterGrade6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 130, 60));
-
-        labelClassPercentage6.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        labelClassPercentage6.setForeground(new java.awt.Color(255, 255, 255));
-        labelClassPercentage6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelClassPercentage6.setText("96%");
-        panelSummary6.add(labelClassPercentage6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 130, -1));
-
-        panelHome.add(panelSummary6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 130, 120));
-
-        panelSummary7.setBackground(new java.awt.Color(0, 102, 153));
-        panelSummary7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        labelClassName7.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        labelClassName7.setForeground(new java.awt.Color(255, 255, 255));
-        labelClassName7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelClassName7.setText("IB Lang and Lit");
-        panelSummary7.add(labelClassName7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
-
-        labelLetterGrade7.setFont(new java.awt.Font("Century Gothic", 0, 54)); // NOI18N
-        labelLetterGrade7.setForeground(new java.awt.Color(255, 255, 255));
-        labelLetterGrade7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelLetterGrade7.setText("A");
-        panelSummary7.add(labelLetterGrade7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 130, 60));
-
-        labelClassPercentage7.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        labelClassPercentage7.setForeground(new java.awt.Color(255, 255, 255));
-        labelClassPercentage7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelClassPercentage7.setText("96%");
-        panelSummary7.add(labelClassPercentage7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 130, -1));
-
-        panelHome.add(panelSummary7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, 130, 120));
-
-        panelSummary8.setBackground(new java.awt.Color(0, 102, 153));
-        panelSummary8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        labelClassName8.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        labelClassName8.setForeground(new java.awt.Color(255, 255, 255));
-        labelClassName8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelClassName8.setText("IB Lang and Lit");
-        panelSummary8.add(labelClassName8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
-
-        labelLetterGrade8.setFont(new java.awt.Font("Century Gothic", 0, 54)); // NOI18N
-        labelLetterGrade8.setForeground(new java.awt.Color(255, 255, 255));
-        labelLetterGrade8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelLetterGrade8.setText("A");
-        panelSummary8.add(labelLetterGrade8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 130, 60));
-
-        labelClassPercentage8.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        labelClassPercentage8.setForeground(new java.awt.Color(255, 255, 255));
-        labelClassPercentage8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelClassPercentage8.setText("96%");
-        panelSummary8.add(labelClassPercentage8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 130, -1));
-
-        panelHome.add(panelSummary8, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 230, 130, 120));
-
-        labelGoalsMet.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
-        labelGoalsMet.setForeground(new java.awt.Color(255, 255, 255));
-        labelGoalsMet.setText("Goals met: 7/8");
-        panelHome.add(labelGoalsMet, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 380, -1, -1));
-
-        getContentPane().add(panelHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 440));
 
         panelCalendar.setBackground(new java.awt.Color(0, 153, 153));
         panelCalendar.setForeground(new java.awt.Color(255, 255, 255));
@@ -2542,11 +2542,27 @@ public class Dashboard extends javax.swing.JFrame {
             labelLetterGrade8.setText(numToLetterGrade(currentUser.classes.get(7).getOverallGrade()));
             labelClassPercentage8.setText((int)((currentUser.classes.get(7).getOverallGrade() * 100) + .5) + "%");
         }
+        javax.swing.JPanel[] panelArray = new javax.swing.JPanel[8];
+        panelArray[0] = panelSummary1;
+        panelArray[1] = panelSummary2;
+        panelArray[2] = panelSummary3;
+        panelArray[3] = panelSummary4;
+        panelArray[4] = panelSummary5;
+        panelArray[5] = panelSummary6;
+        panelArray[6] = panelSummary7;
+        panelArray[7] = panelSummary8;
+        
         int metGoals = 0;
+        int i = 0;
         for(Class classGrade : currentUser.classes) {
             if(classGrade.getOverallGrade() >= classGrade.getGoal()) {
                 metGoals++;
+                panelArray[i].setBackground(new java.awt.Color(0,102,153));
             }
+            else {
+                panelArray[i].setBackground(new java.awt.Color(150,35,35));
+            }
+            i++;
         }
         labelGoalsMet.setText("Goals met: " + metGoals + "/" + currentUser.classes.size());
     }
